@@ -1,83 +1,19 @@
 {% set footer = site.footer %}
-                <footer class="bg-gray-50 border-t border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-                    <div class="p-4 py-6 mx-auto max-w-screen-xl md:p-8 lg:-10">
-                        <div class="grid grid-cols-2 gap-8 lg:grid-cols-5">
-                            <div class="col-span-2 lg:pr-8">
-                                {% include 'logo/rochen-logo.svg.twig' with {logo_size: 'h-4 sm:h-5'} %}
-                                <div class="my-4 font-light text-gray-500 dark:text-gray-400">
-                                    {{ footer.pitch|t|markdown }}
-                                </div>
-                                <div class="inline-flex gap-2 mb-4">
-                                    <img src="{{ url('theme://images/visa.svg')|raw }}" class="w-[40px]" alt="visa"/>
-                                    <img src="{{ url('theme://images/mastercard.svg')|raw }}" class="w-[40px]" alt="MasterCard"/>
-                                    <img src="{{ url('theme://images/amex.svg')|raw }}" class="w-[40px]" alt="American Express"/>
-                                    <img src="{{ url('theme://images/discover.svg')|raw }}" class="w-[40px]" alt="Discover"/>
-                                </div>
-                                <ul class="flex mt-5 space-x-6">
-                                    {% for social in footer.socials %}
-                                        <li>
-                                            <a href="{{ url(social.link) }}" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400" target="_blank">
-                                                {{ fa_icon(social.icon, 'w-5 h-5 text-current')|raw }}
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                                <div class='[&>ul>li>a]:text-primary-500 mt-6'>
-                                    {% include 'partials/langswitcher.html.twig' %}
-                                </div>
-                            </div>
-                            {% for section in footer.links %}
-                                <div class="lg:mx-auto text-sm">
-                                    {% if section.collection %}
-                                        {% set section_page = pages.find(section.collection) %}
-                                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{{ section_page.title }}</h2>
-                                        {% if section_page.header.menu_sections %}
-                                            {% for m in section_page.collection %}
-                                                <div class="menu-section mt-2">
-                                                    <div class="menu-title flex text-xs uppercase text-bold text-gray-600 dark:text-gray-300 text-bold mb-1">
-                                                        {{ m.title }}
-                                                    </div>
-                                                    <ul class="text-gray-500 dark:text-gray-400 mb-6">
-                                                        {% for item in m.collection %}
-                                                            {% set url = item.url %}
-                                                            {% if item.modular %}
-                                                                {% set url = section_page.url ~ '#' ~ item.header.sticky_menu|default(item.header.title)|lower|hyphenize %}
-                                                            {% endif %}
-                                                            <li class="mb-2">
-                                                                <a href="{{ url(url) }}" class=" hover:underline">{{ item.menu }}</a>
-                                                            </li>
-                                                        {% endfor %}
-                                                    </ul>
-                                                </div>
-                                            {% endfor %}
-                                        {% else %}
-                                            <ul class="text-gray-500 dark:text-gray-400">
-                                                {% for item in section_page.collection %}
-                                                    {% set url = item.url %}
-                                                    {% if item.modular %}
-                                                        {% set url = section_page.url ~ '#' ~ item.header.sticky_menu|default(item.header.title)|lower|hyphenize %}
-                                                    {% endif %}
-                                                    <li class="mb-2">
-                                                        <a href="{{ url(url) }}" class=" hover:underline">{{ item.menu }}</a>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        {% endif %}
-                                    {% else %}
-                                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{{ section.title }}</h2>
-                                        <ul class="text-gray-500 dark:text-gray-400">
-                                            {% for item in section.items %}
-                                                <li class="mb-2">
-                                                    <a href="{{ url(item.url) }}" class=" hover:underline">{{ item.text }}</a>
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    {% endif %}
-                                </div>
-                            {% endfor %}
-                        </div>
-                        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
-                            <div class="text-sm text-center text-gray-500 dark:text-gray-400">{{ footer.copyright|t }}</div>
-                            <div class="text-sm mt-4 text-center text-gray-500 dark:text-gray-400 max-w-screen-md mx-auto">{{ footer.text|t }}</div>
-                        </div>
-                    </footer>
+<footer class="bg-gray-900/90 border-t border-gray-800">
+    <div class="prose text-sm font-light text-gray-400 [&_strong]:text-gray-300 [&_a]:text-underline [&_a]:text-gray-300 p-4 py-6 mx-auto max-w-screen-xl md:p-8 lg:-10">
+
+        <hr class="my-6 border-gray-700 sm:mx-auto">
+
+        {{ footer.copyright|markdown }}
+
+        <div class="grid grid-cols-2 gap-x-8 items-center">
+            <div class="lg:pr-8 ">
+                {{ footer.privacy|markdown }}
+            </div>
+            <div class="flex justify-end not-prose">
+                <img class="h-[27px]" src="{{ url('theme://images/footer-logo.svg') }}" alt="footer logo"/>
+            </div>
+
+        </div>
+    </div>
+</footer>
