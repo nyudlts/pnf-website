@@ -1,0 +1,132 @@
+[x-cloak] {
+    @apply hidden;
+}
+
+.button {
+  @apply no-underline text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-1 focus:ring-gray-300  dark:hover:bg-gray-700 dark:focus:ring-gray-800 w-full sm:w-auto focus:ring-1 focus:outline-none rounded-lg inline-flex items-center justify-center px-4 py-3;
+}
+
+.button__xs {
+  @apply py-1.5 px-3 text-sm;
+}
+
+.button__sm {
+  @apply py-2 px-3;
+}
+
+.button__lg {
+  @apply py-4 px-6;
+}
+
+.button__xl {
+  @apply py-5 px-8 text-lg;
+}
+
+.button__primary {
+  @apply text-white bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900;
+}
+
+.button__border {
+  @apply text-gray-900 border border-gray-300 hover:bg-gray-100 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800;
+}
+
+.button__link {
+    @apply p-0 text-primary-600 hover:bg-transparent hover:text-primary-500 after:content-['→'] after:inline-block after:ml-1 after:transition-transform after:duration-300 hover:after:translate-x-1;
+}
+
+.button__green {
+  @apply text-white bg-green-500 hover:bg-green-600 focus:ring-green-400 dark:focus:ring-green-700;
+}
+
+.button__orange {
+  @apply text-white bg-orange-500 hover:bg-orange-600 focus:ring-orange-400 dark:focus:ring-orange-700;
+}
+
+.button {
+    @apply hover:[content="*→"]:translate-x-1;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 2s linear infinite;
+}
+
+.prose {
+    table {
+        thead {
+            th {
+                @apply font-medium align-top;
+                strong {
+                    @apply font-black;
+                }
+            }
+        }
+    }
+
+    h6 {
+        @apply text-lg md:text-xl font-normal text-black dark:text-white;
+    }
+}
+
+.circle-background {
+    background-color: transparent;
+    opacity: 0.6;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0,white 10px ), repeating-linear-gradient( #0279b055, #0279b0 );
+}
+
+.polka-background {
+    background-color: transparent;
+    opacity: 0.8;
+    background-image: radial-gradient(#1cb5fc 0.5px, transparent 0.5px);
+    background-size: 10px 10px;
+}
+
+.grid-paper-background {
+    --s: 100px;
+    --c1: #1cb5fc;
+    --c2: transparent;
+    --_g: #0000 90deg,var(--c1) 0;
+
+    background:
+    conic-gradient(from 90deg at 2px 2px,var(--_g)),
+    conic-gradient(from 90deg at 1px 1px,var(--_g)),
+    var(--c2);
+    background-size: var(--s) var(--s), calc(var(--s)/5) calc(var(--s)/5);
+    background-position: 50% 50%;
+}
+
+/* Neutralize 1Password’s attribute without introducing any colors */
+input[data-com-onepassword-filled],
+textarea[data-com-onepassword-filled],
+select[data-com-onepassword-filled] {
+  /* roll back to your normal cascade */
+  background-color: revert !important;
+  color: revert !important;
+  border-color: revert !important;
+  outline-color: revert !important;
+
+  /* WebKit sometimes ignores color and uses this instead */
+  -webkit-text-fill-color: inherit !important;
+
+  /* remove common “autofill” effects if added via styles */
+  box-shadow: revert !important;
+  filter: none !important;
+  caret-color: inherit !important;
+}
+
+table {
+    tbody {
+        tr:last-child {
+            border: 0 !important;
+        }
+    }
+}
+
+
+
+

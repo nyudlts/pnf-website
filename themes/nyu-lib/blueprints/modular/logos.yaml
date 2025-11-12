@@ -1,0 +1,70 @@
+title: Logos Grid
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+              ordering@: 99
+              label: Modular Media
+
+            intro_section:
+              type: section
+              title: Intro
+              underline: true
+              ordering@: 10
+
+            header.intro.title:
+              type: text
+              label: Heading
+              placeholder: You'll be in good company
+              ordering@: 11
+              validate:
+                required: true
+
+            header.intro.subtitle:
+              type: textarea
+              label: Subheading
+              rows: 3
+              markdown: true
+              ordering@: 12
+
+            logos_section:
+              type: section
+              title: Logos
+              underline: true
+              ordering@: 20
+
+            header.logos:
+              type: list
+              label: Logo Items
+              style: vertical
+              btn_label: Add Logo
+              ordering@: 21
+              fields:
+                .title:
+                  type: text
+                  label: Label / Alt Text
+                  toggleable: true
+                .url:
+                  type: text
+                  label: URL
+                  placeholder: https://example.com
+                  validate:
+                    type: url
+                    required: true
+                .image:
+                  type: pagemediaselect
+                  label: Image
+                  folder: '@self'
+                  preview_images: true
+                  help: Choose an image uploaded to this module folder.
+                .classes:
+                  type: text
+                  label: CSS Classes
+                  toggleable: true

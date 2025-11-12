@@ -1,0 +1,73 @@
+title: Green Hosting
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            media_section:
+              type: section
+              title: Media
+              underline: true
+              ordering@: 5
+
+            header.background_image:
+              type: pagemediaselect
+              label: Background Image
+              folder: '@self'
+              preview_images: true
+              help: Image displayed behind the content. Defaults to abstract-bg.jpg when empty.
+              toggleable: true
+
+            header.badge_image:
+              type: pagemediaselect
+              label: Badge Image
+              folder: '@self'
+              preview_images: true
+              help: Optional image displayed beneath the intro text.
+              toggleable: true
+
+            header.badge_alt:
+              type: text
+              label: Badge Alt Text
+              toggleable: true
+
+            header.badge_classes:
+              type: text
+              label: Badge Classes
+              toggleable: true
+
+            intro_section:
+              type: section
+              title: Intro
+              underline: true
+              ordering@: 20
+
+            header.intro.title:
+              type: text
+              label: Heading
+              ordering@: 21
+              validate:
+                required: true
+
+            header.intro.subtitle:
+              type: textarea
+              label: Subheading
+              rows: 3
+              markdown: true
+              ordering@: 22
+
+            body_section:
+              type: section
+              title: Body
+              underline: true
+              ordering@: 30
+
+            content:
+              type: markdown
+              label: Body Content
+              ordering@: 31
+              validate:
+                required: true

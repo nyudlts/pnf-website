@@ -1,0 +1,11 @@
+state: enabled
+email: hello@trilbymedia.com
+fullname: 'Trilby Media'
+title: Administrator
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$zFg3.yu04AJmXbeu7kZDjuJUCK327awp/CMRvli10kiD9C1wRmbiS

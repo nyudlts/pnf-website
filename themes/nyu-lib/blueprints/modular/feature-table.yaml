@@ -1,0 +1,82 @@
+title: Feature Sections
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            intro_section:
+              type: section
+              title: Intro Content
+              underline: true
+              ordering@: 10
+
+            content:
+              type: markdown
+              label: Body Content
+              help: Appears beneath the heading before the section grid.
+              ordering@: 12
+
+            sections_section:
+              type: section
+              title: Sections
+              underline: true
+              ordering@: 20
+
+            header.sections:
+              type: list
+              label: Sections
+              style: vertical
+              btn_label: Add Section
+              ordering@: 22
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  validate:
+                    required: true
+                .caption:
+                  type: textarea
+                  label: Caption
+                  rows: 3
+                  markdown: true
+                  toggleable: true
+                .content:
+                  type: textarea
+                  label: Rich Content
+                  rows: 6
+                  markdown: true
+                  toggleable: true
+                table_section:
+                  type: section
+                  title: Table Configuration
+                .table.rows:
+                  toggleable: true
+                  type: array
+                  label: Rows
+                  btn_label: Add Row
+                  value_only: true
+                  width: large
+                  help: Use `|` to separate cells within a row.
+                table_expert:
+                  type: fieldset
+                  title: Advanced Table Options
+                  fields:
+                    .table.headers:
+                      type: text
+                      label: Column Headers
+                      toggleable: true
+                      help: Use `|` to separate column titles.
+                    .table.widths:
+                      type: text
+                      label: Column Width Classes
+                      toggleable: true
+                      help: Use `|` to provide Tailwind classes per column.
+                    .table.footer:
+                      type: textarea
+                      label: Footer
+                      rows: 3
+                      markdown: true
+                      toggleable: true

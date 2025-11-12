@@ -1,0 +1,74 @@
+{% set is_htmx = is_htmx|default(false) %}
+{% set start = start|default(0) %}
+{% set posts = posts|default([]) %}
+
+{% if is_htmx %}
+    {% if posts %}
+        <div id="blog-col-2" hx-swap-oob="beforeend">
+            {% for post in posts %}
+                {% set global_index = start + loop.index0 %}
+                {% if global_index is even %}
+                    {% include 'partials/blog/post-card.html.twig' with { post: post } %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div id="blog-col-3" hx-swap-oob="beforeend">
+            {% for post in posts %}
+                {% set global_index = start + loop.index0 %}
+                {% if global_index is odd %}
+                    {% include 'partials/blog/post-card.html.twig' with { post: post } %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if next_url %}
+        <div id="blog-load-sentinel" class="py-12" hx-get="{{ next_url }}" hx-trigger="revealed" hx-target="this" hx-swap="outerHTML">
+            <p class="text-center text-gray-500 dark:text-gray-400">Loading more posts…</p>
+        </div>
+    {% else %}
+        <div id="blog-load-sentinel"></div>
+    {% endif %}
+{% else %}
+    <div class="grid mb-16 lg:-mx-8 lg:divide-x lg:divide-gray-200 dark:lg:divide-gray-700 lg:grid-cols-3">
+        <div>
+            {% if featured %}
+                <article class="lg:px-8">
+                    {% if featured_image %}
+                        <a href="{{ featured.url }}">
+                            {{ featured_image.html(featured.title, featured.title, 'mb-5 rounded-lg')|raw }}
+                        </a>
+                    {% endif %}
+                    <h2 class="my-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        <a href="{{ featured.url }}">{{ featured.title }}</a>
+                    </h2>
+                    <div class="mb-4 font-light text-gray-500 dark:text-gray-400">{{ featured.summary|raw }}</div>
+                    <a href="{{ featured.url }}"
+                       class="inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-500">
+                        Read more {{ fa_icon('regular/arrow-right-long.svg', 'text-current w-5 h-5 ml-2')|raw }}
+                    </a>
+                </article>
+            {% endif %}
+        </div>
+        <div id="blog-col-2" class="space-y-8 lg:px-8">
+            {% for post in posts %}
+                {% set global_index = start + loop.index0 %}
+                {% if global_index is even %}
+                    {% include 'partials/blog/post-card.html.twig' with { post: post } %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div id="blog-col-3" class="space-y-8 lg:px-8">
+            {% for post in posts %}
+                {% set global_index = start + loop.index0 %}
+                {% if global_index is odd %}
+                    {% include 'partials/blog/post-card.html.twig' with { post: post } %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% if next_url %}
+        <div id="blog-load-sentinel" class="py-12" hx-get="{{ next_url }}" hx-trigger="revealed" hx-target="this" hx-swap="outerHTML">
+            <p class="text-center text-gray-500 dark:text-gray-400">Loading more posts…</p>
+        </div>
+    {% endif %}
+{% endif %}

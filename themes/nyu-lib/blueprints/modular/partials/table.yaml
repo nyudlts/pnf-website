@@ -1,0 +1,28 @@
+form:
+  fields:
+    .headers:
+      type: text
+      label: Table Headers
+      toggleable: true
+      help: Use a pipe `|` to separate column headings.
+
+    .widths:
+      type: text
+      label: Column Width Classes
+      toggleable: true
+      help: Provide Tailwind width classes separated by `|`, e.g. `w-1/3 | w-2/3`.
+
+    .rows:
+      type: list
+      label: Rows
+      style: vertical
+      btn_label: Add Row
+      value_only: true
+      help: Each row can use `|` to separate columns.
+
+    .footer:
+      type: textarea
+      label: Footer
+      rows: 3
+      markdown: true
+      toggleable: true

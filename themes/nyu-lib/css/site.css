@@ -1,0 +1,85 @@
+/* Import various CSS files */
+@import './custom/fonts.css';
+@import './custom/forms.css';
+@import './custom/navigation.css';
+@import './custom/plugins.css';
+@import './custom/typography.css';
+@import './custom/marquee.css';
+@import './custom/scrolling-header.css';
+@import './custom/accordion.css';
+@import "flowbite/src/themes/default.css";
+
+/* Import Tailwind CSS */
+@import 'tailwindcss';
+
+/* Set extra source folders relative to the current file */
+@source "../../../config";
+@source "../../../pages";
+@source "../node_modules/flowbite";
+
+/* Sets the dark mode to use the .dark class if available */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Use these plugins */
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin "flowbite/plugin";
+
+@theme {
+    --color-gray-50: var(--color-slate-50);
+    --color-gray-100: var(--color-slate-100);
+    --color-gray-200: var(--color-slate-200);
+    --color-gray-300: var(--color-slate-300);
+    --color-gray-400: var(--color-slate-400);
+    --color-gray-500: var(--color-slate-500);
+    --color-gray-600: var(--color-slate-600);
+    --color-gray-700: var(--color-slate-700);
+    --color-gray-800: var(--color-slate-800);
+    --color-gray-900: var(--color-slate-900);
+    --color-gray-950: var(--color-slate-950);
+    --color-primary-50: oklch(0.959 0.023 302.03);
+    --color-primary-100: oklch(0.911 0.051 303.09);
+    --color-primary-200: oklch(0.82 0.108 303.05);
+    --color-primary-300: oklch(0.733 0.167 303.62);
+    --color-primary-400: oklch(0.647 0.227 303.66);
+    --color-primary-500: oklch(0.573 0.285 304.29);
+    --color-primary-600: oklch(0.473 0.24 304.59);
+    --color-primary-700: oklch(0.369 0.187 304.47);
+    --color-primary-800: oklch(0.296 0.15 304.67);
+    --color-primary-900: oklch(0.223 0.113 304.77);
+    --color-primary-950: oklch(0.177 0.088 304.29);
+    --color-twitter: #1DA1F2;
+    --color-facebook: #1877F2;
+    --color-instagram: #E4405F;
+    --color-linkedin: #0077B5;
+    --color-github: #181717;
+    --color-pinterest: #BD081C;
+    --color-whatsapp: #25D366;
+    --color-youtube: #FF0100;
+    --color-vimeo: #1ab7ea;
+    --color-gitbook: #3884FF;
+    --color-500px: #0099E5;
+    --font-sans: NYUPerstare, Helvetica, Arial, sans-serif;
+    --font-title: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    --leading-tighter: 1.15;
+    --spacing-inherit: inherit;
+}
+
+/* Custom Typography / Prose colors */
+@utility prose {
+  --tw-prose-links: var(--color-primary-600);
+  --tw-prose-invert-links: var(--color-primary-500);
+  --tw-prose-body: var(--color-gray-600);
+  --tw-prose-headings: var(--color-gray-700);
+  --tw-prose-invert-body: var(--color-gray-300);
+  --tw-prose-invert-headings: var(--color-gray-200);
+  --tw-prose-bold: var(--color-gray-800);
+  --tw-prose-invert-bold: var(--color-gray-100);
+  --tw-prose-pre-code: var(--color-primary-600);
+  --tw-prose-pre-bg: var(--color-primary-100);
+  --tw-prose-code: var(--color-primary);
+  --tw-prose-td-borders: var(--color-gray-300);
+  --tw-prose-invert-td-borders: var(--color-gray-600);
+  --tw-prose-th-borders: var(--color-gray-300);
+  --tw-prose-invert-th-borders: var(--color-gray-600);
+}

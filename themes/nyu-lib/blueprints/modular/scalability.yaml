@@ -1,0 +1,84 @@
+title: Scalability Tables
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.media_order:
+              unset@: true
+            header.background:
+              type: select
+              label: Background Variant
+              default: default
+              options:
+                default: Light
+                darker: Darker
+              help: Matches the template styling for alternating backgrounds.
+              ordering@: 8
+
+            content_section:
+              type: section
+              title: Intro Content
+              underline: true
+              ordering@: 10
+
+            content:
+              type: markdown
+              label: Body Content
+              help: Displayed beneath the heading above the tables.
+              ordering@: 12
+
+            tables_section:
+              type: section
+              title: Tables
+              underline: true
+              ordering@: 20
+
+            header.tables:
+              type: list
+              label: Tables
+              style: vertical
+              btn_label: Add Table
+              ordering@: 22
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  validate:
+                    required: true
+                .caption:
+                  type: textarea
+                  label: Caption
+                  rows: 3
+                  markdown: true
+                  toggleable: true
+                .headers:
+                  type: text
+                  label: Column Headers
+                  toggleable: true
+                  help: Use `|` to separate column titles.
+                .widths:
+                  type: text
+                  label: Column Width Classes
+                  toggleable: true
+                  help: Use `|` to provide Tailwind classes per column.
+                .rows:
+                  type: array
+                  label: Rows
+                  value_only: true
+                  help: Use `|` to separate columns within a row.
+                .footer:
+                  type: textarea
+                  label: Footer
+                  rows: 3
+                  markdown: true
+                  toggleable: true
+                .additional:
+                  type: textarea
+                  label: Additional Info
+                  rows: 3
+                  markdown: true
+                  toggleable: true

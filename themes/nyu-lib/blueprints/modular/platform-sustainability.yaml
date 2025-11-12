@@ -1,0 +1,68 @@
+title: Platform Sustainability
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            layout_section:
+              type: section
+              title: Layout
+              underline: true
+              ordering@: 5
+
+            header.first:
+              type: text
+              label: Primary Heading
+              toggleable: true
+              ordering@: 6
+
+            header.background:
+              type: text
+              label: Background Classes
+              toggleable: true
+              ordering@: 7
+
+            header.prose_classes:
+              type: text
+              label: Prose Classes
+              toggleable: true
+              ordering@: 8
+
+            header.content_classes:
+              type: text
+              label: Content Classes
+              toggleable: true
+              ordering@: 9
+
+            header.h1_classes:
+              type: text
+              label: H1 Classes
+              toggleable: true
+              ordering@: 10
+
+            header.h2_classes:
+              type: text
+              label: H2 Classes
+              toggleable: true
+              ordering@: 11
+
+            header.verify_url:
+              type: text
+              label: Verify URL Base
+              help: Base URL used by the “Verify Green Status” button.
+              toggleable: true
+              ordering@: 12
+
+            content_section:
+              type: section
+              title: Body Content
+              underline: true
+              ordering@: 20
+
+            content:
+              type: markdown
+              label: Body Content
+              ordering@: 22

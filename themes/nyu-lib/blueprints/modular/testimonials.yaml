@@ -1,0 +1,72 @@
+title: Testimonials
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.media_order:
+              ordering@: 100
+            intro_section:
+              type: section
+              title: Intro
+              underline: true
+              ordering@: 10
+
+            header.intro.title:
+              type: text
+              label: Heading
+              placeholder: Why customers love us
+              ordering@: 11
+              validate:
+                required: true
+
+            header.intro.subtitle:
+              type: textarea
+              label: Subheading
+              rows: 3
+              ordering@: 12
+
+            testimonials_section:
+              type: section
+              title: Testimonials
+              underline: true
+              ordering@: 20
+
+            header.testimonials:
+              type: list
+              label: Testimonials
+              style: vertical
+              btn_label: Add Testimonial
+              ordering@: 21
+              fields:
+                .name:
+                  type: text
+                  label: Name
+                  validate:
+                    required: true
+                .review:
+                  type: textarea
+                  label: Quote
+                  rows: 4
+                  markdown: true
+                  validate:
+                    required: true
+                .avatar:
+                  type: filepicker
+                  folder: '@self'
+                  label: Avatar
+                  preview_images: true
+                  toggleable: true
+                .x:
+                  type: text
+                  label: X URL
+                  placeholder: https://x.com/username/status/123
+                  toggleable: true
+                .facebook:
+                  type: text
+                  label: Facebook URL
+                  placeholder: https://www.facebook.com/
+                  toggleable: true

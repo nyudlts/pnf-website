@@ -1,0 +1,42 @@
+title: Pricing Overview
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            content:
+              unset@: true
+
+            features_section:
+              type: section
+              title: Feature Grid
+              underline: true
+              ordering@: 200
+
+            header.features:
+              type: list
+              label: Feature Cards
+              style: vertical
+              btn_label: Add Feature
+              fields:
+                .icon:
+                  type: faicon
+                  label: Icon
+                  default_type: regular
+                  toggleable: true
+
+                .title:
+                  type: text
+                  label: Title
+                  validate:
+                    required: true
+
+                .text:
+                  type: textarea
+                  label: Description
+                  rows: 3
+                  validate:
+                    required: true

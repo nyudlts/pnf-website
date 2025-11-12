@@ -1,0 +1,43 @@
+title: Modular
+extends@: '@parent'
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+              unset@: true
+            header.title:
+              style: horizontal
+            header.menu_icon:
+              type: faicon
+              label: Menu Icon
+              help: Icon displayed alongside the page in navigation.
+              default_type: brands
+              toggleable: true
+              ordering@: 2
+            modular_title:
+              type: section
+              title: Modular Setup
+              underline: true
+            header.content.items:
+              type: text
+              label: Module Collection
+              default: 'self@.modular'
+              placeholder: 'self@.modular'
+            header.content.order.by:
+              type: text
+              label: PLUGIN_ADMIN.ORDER_BY
+              placeholder: date
+              help:
+              size: small
+            header.content.order.dir:
+              type: text
+              label: PLUGIN_ADMIN.ORDER
+              help: '"desc" or "asc" are valid values'
+              placeholder: desc
+              size: small

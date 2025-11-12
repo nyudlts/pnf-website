@@ -1,0 +1,97 @@
+/* Smooth transitions for the header when it becomes sticky */
+#main-header {
+    /* Ensure the header maintains its height when switching to fixed */
+    contain: layout;
+}
+
+/* Add a placeholder to prevent content jump when header becomes fixed */
+body.has-sticky-header {
+    padding-top: 80px; /* Adjust based on your header height */
+}
+
+/* Progress bar styling */
+.progress-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Scroll spy active section styling */
+#header-sticky a.active-section {
+    position: relative;
+}
+
+#header-sticky a.sticky-item {
+    position: relative;
+}
+
+#header-sticky a.sticky-item::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: all 0.4s;
+}
+
+/* Active section indicator */
+#header-sticky a.sticky-item.active-section::after {
+    width: 100%;
+}
+
+/* Smooth color transitions for sticky nav links */
+#header-sticky a {
+    transition: all 0.3s ease;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    @apply bg-gray-500/50 dark:bg-gray-600/75 ;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 40;
+    transition: all 0.3s ease;
+    transform: translateY(100px);
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.scroll-to-top:hover {
+    @apply bg-primary-700 scale-110;
+}
+
+.scroll-to-top.visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+    animation: bounce 3s ease-in-out infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}

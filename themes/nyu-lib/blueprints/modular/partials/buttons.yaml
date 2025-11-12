@@ -1,0 +1,35 @@
+form:
+  fields:
+    header.buttons:
+      type: list
+      label: Buttons
+      style: vertical
+      btn_label: Add Button
+      fields:
+        .text:
+          type: text
+          label: Label
+          validate:
+            required: true
+        .link:
+          type: text
+          label: URL
+          placeholder: /pricing
+          validate:
+            required: true
+        .button_type:
+          type: select
+          label: Style
+          default: button__primary
+          options:
+            button__primary: Primary Fill
+            button__green: Accent (Green)
+            button__border: Outline
+            button__link: Text Link
+            button__ghost: Ghost
+        .icon:
+          type: faicon
+          label: Icon
+          toggleable: true
+          default_type: regular
+          help: Optional icon displayed next to the label.

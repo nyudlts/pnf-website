@@ -1,0 +1,39 @@
+{% extends 'partials/htmx-wrapper.html.twig' %}
+
+{% block body %}
+{% set page_num = (uri.param('page') ?: 1)|int %}
+{% set blog_config = page.header.content %}
+{% set base_limit = (blog_config.limit ?? 0)|int %}
+{% set base_limit = base_limit > 0 ? base_limit : 6 %}
+{% set paginated_collection = page.collection(blog_config) %}
+{% set pagination = paginated_collection.params.pagination|default(null) %}
+{% set collection_params = paginated_collection.params|default({})|merge({'pagination': false, 'limit': 0}) %}
+{% set full_collection = page.collection(collection_params) %}
+{% set featured = page_num == 1 and full_collection|length ? full_collection|first : null %}
+{% set featured_image = featured ? featured.media.images|first : null %}
+{% set posts_collection = full_collection|slice(full_collection|length > 0 ? 1 : 0) %}
+{% set total_posts = posts_collection|length %}
+{% set start = (page_num - 1) * base_limit %}
+{% set posts = posts_collection|slice(start, base_limit) %}
+{% set post_count = posts|length %}
+{% set has_next = total_posts > start + post_count %}
+{% set next_url = null %}
+
+
+{% if has_next %}
+    {% if pagination and pagination.nextUrl %}
+        {% set next_url = (page.url ~ pagination.params ~ pagination.nextUrl)|replace({'//':'/'}) %}
+    {% else %}
+        {% set next_url = (page.url ~ '/page:' ~ (page_num + 1))|replace({'//':'/'}) %}
+    {% endif %}
+{% endif %}
+
+    {% include 'partials/blog/posts-grid.html.twig' with {
+        featured: featured,
+        featured_image: featured_image,
+        posts: posts,
+        start: start,
+        next_url: next_url,
+        is_htmx: true
+    } %}
+{% endblock %}

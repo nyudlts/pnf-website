@@ -1,0 +1,48 @@
+title: Info Panel
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.title_text:
+              type: text
+              label: Title Text
+              placeholder: What's Joomla?
+              ordering@: 5
+
+            header.description:
+              type: textarea
+              label: Description
+              rows: 4
+              markdown: true
+              ordering@: 10
+
+            info_features_section:
+              type: section
+              title: Feature Bullets
+              underline: true
+              ordering@: 20
+
+            header.features:
+              type: list
+              label: Feature Bullets
+              style: vertical
+              btn_label: Add Feature
+              ordering@: 21
+              fields:
+                .text:
+                  type: text
+                  label: Text
+                  validate:
+                    required: true
+
+            buttons_section:
+              type: section
+              title: Buttons
+              underline: true
+              ordering@: 30
+              import@:
+                type: modular/partials/buttons

@@ -1,0 +1,12 @@
+title: Blog (HTMX)
+extends@: blog
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            htmx_notice:
+              type: help
+              text: This template is loaded automatically for HTMX requests; no additional configuration is required.

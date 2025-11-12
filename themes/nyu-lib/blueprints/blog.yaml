@@ -1,0 +1,95 @@
+title: Blog
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            content:
+              unset@: true
+
+            blog_collection_section:
+              type: section
+              title: Post Collection
+              underline: true
+              ordering@: 200
+
+            header.content.items:
+              type: text
+              label: Collection Source
+              help: Define the collection of posts to render (for example, self@.children).
+              default: self@.children
+              validate:
+                required: true
+
+            header.content.limit:
+              type: number
+              label: Posts Per Page
+              default: 6
+              min: 1
+              ordering@: 210
+
+            header.content.order.by:
+              type: select
+              label: Order By
+              default: date
+              options:
+                folder: Folder
+                title: Title
+                date: Date
+                default: Default
+              ordering@: 220
+
+            header.content.order.dir:
+              type: select
+              label: Order Direction
+              default: desc
+              options:
+                asc: Ascending
+                desc: Descending
+              ordering@: 230
+
+            header.content.pagination:
+              type: toggle
+              label: Enable Pagination
+              highlight: 1
+              default: 1
+              options:
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+              ordering@: 240
+
+            header.content.url_taxonomy_filters:
+              type: toggle
+              label: Allow URL Taxonomy Filters
+              highlight: 1
+              default: 1
+              options:
+                1: Enabled
+                0: Disabled
+              validate:
+                type: bool
+              toggleable: true
+              ordering@: 250
+
+            header.content.filter:
+              type: textarea
+              label: Additional Filters
+              help: Optional YAML filters applied to the collection.
+              yaml: true
+              placeholder: "category:\n  - blog"
+              toggleable: true
+              ordering@: 260
+
+        blog_layout:
+          type: tab
+          title: Layout
+          ordering@: 400
+          fields:
+            layout_note:
+              type: help
+              text: The template highlights the most recent post automatically; remaining posts render in a two-column grid.

@@ -1,0 +1,56 @@
+title: Legal Links Hub
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            content:
+              unset@: true
+
+            collection_section:
+              type: section
+              title: Linked Documents
+              underline: true
+              ordering@: 200
+
+            header.content.items:
+              type: text
+              label: Collection Source
+              help: Define which pages to surface (for example, self@.children or self@.pages).
+              default: self@.children
+              validate:
+                required: true
+
+            header.content.filter:
+              type: textarea
+              label: Filters
+              help: Optional YAML filters applied to the collection.
+              yaml: true
+              placeholder: "visible: true"
+              toggleable: true
+              ordering@: 210
+
+            header.content.order.by:
+              type: select
+              label: Order By
+              default: folder
+              options:
+                folder: Folder
+                title: Title
+                date: Date
+                default: Default
+              toggleable: true
+              ordering@: 220
+
+            header.content.order.dir:
+              type: select
+              label: Order Direction
+              default: asc
+              options:
+                asc: Ascending
+                desc: Descending
+              toggleable: true
+              ordering@: 230

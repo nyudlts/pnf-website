@@ -1,0 +1,56 @@
+title: Timeline
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.media_order:
+              ordering@: 100
+            intro_section:
+              type: section
+              title: Intro
+              underline: true
+              ordering@: 10
+
+            header.title:
+              type: text
+              label: Heading
+              placeholder: Our History
+              ordering@: 11
+              validate:
+                required: true
+
+            header.subtitle:
+              type: textarea
+              label: Subheading
+              rows: 3
+              ordering@: 12
+
+            timeline_section:
+              type: section
+              title: Timeline
+              underline: true
+              ordering@: 20
+
+            header.timeline:
+              type: list
+              label: Timeline Items
+              style: vertical
+              btn_label: Add Timeline Item
+              ordering@: 21
+              fields:
+                .date:
+                  type: text
+                  label: Date
+                  validate:
+                    required: true
+                .text:
+                  type: textarea
+                  label: Description
+                  rows: 3
+                  markdown: true
+                  validate:
+                    required: true

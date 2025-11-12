@@ -1,0 +1,12 @@
+<article>
+    <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </h2>
+    <div class="mb-4 font-light text-gray-500 dark:text-gray-400">
+        {{ post.summary|raw }}
+    </div>
+    <a href="{{ post.url }}"
+       class="inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-500">
+        Read more {{ fa_icon('regular/arrow-right-long.svg', 'text-current w-5 h-5 ml-2')|raw }}
+    </a>
+</article>

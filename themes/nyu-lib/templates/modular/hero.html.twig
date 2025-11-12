@@ -1,0 +1,88 @@
+{% set hero = page.header.hero %}
+{% set features = page.header.features %}
+{% set banner = page.header.banner %}
+{% set notices = site.notices.homepage %}
+
+<section class="bg-white dark:bg-gray-900 relative">
+    <div class="absolute inset-0 opacity-25 overflow-hidden">
+        {% if hero.background == 'waves' %}
+            {% include 'backgrounds/home-hero.svg.twig' %}
+        {% elseif hero.background == "circles" %}
+            <div class="circle-background w-full h-full"></div>
+        {% elseif hero.background == 'polka' %}
+            <div class="polka-background w-full h-full"></div>
+        {% elseif hero.background|starts_with('thalorin') %}
+            <img src="{{ url('theme://images/backgrounds/' ~ hero.background ~ '.jpg') }}" class="bg-primary-500 opacity-75 hue-rotate-180 w-full h-full object-cover" alt="background" />
+        {% elseif hero.background == 'grid-paper' %}
+            <div class="grid-paper-background w-full h-full opacity-50"></div>
+        {% elseif hero.background == 'custom' %}
+            <img src="{{ page.media[hero.background_url].url }}"
+            class="w-full h-full {{ hero.background_classes }}"
+            alt="background" />
+        {% endif %}
+    </div>
+    <div class="relative py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+        {% if notices.content %}
+            <a href="{{ url(notices.link) }}"
+               class="inline-flex max-w-full justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 border-gray-200/20"
+               role="alert">
+                <span
+                    class="text-xs bg-primary-500 rounded-full text-white px-4 py-1.5 mr-3">{{ notices.type|titleize }}</span>
+                <span class="text-sm font-medium overflow-hidden flex-1">
+        <span>{{ notices.content }}</span>
+      </span>
+                {{ fa_icon('regular/chevron-right.svg', 'w-3.5 h-3.5 ml-2 text-gray-900 dark:text-gray-400')|raw }}
+            </a>
+        {% endif %}
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{{ hero.title }}</h1>
+        <h2 class="text-xl font-normal text-gray-500 dark:text-gray-400 lg:text-2xl max-w-screen-md mx-auto  text-balance">{{ hero.subtitle|markdown(false) }}</h2>
+        {% if hero.subsubtitle %}
+        <div class="bg-gray-100/50 dark:bg-gray-700/50 rounded-xl px-8 py-4 my-12 text-lg font-light text-primary-700 dark:text-gray-200 max-w-screen-md mx-auto text-left flex items-center">
+            {% if hero.subsubtitle_icon %}
+                <div class="flex-1">{{ fa_icon(hero.subsubtitle_icon, 'w-12 h-12 mr-6 text-current opacity-75')|raw }}</div>
+            {% endif %}
+            <div>
+                <h3>{{ hero.subsubtitle|markdown(false) }}</h3>
+            </div>
+        </div>
+        {% endif %}
+        <div class="flex flex-col mt-8 mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+            {% for button in hero.buttons %}
+                <a href="{{ url(button.link) }}"
+                   class="button button__xl {{ button.button_type }}">
+                    {{ button.text }}
+                    {% if button.icon %}
+                        {{ fa_icon(button.icon, 'ml-2 -mr-1 w-5 h-5 text-current')|raw }}
+                    {% endif %}
+                </a>
+            {% endfor %}
+        </div>
+        <div class="mx-auto text-center sm:px-12">
+            <div
+                class="z-10 relative p-4 mt-8 rounded-lg sm:p-12 lg:mt-16 bg-gray-100/75 dark:bg-gray-800/75 shadow-xl shadow-gray-400/10 dark:shadow-2xl dark:shadow-gray-900/80">
+                <div class="grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-2 lg:grid-cols-3">
+                    {% for feature in features %}
+                        <div class="flex flex-col items-center gap-4 sm:gap-5 sm:flex-row">
+                            <div
+                                class="bg-white dark:bg-gray-700 rounded-full w-8 h-8 lg:w-16 lg:h-16 flex items-center justify-center shrink-0">
+                                {{ fa_icon(feature.icon, 'w-6 h-6 lg:w-10 lg:h-10 text-primary-600 dark:text-primary-500')|raw }}
+                            </div>
+                            <div class="inline-flex">
+                                <p class="text-sm sm:text-base font-sm text-left text-gray-500  dark:text-gray-400">
+                                    {{ feature.description }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% if banner %}
+                <div class="text-center mx-auto px-4 sm:px-12 z-0">
+                    <p class="max-w-[700px] inline-block text-balance lg:text-wrap text-gray-500/80 dark:text-gray-400 text-sm p-4 sm:px-8 bg-blue-200/10 dark:bg-gray-700/70 rounded-b-lg border border-t-0 border-gray-200/50 dark:border-gray-700/90">
+                        {{ banner|markdown(false) }}
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

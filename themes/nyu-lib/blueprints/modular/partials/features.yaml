@@ -1,0 +1,55 @@
+form:
+  fields:
+    header.features:
+      type: list
+      label: Feature Cards
+      style: vertical
+      btn_label: Add Feature
+      fields:
+        .title:
+          type: text
+          label: Title
+          validate:
+            required: true
+        .icon:
+          type: faicon
+          label: Icon
+          toggleable: true
+          default_type: duotone
+        .text:
+          type: textarea
+          label: Description
+          rows: 3
+          markdown: true
+          toggleable: true
+        .link:
+           type: text
+           label: Link
+           placeholder: https://example.com
+           toggleable: true
+        .link_text:
+           type: text
+           label: Link Text
+           placeholder: Learn more
+           toggleable: true
+        .color:
+           type: select
+           label: Color Theme
+           help: Choose a color theme for this feature's icons and accents.
+           default: default
+           options:
+             default: 'Default (Primary Blue)'
+             green: 'Green'
+             orange: 'Orange'
+             purple: 'Purple'
+           toggleable: true
+        .items:
+           type: list
+           label: List Items (for Style 6)
+           style: vertical
+           btn_label: Add Item
+           toggleable: true
+           fields:
+             .:
+               type: text
+               label: Item Text

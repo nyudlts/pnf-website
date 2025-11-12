@@ -1,0 +1,45 @@
+title: Modular Section Base
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.title:
+              label: Section Title
+              style: vertical
+              ordering@: 1
+
+            header.menu:
+              type: text
+              label: Menu Label
+              help: Overrides the navigation label for this module.
+              toggleable: true
+              ordering@: 2
+
+            header.menu_dropline:
+              type: text
+              label: Menu Dropline
+              help: Optional secondary navigation text.
+              toggleable: true
+              ordering@: 3
+
+            header.menu_icon:
+              type: faicon
+              label: Menu Icon
+              toggleable: true
+              default_type: regular
+              ordering@: 4
+
+            header.sticky_menu:
+              type: text
+              label: Sticky Menu Anchor
+              help: Defines the text used to build the in-page anchor; defaults to the section title.
+              toggleable: true
+              ordering@: 5
+
+            content:
+              unset@: true
+

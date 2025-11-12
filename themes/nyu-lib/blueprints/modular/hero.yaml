@@ -1,0 +1,153 @@
+title: Hero
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            hero_section:
+              type: section
+              title: Hero Content
+              underline: true
+              ordering@: 10
+
+            header.hero.title:
+              type: text
+              label: Heading
+              placeholder: Trusted Joomla Hosting
+              ordering@: 11
+              validate:
+                required: true
+
+            header.hero.subtitle:
+              type: textarea
+              label: Subheading
+              rows: 3
+              ordering@: 12
+
+            header.hero.subsubtitle:
+              type: textarea
+              label: Highlight
+              rows: 3
+              markdown: true
+              toggleable: true
+              ordering@: 13
+
+            header.hero.subsubtitle_icon:
+              type: faicon
+              label: Highlight Icon (optional)
+              toggleable: true
+              ordering@: 13
+
+            header.media_order:
+              ordering@: 14
+
+            header.hero.background:
+              type: elements
+              label: Background
+              ordering@: 15
+              placeholder: waves
+              options:
+                custom: custom
+                waves: Waves
+                circles: Circles
+                polka: Polka Dots
+                grid-paper: Grid Paper
+                thalorin-1: Thalorin 1
+                thalorin-2: Thalorin 2
+                thalorin-3: Thalorin 3
+                thalorin-4: Thalorin 4
+                thalorin-5: Thalorin 5
+                thalorin-6: Thalorin 6
+                thalorin-7: Thalorin 7
+                thalorin-8: Thalorin 8
+                thalorin-9: Thalorin 9
+                thalorin-10: Thalorin 10
+                thalorin-11: Thalorin 11
+                thalorin-12: Thalorin 12
+                thalorin-13: Thalorin 13
+                thalorin-14: Thalorin 14
+                thalorin-15: Thalorin 15
+              fields:
+                custom:
+                  type: element
+                  fields:
+                    header.hero.background_url:
+                      type: filepicker
+                      label: Background Image ("Custom Background")
+                      preview_images: true
+                      ordering@: 15
+
+            hero_buttons:
+              type: section
+              title: Hero Buttons
+              underline: true
+              ordering@: 16
+
+            header.hero.buttons:
+              type: list
+              label: Buttons
+              style: vertical
+              btn_label: Add Button
+              ordering@: 17
+              fields:
+                .text:
+                  type: text
+                  label: Label
+                  validate:
+                    required: true
+                .link:
+                  type: text
+                  label: URL
+                  placeholder: /pricing
+                  validate:
+                    required: true
+                .button_type:
+                  type: select
+                  label: Style
+                  default: button__primary
+                  options:
+                    button__primary: Primary Fill
+                    button__green: Accent (Green)
+                    button__border: Outline
+                    button__link: Text Link
+                    button__ghost: Ghost
+                .icon:
+                  type: faicon
+                  label: Icon
+                  toggleable: true
+                  default_type: regular
+
+            features_section:
+              type: section
+              title: Feature Highlights
+              underline: true
+              ordering@: 20
+
+            header.features:
+              type: list
+              label: Feature Highlights
+              style: vertical
+              btn_label: Add Feature
+              ordering@: 21
+              fields:
+                .icon:
+                  type: faicon
+                  label: Icon
+                  toggleable: true
+                  default_type: duotone
+                .description:
+                  type: textarea
+                  label: Description
+                  rows: 3
+                  markdown: true
+
+            header.banner:
+              type: textarea
+              label: Banner Text
+              rows: 3
+              markdown: true
+              toggleable: true
+              ordering@: 30

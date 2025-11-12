@@ -1,0 +1,113 @@
+title: Difference Blocks
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            intro_section:
+              type: section
+              title: Intro
+              underline: true
+              ordering@: 10
+
+            header.intro.title:
+              type: text
+              label: Heading
+              ordering@: 11
+              validate:
+                required: true
+
+            header.intro.subtitle:
+              type: textarea
+              label: Subheading
+              rows: 3
+              markdown: true
+              ordering@: 12
+
+            section_one:
+              type: section
+              title: Section One
+              underline: true
+              ordering@: 20
+
+            header.section1.title:
+              type: text
+              label: Section Title
+              ordering@: 21
+              validate:
+                required: true
+
+            header.section1.description:
+              type: textarea
+              label: Description
+              rows: 4
+              markdown: true
+              ordering@: 22
+
+            header.section1.software:
+              type: list
+              label: Software Grid
+              style: vertical
+              btn_label: Add Item
+              ordering@: 23
+              fields:
+                .text:
+                  type: text
+                  label: Label
+                  validate:
+                    required: true
+                .icon:
+                  type: pagemediaselect
+                  label: Icon
+                  folder: '@self'
+                  preview_images: true
+                  validate:
+                    required: true
+                .color:
+                  type: text
+                  label: Tailwind Classes
+                  placeholder: text-[#21759B]
+                  toggleable: true
+
+            section_two:
+              type: section
+              title: Section Two
+              underline: true
+              ordering@: 30
+
+            header.section2.title:
+              type: text
+              label: Section Title
+              ordering@: 31
+              validate:
+                required: true
+
+            header.section2.description:
+              type: textarea
+              label: Description
+              rows: 4
+              markdown: true
+              ordering@: 32
+
+            section_three:
+              type: section
+              title: Section Three
+              underline: true
+              ordering@: 40
+
+            header.section3.title:
+              type: text
+              label: Section Title
+              ordering@: 41
+              validate:
+                required: true
+
+            header.section3.description:
+              type: textarea
+              label: Description
+              rows: 4
+              markdown: true
+              ordering@: 42

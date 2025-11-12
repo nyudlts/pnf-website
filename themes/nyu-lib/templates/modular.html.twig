@@ -1,0 +1,11 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+<main id="body" class="z-0">
+  {% for module in page.collection %}
+    {% set target = module.header.sticky_menu|default(module.header.title)|lower|hyphenize %}
+    <a id="{{ target }}" class="scroll-spy-anchor"></a>
+    {{ module.content|raw }}
+  {% endfor %}
+</main>
+{% endblock %}

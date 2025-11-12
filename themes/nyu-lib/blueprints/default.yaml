@@ -1,0 +1,15 @@
+title: Default
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.subtitle:
+              type: text
+              label: Subtitle
+              help: Optional text displayed below the page title.
+              toggleable: true
+              ordering@: 105

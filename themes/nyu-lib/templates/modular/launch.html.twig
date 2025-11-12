@@ -1,0 +1,81 @@
+<!-- Include the required scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+
+{% set intro = page.header.intro %}
+{% set buttons = page.header.buttons %}
+{% set animation_file = page.header.animation|default('rocket-launch.json') %}
+{% set animation_media = page.media[animation_file] %}
+{% set animation_path = animation_media ? animation_media.url : animation_file %}
+
+{% set button_normal = 'text-white bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900' %}
+{% set button_inverted = 'text-gray-900 border border-gray-300 hover:bg-gray-100 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800' %}
+
+<section class="bg-white dark:bg-gray-900 relative">
+  <div class="absolute top-0 left-0 right-0 h-[400px]"></div>
+  <div class="pb-8 lg:pb-16 px-4 mx-auto max-w-screen-xl relative">
+    <div id="logs" class="text-red-400"></div>
+    {#      <img src="{{ page.media['rocket-launch-bg.png'].url }}" alt="Rocket Launch Background" class="w-full max-w-[600px] mx-auto dark:mix-blend-hard-light" /> #}
+
+    <div id="lottie-container"
+         class="w-full max-w-[470px] h-full mx-auto dark:mix-blend-hard-light rounded-2xl overflow-hidden"></div>
+
+    <h2 class="mb-4 mt-6 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 dark:text-white md:text-4xl">{{ intro.title }}</h2>
+    <p class="mb-4 text-base font-light text-center text-gray-500 md:text-xl sm:px-14 md:px-24 lg:px-56 xl:px-72">{{ intro.subtitle }}</p>
+    <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-x-6 sm:space-y-0 mt-12">
+      {% for button in buttons %}
+        <a href="{{ url(button.link) }}"
+           class="button {{ button.button_type }}">
+          {{ fa_icon(button.icon, 'w-10 h-10 text-current')|raw }}
+          <div class="text-left ml-3">
+            <div class="mb-1 text-xs">{{ button.description }}</div>
+            <div class="-mt-1 font-sans text-sm font-semibold">{{ button.title }}</div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const lottieContainer = document.getElementById('lottie-container');
+        // --- IMPORTANT: Replace with the correct path to YOUR .json file ---
+        const animationPath = '{{ animation_path }}';
+        // For testing, you might use a public URL:
+        // const animationPath = 'https://assets2.lottiefiles.com/packages/lf20_ liquido.json';
+
+        if (!lottieContainer || typeof lottie === 'undefined') {
+            console.error('Lottie container or lottie-web library not found.');
+            return;
+        }
+
+        const anim = lottie.loadAnimation({
+            container: lottieContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: false,
+            path: animationPath
+        });
+
+        anim.addEventListener('data_failed', () => {
+            console.error('Rocket animation data could not be loaded. Path: ' + animationPath);
+        });
+        anim.addEventListener('error', (err) => {
+            console.error('Rocket animation error:', (err.message || err));
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    console.log('Rocket in view - playing');
+                    anim.play();
+                } else {
+                    console.log('Rocket out of view - stopping');
+                    anim.stop();
+                }
+            });
+        }, {threshold: 0.1}); // Trigger when 10% visible
+
+        observer.observe(lottieContainer);
+    });
+</script>

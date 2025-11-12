@@ -1,0 +1,71 @@
+{% set intro = page.header.intro %}
+{% set section1 = page.header.section1 %}
+{% set section2 = page.header.section2 %}
+{% set section3 = page.header.section3 %}
+<section class="bg-white dark:bg-gray-900 relative">
+  <div
+    class="absolute top-0 left-0 right-0 h-[400px] bg-linear-to-b from-gray-100 dark:from-gray-800"
+  ></div>
+  <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-xl relative">
+    <h2
+      class="mb-4 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 dark:text-white md:text-4xl"
+    >
+      {{ intro.title }}
+    </h2>
+    <p
+      class="mb-4 text-base font-light text-center text-gray-500 md:text-xl sm:px-14 md:px-24 lg:px-56 xl:px-72"
+    >
+      {{ intro.subtitle }}
+    </p>
+    <div class="grid grid-cols-1 gap-8 mt-8 lg:gap-16 lg:grid-cols-2 lg:mt-16">
+      <div>
+        <div>
+          <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
+            {{ section1.title }}
+          </h3>
+          <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
+            {{ section1.description|markdown(false) }}
+          </p>
+        </div>
+
+        <ul class="grid grid-cols-1 mt-8 sm:grid-cols-2 gap-x-4 gap-y-3">
+          {% for software in section1.software %}
+            <li class="flex items-center gap-2.5">
+              {{
+                svg_image(
+                  page.media[software.icon].url,
+                  'w-5 h-5 ' ~ software.color
+                )|raw
+              }}
+              <span
+                class="text-base font-normal text-gray-500 dark:text-gray-400"
+              >
+                {{ software.text }}
+              </span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
+            {{ section2.title }}
+          </h3>
+          <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
+            {{ section2.description|markdown(false) }}
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white">
+            {{ section3.title }}
+          </h3>
+          <p class="mt-2 text-lg font-normal text-gray-500 dark:text-gray-400">
+            {{ section3.description|markdown(false) }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

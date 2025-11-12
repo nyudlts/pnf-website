@@ -1,0 +1,15 @@
+title: Error Page
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            content:
+              unset@: true
+
+            error_notice:
+              type: help
+              text: The template renders a fixed 404 message; page content is not displayed.

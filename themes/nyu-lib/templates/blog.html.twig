@@ -1,0 +1,48 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+{% set page_num = (uri.param('page') ?: 1)|int %}
+{% set blog_config = page.header.content %}
+{% set base_limit = (blog_config.limit ?? 0)|int %}
+{% set base_limit = base_limit > 0 ? base_limit : 6 %}
+{% set paginated_collection = page.collection(blog_config) %}
+{% set pagination = paginated_collection.params.pagination|default(null) %}
+{% set collection_params = paginated_collection.params|default({})|merge({'pagination': false, 'limit': 0}) %}
+{% set full_collection = page.collection(collection_params) %}
+{% set featured = page_num == 1 and full_collection|length ? full_collection|first : null %}
+{% set featured_image = featured ? featured.media.images|first : null %}
+{% set posts_collection = full_collection|slice(full_collection|length > 0 ? 1 : 0) %}
+{% set total_posts = posts_collection|length %}
+{% set start = (page_num - 1) * base_limit %}
+{% set posts = posts_collection|slice(start, base_limit) %}
+{% set post_count = posts|length %}
+{% set has_next = total_posts > start + post_count %}
+{% set next_url = null %}
+{% if has_next %}
+    {% if pagination and pagination.nextUrl %}
+        {% set next_url = (page.url ~ pagination.params ~ pagination.nextUrl)|replace({'//':'/'}) %}
+    {% else %}
+        {% set next_url = (page.url ~ '/page:' ~ (page_num + 1))|replace({'//':'/'}) %}
+    {% endif %}
+{% endif %}
+
+        <main id="body" class="z-0">
+            <section class="bg-white dark:bg-gray-900">
+                <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                    <div class="mx-auto max-w-screen-sm text-center">
+                        <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                            {{ page.title }}
+                        </h2>
+                        <p class="mb-8 lg:mb-16 font-light text-gray-500 dark:text-gray-400 sm:text-xl">{{ page.header.subtitle }}</p>
+                    </div>
+                    {% include 'partials/blog/posts-grid.html.twig' with {
+                        featured: featured,
+                        featured_image: featured_image,
+                        posts: posts,
+                        start: start,
+                        next_url: next_url
+                    } %}
+                </div>
+            </section>
+        </main>
+{% endblock %}

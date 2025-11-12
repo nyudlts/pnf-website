@@ -1,0 +1,172 @@
+{% set col_count = page.header.column_count|default(4)|int %}
+{% switch col_count %}
+    {% case 4 %}
+        {% set col_classes = "space-y-8 md:grid md:grid-cols-2 xl:grid-cols-4 md:gap-8 xl:gap-8 md:space-y-0" %}
+    {% case 3 %}
+        {% set col_classes = "space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0" %}
+    {% case 2 %}
+        {% set col_classes = "space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0" %}
+    {% default %}
+        {% set col_classes = "" %}
+{% endswitch %}
+
+<section class="bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 to dark:to-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        {% set style = page.header.style|default('style-1') %}
+        {% if page.header.hero %}
+            <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-16">
+                <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{{ page.title }}</h1>
+                <div class="font-light text-gray-500 dark:text-gray-400 sm:text-xl">{{ page.header.subtitle }}</div>
+            </div>
+        {% else %}
+            <div class="mx-auto max-w-screen-sm mb-8 lg:mb-16 text-center">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{{ page.title }}</h2>
+                <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{{ page.header.subtitle }}</p>
+            </div>
+        {% endif %}
+
+        {% if style == 'style-1' %}
+            <div class="{{ col_classes }}">
+                {% for feature in page.header.features %}
+                    {% set color = feature.color|default('default') %}
+                    {% set bg_class = color == 'green' ? 'bg-green-100 dark:bg-green-900' : color == 'orange' ? 'bg-orange-100 dark:bg-orange-900' : color == 'purple' ? 'bg-purple-100 dark:bg-purple-900' : 'bg-primary-100 dark:bg-primary-800/75' %}
+                    {% set icon_class = color == 'green' ? 'text-green-600 dark:text-green-500' : color == 'orange' ? 'text-orange-600 dark:text-orange-500' : color == 'purple' ? 'text-purple-600 dark:text-purple-500' : 'text-primary-600 dark:text-primary-500' %}
+                    <div class="p-6 bg-white rounded shadow dark:bg-gray-800">
+                        {% if feature.icon %}
+                            <div class="flex justify-center items-center mb-4 w-12 h-12 p-2 rounded {{ bg_class }} lg:h-12 lg:w-12">
+                                {{ fa_icon(feature.icon, icon_class)|raw }}
+                            </div>
+                        {% endif %}
+                        <h3 class="mb-2 text-xl font-bold dark:text-white">{{ feature.title }}</h3>
+                        <div class="prose dark:prose-invert font-light text-gray-500 dark:text-gray-400">{{ feature.text|markdown }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% elseif style == 'style-2' %}
+            <div class="mt-8 lg:mt-16 mb-8 {{ col_classes }}">
+                {% for feature in page.header.features %}
+                    {% set color = feature.color|default('default') %}
+                    {% set bg_class = color == 'green' ? 'bg-green-100 dark:bg-green-900' : color == 'orange' ? 'bg-orange-100 dark:bg-orange-900' : color == 'purple' ? 'bg-purple-100 dark:bg-purple-900' : 'bg-primary-100 dark:bg-primary-900' %}
+                    {% set icon_class = color == 'green' ? 'text-green-600 dark:text-green-500' : color == 'orange' ? 'text-orange-600 dark:text-orange-500' : color == 'purple' ? 'text-purple-600 dark:text-purple-500' : 'text-primary-600 dark:text-primary-500' %}
+                    {% set link_class = color == 'green' ? 'text-green-600 hover:text-green-700 dark:text-green-500 dark:hover:text-green-400' : color == 'orange' ? 'text-orange-600 hover:text-orange-700 dark:text-orange-500 dark:hover:text-orange-400' : color == 'purple' ? 'text-purple-600 hover:text-purple-700 dark:text-purple-500 dark:hover:text-purple-400' : 'text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400' %}
+                    <div>
+                        <div class="inline-flex justify-center items-center mb-6 w-24 h-24 rounded-lg {{ bg_class }}">
+                            {{ fa_icon(feature.icon, 'mx-auto w-16 h-16 ' ~ icon_class)|raw }}
+                        </div>
+                        <h3 class="mb-4 text-2xl font-bold dark:text-white">{{ feature.title }}</h3>
+                        <div class="prose dark:prose-invert text-gray-500 dark:text-gray-400 mb-4">{{ feature.text|markdown }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% elseif style == 'style-3' %}
+            <div class="{{ col_classes }}">
+                {% for feature in page.header.features %}
+                    {% set color = feature.color|default('default') %}
+                    {% set bg_class = color == 'green' ? 'bg-green-100 dark:bg-green-900' : color == 'orange' ? 'bg-orange-100 dark:bg-orange-900' : color == 'purple' ? 'bg-purple-100 dark:bg-purple-900' : 'bg-primary-100 dark:bg-primary-900' %}
+                    {% set icon_class = color == 'green' ? 'text-green-600 dark:text-green-300' : color == 'orange' ? 'text-orange-600 dark:text-orange-300' : color == 'purple' ? 'text-purple-600 dark:text-purple-300' : 'text-primary-600 dark:text-primary-300' %}
+                    <div>
+                        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full {{ bg_class }} lg:h-12 lg:w-12">
+                            {{ fa_icon(feature.icon, 'w-5 h-5 ' ~ icon_class ~ ' lg:w-6 lg:h-6')|raw }}
+                        </div>
+                        <h3 class="mb-2 text-xl font-bold dark:text-white">{{ feature.title }}</h3>
+                        <div class="prose dark:prose-invert text-gray-500 dark:text-gray-400">{{ feature.text|markdown }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% elseif style == 'style-4' %}
+            <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 xl:gap-16 sm:py-16 lg:px-6">
+                {% if page.header.image %}
+                    <img class="mb-4 w-full lg:mb-0 rounded-lg" src="{{ page.media[page.header.image].url }}" alt="feature image">
+                    {% endif %}
+                    <div class="text-gray-500 dark:text-gray-400 sm:text-lg">
+                        {% if page.header.features %}
+                            <div class="py-8 mb-6 border-t border-b border-gray-200 dark:border-gray-700">
+                                {% for item in page.header.features %}
+                                    {% set color = item.color|default('default') %}
+                                    {% set bg_class = color == 'green' ? 'bg-green-100 dark:bg-green-900' : color == 'orange' ? 'bg-orange-100 dark:bg-orange-900' : color == 'purple' ? 'bg-purple-100 dark:bg-purple-900' : 'bg-primary-100 dark:bg-primary-900' %}
+                                    {% set icon_class = color == 'green' ? 'text-green-600 dark:text-green-300' : color == 'orange' ? 'text-orange-600 dark:text-orange-300' : color == 'purple' ? 'text-purple-600 dark:text-purple-300' : 'text-primary-600 dark:text-primary-300' %}
+                                    {% set link_class = color == 'green' ? 'text-green-600 hover:text-green-800 dark:text-green-500 dark:hover:text-green-600' : color == 'orange' ? 'text-orange-600 hover:text-orange-800 dark:text-orange-500 dark:hover:text-orange-600' : color == 'purple' ? 'text-purple-600 hover:text-purple-800 dark:text-purple-500 dark:hover:text-purple-600' : 'text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-600' %}
+                                    <div class="flex">
+                                        <div class="flex justify-center items-center mr-4 w-8 h-8 rounded-full {{ bg_class }} shrink-0">
+                                            {{ fa_icon(item.icon, 'w-5 h-5 ' ~ icon_class)|raw }}
+                                        </div>
+                                        <div>
+                                            <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">{{ item.title }}</h3>
+                                            <p class="mb-2 font-light text-gray-500 dark:text-gray-400">{{ item.text|markdown }}</p>
+                                            {% if item.link %}
+                                                <a href="{{ item.link }}" class="inline-flex items-center {{ link_class }}">
+                                                    {{ item.link_text|default('Learn more') }}
+                                                    <svg class="ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    {% if not loop.last %}
+                                        <div class="flex pt-8"></div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        {% if page.header.footer_text %}
+                            <p class="text-sm">{{ page.header.footer_text|default('') }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% elseif style == 'style-5' %}
+                <div class="mt-8 lg:mt-12 {{ col_classes }}">
+                    {% for feature in page.header.features %}
+                        {% set color = feature.color|default('default') %}
+                        {% set icon_class = color == 'green' ? 'text-green-600 dark:text-green-500' : color == 'orange' ? 'text-orange-600 dark:text-orange-500' : color == 'purple' ? 'text-purple-600 dark:text-purple-500' : 'text-primary-600 dark:text-primary-500' %}
+                        {% set link_class = color == 'green' ? 'text-green-600 hover:text-green-700 dark:text-green-500 dark:hover:text-green-400' : color == 'orange' ? 'text-orange-600 hover:text-orange-700 dark:text-orange-500 dark:hover:text-orange-400' : color == 'purple' ? 'text-purple-600 hover:text-purple-700 dark:text-purple-500 dark:hover:text-purple-400' : 'text-primary-600 hover:text-primary-700 dark:text-primary-500 dark:hover:text-primary-400' %}
+                        <div class="flex items-center justify-center">
+                            <div class="flex items-center justify-center w-1/3">
+                                {{ fa_icon(feature.icon, 'w-16 h-16' ~ icon_class)|raw }}
+
+                            </div>
+                            <div class="w-2/3">
+                                <h3 class="mb-2 text-xl font-bold dark:text-white">{{ feature.title }}</h3>
+                                <div class="mb-4 text-gray-500 dark:text-gray-400">{{ feature.text|markdown }}</div>
+                                {% if feature.link %}
+                                    <a href="{{ feature.link }}" class="inline-flex items-center text-sm font-medium {{ link_class }}">
+                                        {{ feature.link_text|default('Learn more') }}
+                                        <svg class="ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% elseif style == 'style-6' %}
+                <div class="{{ col_classes }}">
+                    {% for feature in page.header.features %}
+                        {% set color = feature.color|default('default') %}
+                        {% set bg_class = color == 'green' ? 'bg-green-100 dark:bg-green-900' : color == 'orange' ? 'bg-orange-100 dark:bg-orange-900' : color == 'purple' ? 'bg-purple-100 dark:bg-purple-900' : 'bg-primary-100 dark:bg-primary-900' %}
+                        {% set icon_class = color == 'green' ? 'text-green-600 dark:text-green-300' : color == 'orange' ? 'text-orange-600 dark:text-orange-300' : color == 'purple' ? 'text-purple-600 dark:text-purple-300' : 'text-primary-600 dark:text-primary-300' %}
+                        {% set check_class = color == 'green' ? 'text-green-500 dark:text-green-400' : color == 'orange' ? 'text-orange-500 dark:text-orange-400' : color == 'purple' ? 'text-purple-500 dark:text-purple-400' : 'text-primary-600 dark:text-primary-500' %}
+                        <div>
+                            <div class="flex justify-center items-center mb-4 w-10 h-10 {{ bg_class }} rounded lg:h-16 lg:w-16">
+                                {{ fa_icon(feature.icon, 'w-5 h-5 ' ~ icon_class ~ ' lg:w-8 lg:h-8')|raw }}
+                            </div>
+                            <h3 class="mb-2 text-xl font-bold dark:text-white text-gray-900">{{ feature.title }}</h3>
+                            {% if feature.items %}
+                                <ul role="list" class="my-6 lg:mb-0 space-y-4">
+                                    {% for item in feature.items %}
+                                        <li class="flex space-x-2.5">
+                                            <svg class="flex-shrink-0 w-5 h-5 {{ check_class }}" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span class="leading-tight text-gray-500 dark:text-gray-400">{{ item }}</span>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </section>

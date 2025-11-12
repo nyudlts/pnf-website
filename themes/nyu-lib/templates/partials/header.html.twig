@@ -1,0 +1,14 @@
+<nav class="bg-primary-700 px-4 lg:px-6 py-2.5">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+        <a href="{{ home_url }}" class="flex items-center">
+            <img class="h-[30px] w-[233px]" src="{{ url('theme://images/nyulibraries-logo.svg') }}" alt="NYU Libraries" />
+            {#              <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /> #}
+            {#              <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> #}
+        </a>
+        <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+            <ul class="flex flex-col mt-4 lg:flex-row lg:space-x-8 lg:mt-0">
+                {% include 'partials/navigation.html.twig' %}
+            </ul>
+        </div>
+    </div>
+</nav>

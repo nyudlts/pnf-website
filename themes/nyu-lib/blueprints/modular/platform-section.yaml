@@ -1,0 +1,181 @@
+title: Platform Section
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            layout_section:
+              type: section
+              title: Layout
+              underline: true
+              ordering@: 5
+
+            header.first:
+              type: text
+              label: Primary Heading
+              help: When set, replaces the standard title with a large hero-style heading.
+              toggleable: true
+              ordering@: 6
+
+            header.background:
+              type: text
+              label: Background Classes
+              toggleable: true
+              help: Tailwind classes controlling the section background.
+              ordering@: 7
+
+            header.prose_classes:
+              type: text
+              label: Prose Classes
+              toggleable: true
+              help: Overrides the default typography classes applied to rich content.
+              ordering@: 8
+
+            header.content_classes:
+              type: text
+              label: Content Classes
+              toggleable: true
+              help: Extra classes applied to the content wrapper (e.g. column utilities).
+              ordering@: 9
+
+            header.h1_classes:
+              type: text
+              label: H1 Classes
+              toggleable: true
+              ordering@: 10
+
+            header.h2_classes:
+              type: text
+              label: H2 Classes
+              toggleable: true
+              ordering@: 11
+
+            content_section:
+              type: section
+              title: Body Content
+              underline: true
+              ordering@: 20
+
+            content:
+              type: markdown
+              label: Body Content
+              ordering@: 22
+
+            cards_section:
+              type: section
+              title: Card Grid
+              underline: true
+              ordering@: 30
+
+            header.cards:
+              type: list
+              label: Cards
+              style: vertical
+              btn_label: Add Card
+              ordering@: 32
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  validate:
+                    required: true
+                .body:
+                  type: textarea
+                  label: Body
+                  rows: 5
+                  markdown: true
+                  validate:
+                    required: true
+                .footer:
+                  type: textarea
+                  label: Footer
+                  rows: 3
+                  markdown: true
+                  toggleable: true
+
+            tiers_section:
+              type: section
+              title: Tier Comparison
+              underline: true
+              ordering@: 40
+
+            header.tiers:
+              type: list
+              label: Tiers
+              style: vertical
+              btn_label: Add Tier
+              ordering@: 42
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  validate:
+                    required: true
+                .body:
+                  type: textarea
+                  label: Body
+                  rows: 5
+                  markdown: true
+                  validate:
+                    required: true
+
+            extras_section:
+              type: section
+              title: Extras Grid
+              underline: true
+              ordering@: 50
+
+            header.extras.title:
+              type: text
+              label: Extras Heading
+              toggleable: true
+              ordering@: 52
+
+            header.extras.grid:
+              type: text
+              label: Grid Classes
+              toggleable: true
+              help: Tailwind grid classes (e.g. `md:grid-cols-2 lg:grid-cols-4`).
+              ordering@: 54
+
+            header.extras.included:
+              type: list
+              label: Extra Items
+              style: vertical
+              btn_label: Add Item
+              ordering@: 56
+              fields:
+                .icon:
+                  type: faicon
+                  label: Icon
+                  default_type: duotone
+                  validate:
+                    required: true
+                .title:
+                  type: text
+                  label: Label
+                  validate:
+                    required: true
+
+            featured_section:
+              type: section
+              title: Featured Callout
+              underline: true
+              ordering@: 60
+
+            header.featured.title:
+              type: text
+              label: Featured Title
+              toggleable: true
+              ordering@: 62
+
+            header.featured.body:
+              type: textarea
+              label: Featured Body
+              rows: 6
+              markdown: true
+              toggleable: true
+              ordering@: 64

@@ -1,0 +1,28 @@
+{% set title_text = page.header.title_text %}
+{% set description = page.header.description %}
+{% set features = page.header.features %}
+{% set buttons = page.header.buttons %}
+
+<section class="bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 to dark:to-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+    <div class="max-w-screen-md mx-auto text-center mb-8 lg:mb-16">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{{ title_text }}</h2>
+      <p class="mb-6 text-gray-500 dark:text-gray-400">{{ description }}</p>
+      <div class="flex flex-wrap justify-center gap-2 mb-6">
+        {% for feature in features %}
+          <span class="bg-primary-100 text-primary-800 text-sm font-medium px-2.5 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300">
+            {{ fa_icon('duotone/check.svg', 'w-3 h-3 mr-1 text-current')|raw }}{{ feature.text }}
+          </span>
+        {% endfor %}
+      </div>
+      <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+        {% for button in buttons %}
+          <a href="{{ url(button.link) }}"
+             class="button button__lg {{ button.button_type }}">
+            {{ button.text }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,79 @@
+title: Features
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.media_order:
+              ordering@: 99
+            header.subtitle:
+              type: textarea
+              label: Subheading
+              rows: 3
+              markdown: true
+              toggleable: true
+              ordering@: 10
+
+            header.hero:
+              type: toggle
+              label: Use Hero Layout Spacing
+              help: Expands the intro to mimic the hero section spacing.
+              highlight: 0
+              options:
+                1: Enabled
+                0: Disabled
+              ordering@: 15
+
+            header.style:
+              type: elements
+              label: Features Style
+              help: Choose the layout style for the features section.
+              default: style-1
+              options:
+                style-1: "Style 1: Enclosed Card (Default)"
+                style-2: "Style 2: Large Icons"
+                style-3: "Style 3: Circular Icons"
+                style-4: "Style 4: Side-by-Side with Image"
+                style-5: "Style 5: Icons left"
+                style-6: "Style 6: Feature with List"
+              ordering@: 16
+              fields:
+                style-4:
+                  type: element
+                  fields:
+                    header.image:
+                      toggleable: true
+                      type: filepicker
+                      preview_images: true
+                      label: Image (for Style 4)
+
+                    header.footer_text:
+                      type: textarea
+                      label: Footer Text (for Style 4)
+                      help: Additional text at the bottom of the side-by-side layout.
+                      rows: 2
+                      markdown: true
+                      toggleable: true
+            header.column_count:
+              type: select
+              label: Max Column Count
+              size: x-small
+              ordering@: 16
+              default: 4
+              options:
+                4: 4
+                3: 3
+                2: 2
+                1: 1
+
+
+            features_section:
+              type: section
+              title: Feature Cards
+              underline: true
+              ordering@: 17
+              import@:
+                type: modular/partials/features

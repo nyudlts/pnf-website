@@ -1,0 +1,34 @@
+{
+  "name": "nyu-lib-theme",
+  "repository": "",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev:css": "npx @tailwindcss/cli -i ./css/site.css -o ./build/css/site.css --watch --minify",
+    "dev:js": "node ./node_modules/vite/bin/vite.js build --watch",
+    "dev": "concurrently \"npm run dev:css\" \"npm run dev:js\"",
+    "prod:css": "npx @tailwindcss/cli -i ./css/site.css -o ./build/css/site.css --minify",
+    "prod:js": "NODE_ENV=production node ./node_modules/vite/bin/vite.js build",
+    "prod": "concurrently \"npm run prod:css\" \"npm run prod:js\""
+  },
+  "dependencies": {
+    "@alpinejs/collapse": "^3.14.9",
+    "@alpinejs/focus": "^3.14.9",
+    "@tailwindcss/cli": "^4.1.8",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5",
+    "@tailwindcss/vite": "^4.1.8",
+    "alpinejs": "^3.14.9",
+    "flowbite": "^3.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "tailwindcss": "^4.1.8",
+    "vite": "^6.3.5"
+  }
+}

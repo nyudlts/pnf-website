@@ -1,0 +1,22 @@
+title: Call to Action
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.media_order:
+              unset@: true
+            header.bg_classes:
+              type: text
+              label: Background Classes
+              placeholder: "bg-white dark:bg-gray-900"
+            buttons_section:
+              type: section
+              title: Buttons
+              underline: true
+              ordering@: 10
+              import@:
+                type: modular/partials/buttons

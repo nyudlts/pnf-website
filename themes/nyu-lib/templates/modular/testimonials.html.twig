@@ -1,0 +1,48 @@
+{% set intro = page.header.intro %}
+{% set testimonials = page.header.testimonials %}
+<section class="bg-gray-100 dark:bg-gray-800">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-sm mb-8 lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{{ intro.title }}</h2>
+            <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{{ intro.subtitle }}</p>
+        </div>
+        <div id="testimonial-carousel" class="relative" data-carousel="slide"  data-carousel-interval="10000">
+            <div class="overflow-x-hidden overflow-y-visible relative mx-auto max-w-screen-md h-52 rounded-lg sm:h-48">
+              {% for testimonial in testimonials|randomize %}
+                <figure class="hidden mx-auto w-full max-w-screen-md duration-700" data-carousel-item>
+                    <blockquote>
+                        <p class="text-lg font-medium text-gray-900 sm:text-2xl dark:text-white">"{{ testimonial.review }}"</p>
+                    </blockquote>
+                    <figcaption class="flex justify-center items-center mt-6 space-x-6">
+                      <div class="flex items-center border-r border-gray-400 dark:border-gray-600">
+                        <img class="w-6 h-6 rounded-full mr-2" src="{{ page.media[testimonial.avatar].url }}" alt="profile picture">
+                        <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                            <div class="pr-6 font-medium text-gray-900 dark:text-white">{{ testimonial.name }}</div>
+                        </div>
+                      </div>
+                      {% if testimonial.x %}
+                        <a class="text-primary-600 inline-flex items-center" href="{{ textimonial.x }}" target="_blank"> {{ fa_icon('brands/x-twitter.svg', 'h-5 w-5 mr-2 text-current')|raw }} X/Twitter</a>
+                      {% elseif testimonial.facebook %}
+                        <a class="text-primary-600 inline-flex items-center" href="{{ textimonial.facebook }}" target="_blank"> {{ fa_icon('brands/facebook.svg', 'h-5 w-5 mr-2 text-current')|raw }} Facebook</a>
+                      {% endif %}
+                    </figcaption>
+                </figure>
+              {% endfor %}
+            </div>
+            <div class="flex justify-center items-center">
+                <button type="button" class="flex justify-center items-center mr-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
+                      {{ fa_icon('regular/arrow-left.svg', 'w-6 h-6 text-current')|raw }}
+                        <span class="hidden">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="flex justify-center items-center h-full cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
+                      {{ fa_icon('regular/arrow-right.svg', 'w-6 h-6 text-current')|raw }}
+                        <span class="hidden">Next</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    </section>

@@ -1,0 +1,25 @@
+{% set intro = page.header.intro %}
+{% set background_file = page.header.background_image|default('abstract-bg.jpg') %}
+{% set background = page.media[background_file] %}
+{% set badge_file = page.header.badge_image|default('save-the-planet.png') %}
+{% set badge = page.media[badge_file] %}
+{% set badge_alt = page.header.badge_alt|default('Save the planet') %}
+{% set badge_classes = page.header.badge_classes|default('invert w-40 opacity-50') %}
+<section class="bg-primary-700 relative overflow-hidden">
+    {% if background %}
+        <div class="absolute inset-0"><img class="w-full h-full object-fill dark:opacity-50" src="{{ background.url }}" alt="vector background" /></div>
+    {% endif %}
+    <div class="relative py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-24 lg:px-6">
+        <div class="font-light text-gray-100 sm:text-lg border-b lg:border-b-0 lg:border-r border-white/30 lg:pr-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">{{ intro.title }}</h2>
+            <p class="mb-12 text-xl sm:text-2xl">{{ intro.subtitle }}</p>
+            {% if badge %}
+                <p class="mb-4">{{ badge.html(badge_alt, badge_alt, badge_classes)|raw }}</p>
+            {% endif %}
+{#          {{ fa_icon('regular/seedling.svg', 'text-white/75 w-24 h-24')|raw }}#}
+        </div>
+        <div class="mt-4 font-light text-gray-100 sm:text-lg lg:mt-0 lg:pl-16 prose ">
+            {{ page.content|raw }}
+        </div>
+    </div>
+</section>

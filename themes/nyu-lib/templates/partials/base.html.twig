@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
+<head>
+    {% block head %}
+        <meta charset="utf-8" />
+        <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% include 'partials/metadata.html.twig' %}
+
+        <link rel="icon" type="image/png" href="https://cdn.library.nyu.edu/images/favicon.ico" />
+        <link rel="canonical" href="{{ page.url(true, true)|e }}" />
+    {% endblock head %}
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://build/css/site.css') %}
+    {% endblock %}
+
+    {% block javascripts %}
+        {% do assets.addJs('https://unpkg.com/htmx.org@1.9.12', {group: 'bottom', loading: 'defer'}) %}
+	    {% do assets.addJs('theme://build/js/main.js', {group: 'bottom', loading: 'defer'}) %}
+        {% do assets.addJs('theme://js/components/header-sticky.js', {group: 'bottom', loading: 'defer'}) %}
+    {% endblock %}
+
+    {% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+    {% endblock %}
+</head>
+<body id="top" class="{{ page.header.body_classes|e }} {{ config.theme.production ?: 'debug-screens' }}">
+
+{% block header %}
+<header class="relative z-20">
+    <section id="main-header" class="transition-all duration-300 ease-in-out">
+        {% include 'partials/header.html.twig' %}
+    </section>
+    {% if page.header.enable_sticky_menu %}
+    {% include 'partials/header-sticky.html.twig' %}
+    {% endif %}
+</header>
+{% endblock %}
+
+<!-- Scroll to Top Button -->
+{% if page.header.enable_sticky_menu %}
+<button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+</button>
+{% endif %}
+
+{% block body %}
+    <main id="body" class="z-0">
+        <div class="prose">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+{% endblock %}
+
+{% block footer %}
+    {% include 'partials/footer.html.twig' %}
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+</body>
+</html>

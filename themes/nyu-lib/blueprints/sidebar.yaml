@@ -1,0 +1,60 @@
+title: Sidebar Layout
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            content:
+              unset@: true
+
+            collection_section:
+              type: section
+              title: Module Collection
+              underline: true
+              ordering@: 200
+
+            header.content.items:
+              type: text
+              label: Collection Source
+              help: Define the items that populate the sidebar flow (for example, self@.modular).
+              default: self@.modular
+              validate:
+                required: true
+
+            header.content.order.by:
+              type: select
+              label: Order By
+              default: folder
+              options:
+                folder: Folder
+                title: Title
+                date: Date
+                default: Default
+              toggleable: true
+              ordering@: 210
+
+            header.content.order.dir:
+              type: select
+              label: Order Direction
+              default: asc
+              options:
+                asc: Ascending
+                desc: Descending
+              toggleable: true
+              ordering@: 220
+
+            header.content.filter:
+              type: textarea
+              label: Additional Filters
+              yaml: true
+              placeholder: "published: true"
+              toggleable: true
+              ordering@: 230
+
+            sidebar_note:
+              type: help
+              text: Each collected child should be a modular section that defines a Sticky Menu Anchor in its header to power the sidebar navigation.
+              ordering@: 240

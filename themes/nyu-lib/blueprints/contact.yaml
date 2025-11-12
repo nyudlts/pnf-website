@@ -1,0 +1,137 @@
+title: Contact
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            content:
+              unset@: true
+
+            contacts_section:
+              type: section
+              title: Contact Methods
+              underline: true
+              ordering@: 200
+
+            header.contacts:
+              type: list
+              label: Contact Cards
+              style: vertical
+              btn_label: Add Contact Card
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  validate:
+                    required: true
+
+                .icon:
+                  type: faicon
+                  label: Icon
+                  default_type: regular
+                  help: Choose the icon displayed above the card title.
+
+                .text:
+                  type: textarea
+                  label: Description
+                  markdown: true
+                  rows: 4
+
+                .actions:
+                  type: list
+                  label: Actions
+                  style: vertical
+                  btn_label: Add Action
+                  fields:
+                    .text:
+                      type: text
+                      label: Label
+                      validate:
+                        required: true
+
+                    .link:
+                      type: text
+                      label: URL
+                      validate:
+                        required: true
+
+            locations_section:
+              type: section
+              title: Office Locations
+              underline: true
+              ordering@: 300
+
+            header.address_title:
+              type: text
+              label: Address Heading
+              default: Address
+              toggleable: true
+
+            header.company_info_title:
+              type: text
+              label: Company Info Heading
+              default: Company Information
+              toggleable: true
+
+            header.locations:
+              type: list
+              label: Locations
+              style: vertical
+              btn_label: Add Location
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  validate:
+                    required: true
+
+                .address:
+                  type: textarea
+                  label: Address Details
+                  markdown: true
+                  rows: 4
+
+                .company_info:
+                  type: textarea
+                  label: Company Information
+                  markdown: true
+                  rows: 4
+
+            data_centers_section:
+              type: section
+              title: Data Centers
+              underline: true
+              ordering@: 400
+
+            header.data_centers_title:
+              type: text
+              label: Section Heading
+              default: Global Data Centers
+              toggleable: true
+
+            header.data_centers:
+              type: array
+              label: Data Centers
+              value_only: true
+              btn_label: Add Data Center
+              help: Provide one data center label per row.
+
+            form_section:
+              type: section
+              title: Contact Form Heading
+              underline: true
+              ordering@: 500
+
+            header.form_title:
+              type: text
+              label: Form Title
+              default: Get in Touch
+              toggleable: true
+
+            header.form_subtitle:
+              type: text
+              label: Form Subtitle
+              toggleable: true

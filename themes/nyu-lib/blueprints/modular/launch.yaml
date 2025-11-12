@@ -1,0 +1,89 @@
+title: Launch Panel
+extends@: partials/modular
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            animation_section:
+              type: section
+              title: Animation
+              underline: true
+              ordering@: 5
+
+            header.animation:
+              type: pagemediaselect
+              label: Lottie Animation
+              folder: '@self'
+              preview_images: false
+              help: Select a .json animation file uploaded to this module.
+              toggleable: true
+
+            intro_section:
+              type: section
+              title: Intro
+              underline: true
+              ordering@: 10
+
+            header.intro.title:
+              type: text
+              label: Heading
+              placeholder: Ready to Launch on Rochen One?
+              ordering@: 11
+              validate:
+                required: true
+
+            header.intro.subtitle:
+              type: textarea
+              label: Subheading
+              rows: 3
+              markdown: true
+              ordering@: 12
+
+            buttons_section:
+              type: section
+              title: Buttons
+              underline: true
+              ordering@: 20
+
+            header.buttons:
+              type: list
+              label: Buttons
+              style: vertical
+              btn_label: Add Button
+              ordering@: 21
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  validate:
+                    required: true
+                .description:
+                  type: text
+                  label: Description
+                  validate:
+                    required: true
+                .link:
+                  type: text
+                  label: URL
+                  placeholder: /signup
+                  validate:
+                    required: true
+                .button_type:
+                  type: select
+                  label: Style
+                  default: button__primary
+                  options:
+                    button__primary: Primary Fill
+                    button__green: Accent (Green)
+                    button__border: Outline
+                    button__link: Text Link
+                    button__ghost: Ghost
+                .icon:
+                  type: faicon
+                  label: Icon
+                  default_type: regular
+                  validate:
+                    required: true
