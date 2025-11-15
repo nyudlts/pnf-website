@@ -1,0 +1,9 @@
+---
+title: '61. For a custom web application built for a single publication that does not rely on a live web server, work with the developers and authors to prepare a clean, self-contained, installation package for the purpose of backup and preservation.'
+taxonomy:
+    tag:
+        - planning
+        - 'web-based publications'
+---
+
+When a custom publication is developed using plain HTML5, CSS, and JavaScript that does not communicate with a live web server, it may be possible to run the entire application from a local machine by opening it in a browser. In this case, a clean application package should be created and retained by the publisher as a backup and for preservation. Work with the developer and author to ensure that this preservation copy: functions fully offline; does not contain any system files, server information, or logs; uses relative links that do not contain a specific domain name; and contains only local stylesheet, font, or JavaScript references. If there are features that depend on a third-party service, e.g. for search or commenting, that are not a core intellectual component of the work, these can be disabled. A README file should be placed in the root of the application folder to describe the project, instructions, dependencies, versions of technologies used, and details of any unique features that might be useful for playback later. The entire package can be stored as a zip file. If updates happen once the application is deployed on the live server, these should be reflected in the clean preservation copy and a version number should be expressed in the package.

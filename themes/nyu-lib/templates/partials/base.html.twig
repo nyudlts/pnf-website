@@ -20,7 +20,6 @@
     {% block javascripts %}
         {% do assets.addJs('https://unpkg.com/htmx.org@1.9.12', {group: 'bottom', loading: 'defer'}) %}
 	    {% do assets.addJs('theme://build/js/main.js', {group: 'bottom', loading: 'defer'}) %}
-        {% do assets.addJs('theme://js/components/header-sticky.js', {group: 'bottom', loading: 'defer'}) %}
     {% endblock %}
 
     {% block assets deferred %}
@@ -43,13 +42,13 @@
 </button>
 
 {% block main %}
-<main id="body" class="z-0">
-    {% block body %}
-        <div class="prose">
-            {% block content %}{% endblock %}
-        </div>
-    {% endblock %}
-</main>
+    <main id="body" class="z-0">
+        {% block body %}
+            <article class="prose">
+                {% block content %}{% endblock %}
+            </article>
+        {% endblock %}
+    </main>
 {% endblock %}
 
 {% block footer %}

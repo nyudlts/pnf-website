@@ -10,4 +10,5 @@ Alpine.plugin(focus)
 window.Alpine = Alpine
 
 import './components/language-switcher'
+import './components/header-sticky'
 Alpine.start()

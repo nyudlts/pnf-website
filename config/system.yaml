@@ -11,6 +11,10 @@ pages:
     markdown: true
     twig: false
 
+languages:
+  supported: [en]                                  # List of languages supported. eg: [en, fr, de]
+  default_lang: en
+
 cache:
   enabled: true
   check:

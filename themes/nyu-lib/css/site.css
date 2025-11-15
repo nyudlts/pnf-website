@@ -77,7 +77,7 @@
   --tw-prose-invert-bold: var(--color-gray-100);
   --tw-prose-pre-code: var(--color-primary-600);
   --tw-prose-pre-bg: var(--color-primary-100);
-  --tw-prose-code: var(--color-primary);
+  --tw-prose-code: var(--color-primary-500);
   --tw-prose-td-borders: var(--color-gray-300);
   --tw-prose-invert-td-borders: var(--color-gray-600);
   --tw-prose-th-borders: var(--color-gray-300);
