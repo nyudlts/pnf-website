@@ -7,7 +7,7 @@
 @import './custom/marquee.css';
 @import './custom/scrolling-header.css';
 @import './custom/accordion.css';
-@import "flowbite/src/themes/default.css";
+/*@import "flowbite/src/themes/default.css";*/
 
 /* Import Tailwind CSS */
 @import 'tailwindcss';

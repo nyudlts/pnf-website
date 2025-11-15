@@ -1,7 +1,7 @@
 import Alpine from 'alpinejs'
 import collapse from '@alpinejs/collapse'
 import focus from '@alpinejs/focus'
-import 'flowbite'
+// import 'flowbite'
 
 // Register the plugins
 Alpine.plugin(collapse)
