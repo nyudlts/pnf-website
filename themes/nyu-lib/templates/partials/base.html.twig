@@ -31,31 +31,25 @@
 <body id="top" class="{{ page.header.body_classes|e }} {{ config.theme.production ?: 'debug-screens' }}">
 
 {% block header %}
-<header class="relative z-20">
-    <section id="main-header" class="transition-all duration-300 ease-in-out">
         {% include 'partials/header.html.twig' %}
-    </section>
-    {% if page.header.enable_sticky_menu %}
-    {% include 'partials/header-sticky.html.twig' %}
-    {% endif %}
-</header>
 {% endblock %}
 
 <!-- Scroll to Top Button -->
-{% if page.header.enable_sticky_menu %}
+
 <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
     </svg>
 </button>
-{% endif %}
 
-{% block body %}
-    <main id="body" class="z-0">
+{% block main %}
+<main id="body" class="z-0">
+    {% block body %}
         <div class="prose">
             {% block content %}{% endblock %}
         </div>
-    </main>
+    {% endblock %}
+</main>
 {% endblock %}
 
 {% block footer %}

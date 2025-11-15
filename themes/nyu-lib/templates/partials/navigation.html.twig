@@ -2,9 +2,9 @@
     {% import _self as macros %}
     {% for p in page.children.visible %}
         {% set is_active_page = (p.active or p.activeChild) %}
-        {% set active_classes = is_active_page ? 'text-white' : 'text-gray-200' %}
+        {% set active_classes = is_active_page ? 'text-gray-900' : 'text-primary-800' %}
         <li>
-            <a href="{{ p.url }}" class="block py-2 pr-4 pl-3 {{ active_classes }} hover:text-primary-200" {% if is_active_page %} aria-current="page" {% endif %}>
+            <a href="{{ p.url }}" class="block py-2 pr-4 pl-3 {{ active_classes }} hover:text-primary-700" {% if is_active_page %} aria-current="page" {% endif %}>
                 {{ p.menu }}
             </a>
         </li>
