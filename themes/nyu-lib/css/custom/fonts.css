@@ -14,10 +14,3 @@
     src: url("../../fonts/NYUPerstare-Italic-VF.woff2?v=3.19") format("woff2");
 }
 
-@font-face {
-    font-family: "Source Sans Pro";
-    font-weight: 100 900;
-    font-style: normal;
-    font-stretch: normal;
-    src: url("../../fonts/SourceSans3-VF.woff2?v=3.19") format("woff2");
-}
