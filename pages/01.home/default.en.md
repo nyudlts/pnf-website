@@ -2,7 +2,7 @@
 title: Introduction
 ---
 
-## Introduction
+## Table of Contents
 
 * **[Background](#background)**
 * **[Intended audience](#intended-audience)**

@@ -28,7 +28,7 @@
     {% endblock %}
 </head>
 <body id="top" class="{{ page.header.body_classes|e }} {{ config.theme.production ?: 'debug-screens' }}">
-
+{% set hero_bg = url('theme://images/backgrounds/' ~ theme_var('hero.background')) %}
 {% block header %}
         {% include 'partials/header.html.twig' %}
 {% endblock %}
@@ -43,11 +43,21 @@
 
 {% block main %}
     <main id="body" class="z-0">
-        {% block body %}
-            <article class="prose">
-                {% block content %}{% endblock %}
+        <div class="bg-primary-50 relative">
+            {% if hero_bg %}
+                <img class="absolute w-full h-full object-cover grayscale opacity-20" src="{{ hero_bg }}" alt="hero-bg" />
+            {% endif %}
+            <div class="py-6 mx-auto max-w-screen-xl">
+                {% include 'partials/content-title.html.twig' %}
+            </div>
+        </div>
+        <div class="pt-12 pb-12 px-4 mx-auto max-w-screen-xl">
+            {% block content %}
+            <article id="body" class="prose mx-auto max-w-screen-lg pb-16">
+                {{ page.content|raw }}
             </article>
-        {% endblock %}
+            {% endblock %}
+        </div>
     </main>
 {% endblock %}
 

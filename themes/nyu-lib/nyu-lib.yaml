@@ -1,4 +1,6 @@
 enabled: true
 production: false
+hero:
+  background: nyu-bobst.jpg
 dropdown:
   enabled: true

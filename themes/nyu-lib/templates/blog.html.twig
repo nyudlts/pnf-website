@@ -1,6 +1,6 @@
 {% extends 'partials/base.html.twig' %}
 
-{% block body %}
+{% block content %}
     {% set page_num = (uri.param('page') ?: 1)|int %}
     {% set blog_config = page.header.content %}
     {% set base_limit = (blog_config.limit ?? 0)|int %}
@@ -27,7 +27,6 @@
     {% endif %}
 
     <div class="pt-6 pb-12 px-4 mx-auto max-w-screen-xl">
-        {% include 'partials/content-title.html.twig' %}
         {% include 'partials/blog/posts-grid.html.twig' with {
             featured: featured,
             featured_image: featured_image,
