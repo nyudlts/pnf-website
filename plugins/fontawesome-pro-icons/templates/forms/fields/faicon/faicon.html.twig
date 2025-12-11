@@ -1,0 +1,63 @@
+{% extends "forms/field.html.twig" %}
+
+{% block global_attributes %}
+    data-grav-field="faicon"
+    data-grav-faicon-field
+    {{ parent() }}
+{% endblock %}
+
+{% block input %}
+    {% set current_value = value ?? '' %}
+    {% if current_value is not same as('') %}
+        {% set current_value = current_value|string %}
+    {% endif %}
+
+    {% set parts = current_value ? current_value|split('/') : [] %}
+    {% set current_type = parts|length > 1 ? parts[0] : field.default_type|default('regular') %}
+    {% set icon_part = parts|length > 1 ? parts[1] : (parts|length == 1 ? parts[0] : '') %}
+    {% if icon_part ends with '.svg' %}
+        {% set icon_part = icon_part|slice(0, icon_part|length - 4) %}
+    {% endif %}
+
+    {% set placeholder = field.placeholder|default('No icon selected') %}
+    {% set choose_label = field.choose_label|default('Choose Icon') %}
+    {% set clear_label = field.clear_label|default('Clear') %}
+    {% set base_url = url('plugin://fontawesome-pro-icons/icons') %}
+    {% set endpoint = admin_route('/faicon-icons') %}
+
+    <div class="faicon-field__container"
+         data-base-url="{{ base_url|e('html_attr') }}"
+         data-default-type="{{ field.default_type|default('regular')|e('html_attr') }}"
+         data-placeholder="{{ placeholder|e('html_attr') }}"
+         data-selected-type="{{ current_type|e('html_attr') }}"
+         data-selected-icon="{{ icon_part|e('html_attr') }}"
+         data-endpoint="{{ endpoint|e('html_attr') }}">
+        <div class="faicon-field__preview" data-faicon-preview>
+            {% if current_value %}
+                <div class="faicon-field__preview-display">
+                    <span class="faicon-field__preview-icon">
+                        {{ fa_icon(current_value, 'faicon-field__preview-svg')|raw }}
+                    </span>
+                    <span class="faicon-field__preview-label">{{ current_value|replace({'.svg':''}) }}</span>
+                </div>
+            {% else %}
+                <span class="faicon-field__placeholder">{{ placeholder }}</span>
+            {% endif %}
+        </div>
+        <div class="faicon-field__actions">
+            <button type="button" class="button faicon-field__choose" data-faicon-choose>{{ choose_label }}</button>
+            <button type="button" class="button faicon-field__clear" data-faicon-clear{% if not current_value %} disabled{% endif %}>{{ clear_label }}</button>
+        </div>
+        <input
+            type="hidden"
+            name="{{ (scope ~ field.name)|fieldName }}"
+            value="{{ current_value }}"
+            data-faicon-input
+        />
+        <noscript>
+            <div class="faicon-field__nojs">
+                JavaScript is required to use the icon chooser. Enter the icon path manually (for example: <code>regular/arrow-right.svg</code>) in the page frontmatter.
+            </div>
+        </noscript>
+    </div>
+{% endblock %}

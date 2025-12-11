@@ -1,0 +1,31 @@
+{% extends 'partials/base.html.twig' %}
+{% set icon_left = fa_icon('regular/chevron-left.svg', 'w-5 h-5 text-current mr-2')|raw %}
+{% set icon_right = fa_icon('regular/chevron-right.svg', 'w-5 h-5 text-current ml-2')|raw %}
+
+{% block hero_title %}
+    {% include 'partials/content-title.html.twig' %}
+    <div class="flex flex-wrap gap-1 mb-4 max-w-md mx-auto">
+        {% for tag in page.taxonomy.tag %}
+            <span class="inline-flex nowrap text-xs px-2 py-0.5 rounded-md bg-primary-700 text-white">{{ tag }}</span>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block content %}
+    <article id="body" class="prose mx-auto max-w-screen-lg pb-16">
+        {{ page.content|raw }}
+    </article>
+    <div class="flex justify-center w-full p-6 mx-auto">
+        <div class="space-x-3 text-center inline-flex items-center mx-auto ">
+            {% if not page.isLast %}
+                <a class="inline-flex items-center text-sm rounded-md border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 px-4 py-2"
+                   href="{{ page.prevSibling.url }}">{{ icon_left|raw }} {{ 'THEME_NYU.BLOG.ITEM.PREV_GUIDELINE'|t }}</a>
+            {% endif %}
+
+            {% if not page.isFirst %}
+                <a class="inline-flex items-center text-sm rounded-md border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 px-4 py-2"
+                   href="{{ page.nextSibling.url }}">{{ 'THEME_NYU.BLOG.ITEM.NEXT_GUIDELINE'|t }} {{ icon_right|raw }}</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

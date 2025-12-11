@@ -43,14 +43,18 @@
 
 {% block main %}
     <main id="body" class="z-0">
+        {% block hero %}
         <div class="bg-primary-50 relative">
             {% if hero_bg %}
                 <img class="absolute w-full h-full object-cover grayscale opacity-20" src="{{ hero_bg }}" alt="hero-bg" />
             {% endif %}
             <div class="py-6 mx-auto max-w-screen-xl">
+                {% block hero_title %}
                 {% include 'partials/content-title.html.twig' %}
+                {% endblock %}
             </div>
         </div>
+        {% endblock %}
         <div class="pt-12 pb-12 px-4 mx-auto max-w-screen-xl">
             {% block content %}
             <article id="body" class="prose mx-auto max-w-screen-lg pb-16">

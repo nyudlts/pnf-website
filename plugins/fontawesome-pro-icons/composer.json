@@ -1,0 +1,25 @@
+{
+  "name": "trilbymedia/fontawesome-pro-icons",
+  "type": "grav-plugin",
+  "description": "Helper to use Fontawesome Pro Icons",
+  "version": "1.0.0",
+  "keywords": ["plugin"],
+  "homepage": "https://github.com/trilbymedia/grav-plugin-fontawesome-pro-icons",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Trilby Media",
+      "email": "hello@trilby.media",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Grav\\Plugin\\FontawesomeProIcons\\": "classes/"
+    },
+    "classmap":  ["fontawesome-pro-icons.php"]
+  }
+}

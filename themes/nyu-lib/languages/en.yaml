@@ -1,2 +1,10 @@
-THEME_ROCHEN:
-    ERROR: 'Error!'
+THEME_NYU:
+  LANGUAGES: "Languages"
+  LOGIN:
+    LOGIN: "Login"
+    LOGOUT: "Logout"
+  BLOG:
+    ITEM:
+      CONTINUE_READING: Continue reading...
+      NEXT_GUIDELINE: Next Guideline
+      PREV_GUIDELINE: Previous Guideline
