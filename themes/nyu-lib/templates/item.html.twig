@@ -4,7 +4,7 @@
 
 {% block hero_title %}
     {% include 'partials/content-title.html.twig' %}
-    <div class="flex flex-wrap gap-1 mb-4 max-w-md mx-auto">
+    <div class="flex flex-wrap justify-center gap-1 mb-4 max-w-md mx-auto">
         {% for tag in page.taxonomy.tag %}
             <span class="inline-flex nowrap text-xs px-2 py-0.5 rounded-md bg-primary-700 text-white">{{ tag }}</span>
         {% endfor %}
