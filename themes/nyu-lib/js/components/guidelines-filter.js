@@ -1,15 +1,27 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('guidelinesFilter', () => ({
         selectedTags: [],
+        searchQuery: '',
 
         init() {
             // Check URL for any existing tag filters and apply them
             const urlParams = new URLSearchParams(window.location.search);
             const tagParam = urlParams.get('tags');
+            const searchParam = urlParams.get('q');
             if (tagParam) {
                 this.selectedTags = tagParam.split(',').filter(t => t);
+            }
+            if (searchParam) {
+                this.searchQuery = searchParam;
+            }
+            if (tagParam || searchParam) {
                 this.$nextTick(() => this.filterCards());
             }
+        },
+
+        onSearchInput() {
+            this.updateURL();
+            this.filterCards();
         },
 
         toggleTag(tag) {
@@ -29,12 +41,13 @@ document.addEventListener('alpine:init', () => {
 
         clearFilters() {
             this.selectedTags = [];
+            this.searchQuery = '';
             this.updateURL();
             this.filterCards();
         },
 
         hasFilters() {
-            return this.selectedTags.length > 0;
+            return this.selectedTags.length > 0 || this.searchQuery.length > 0;
         },
 
         updateURL() {
@@ -44,6 +57,11 @@ document.addEventListener('alpine:init', () => {
             } else {
                 url.searchParams.delete('tags');
             }
+            if (this.searchQuery.length > 0) {
+                url.searchParams.set('q', this.searchQuery);
+            } else {
+                url.searchParams.delete('q');
+            }
             window.history.replaceState({}, '', url);
         },
 
@@ -52,13 +70,21 @@ document.addEventListener('alpine:init', () => {
             let visibleEven = [];
             let visibleOdd = [];
             let visibleIndex = 0;
+            const searchLower = this.searchQuery.toLowerCase().trim();
 
             cards.forEach((card) => {
                 const cardTags = JSON.parse(card.dataset.tags || '[]');
+                const cardTitle = (card.dataset.title || '').toLowerCase();
 
-                // Show card if no filters selected OR card has ALL selected tags
-                const shouldShow = this.selectedTags.length === 0 ||
+                // Check tag filter: show if no tags selected OR card has ALL selected tags
+                const matchesTags = this.selectedTags.length === 0 ||
                     this.selectedTags.every(tag => cardTags.includes(tag));
+
+                // Check search filter: show if no search OR title contains search query
+                const matchesSearch = searchLower.length === 0 ||
+                    cardTitle.includes(searchLower);
+
+                const shouldShow = matchesTags && matchesSearch;
 
                 if (shouldShow) {
                     card.classList.remove('hidden');
