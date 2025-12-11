@@ -14,6 +14,7 @@ pages:
 languages:
   supported: [en]                                  # List of languages supported. eg: [en, fr, de]
   default_lang: en
+  include_default_lang: false
 
 cache:
   enabled: true

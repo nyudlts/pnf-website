@@ -1,10 +1,16 @@
-<article>
+<article data-guideline-card data-tags="{{ post.taxonomy.tag|json_encode }}">
     <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         <a href="{{ post.url }}">{{ post.title }}</a>
     </h2>
+    <div class="flex flex-wrap gap-1 mb-4">
+        {% for tag in post.taxonomy.tag %}
+            <span class="inline-flex nowrap text-xs px-2 py-0.5 rounded-md bg-gray-200 text-gray-600">{{ tag }}</span>
+        {% endfor %}
+    </div>
     <div class="mb-4 font-light text-gray-500 dark:text-gray-400">
         {{ post.summary|raw }}
     </div>
+
     <a href="{{ post.url }}"
        class="inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-500">
         Read more {{ fa_icon('regular/arrow-right-long.svg', 'text-current w-5 h-5 ml-2')|raw }}

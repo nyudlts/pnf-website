@@ -11,4 +11,5 @@ window.Alpine = Alpine
 
 import './components/language-switcher'
 import './components/header-sticky'
+import './components/guidelines-filter'
 Alpine.start()

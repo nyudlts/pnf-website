@@ -10,6 +10,6 @@ content:
     order:
         by: title
         dir: asc
-    pagination: true
-    url_taxonomy_filters: true
+    pagination: false
+    url_taxonomy_filters: false
 ---
