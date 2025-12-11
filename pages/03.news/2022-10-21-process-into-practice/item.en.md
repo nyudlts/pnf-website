@@ -1,0 +1,32 @@
+---
+title: Process into Practice
+date: '2022-10-21 09:22'
+modified: '2025-03-24 11:00'
+author: Spinazze
+taxonomy:
+    category:
+        - updates
+    tag:
+        - author-intent
+        - process
+        - workflow
+summary: 'Where to begin? I asked myself as I sat down to write this update in which I will describe, from my vantage point as project manager and embedding team member, a bit about how we have defined the embedding process, what it looks like in practice, and an example of an unexpected, early learning. We &hellip; Continue reading &#8220;Process into Practice&#8221;'
+---
+
+## Where to begin?
+
+I asked myself as I sat down to write this update in which I will describe, from my vantage point as project manager and embedding team member, a bit about how we have defined the embedding process, what it looks like in practice, and an example of an unexpected, early learning. We are just over six months in to “embedding” with publishers and their publishing-software developers; asking questions about how and when technology-decisions are made, learning about editorial and production workflows, collecting data, engaging in lively discussions about what it might mean to operationalize preservability into those workflows; identifying points of risk, and sharing possible options for addressing them.
+
+No one really knew what to expect when we started. There really aren’t any precedents to point to with regard to the approach we are taking. We needed to create a [process](https://wp.nyu.edu/embedding_preservability/about/). So, the first thing we did was to create a context-setting conversation. A conversation between the embedding team and a publisher during which we begin to learn about their workflow and identify where preservation-related actions currently occur.
+
+This creating context interview consists of a set of questions that we share ahead of time and ask publishers to answer before we meet. Then, during our virtual embedding session, two embedding team members work together to conduct the interview. One of us asks the questions, the other documents the conversation in-real-time. This offers us the opportunity to dive deeper into the questions as we are able to build off of the answers previously provided. The result is the collection of a large swath of information in a short period of time, with the ease of a conversation-style format.
+
+Next, the embedding team works visually, using Miro, to revisit the conversation in light of the sixty-eight [guidelines](https://preservingnewforms.dlib.nyu.edu/guidelines) developed during the previous project to identify points of potential risk to preservation. Our goal is to highlight where there are opportunities to improve preservation outcomes and suggest them back to the publisher. Several of the guidelines have generated considerable discussion and raised some interesting issues in terms of implementation. For example, across the five conversations with publishers that we have had since the start of the embedding process, exploring publications with diverse subjects – archaeology, architecture, Russian literature, transforming a rap dissertation complete with lyrics and tracks into an EPUB, and an issue of a scientific journal – the idea of “author intent” has arisen in some form or another. How does the author see that external resource (audio, video, website, data set, still image) in the context of their publication? Is the resource something that is essential to understanding the publication and how the author intended their reader to experience it? Do they have the rights to preserve it? Is it a core intellectual component?
+
+Whilst we may not have set out to explore author intent, it has become a thread that connects each of the publications with one another and our attempt to raise awareness around the risks to preservation that are inherent in these new forms of scholarship and as we look to recommend possible paths for publishers to take to address those risks. By asking authors to provide context around the core intellectual components of their publications early on in the pre-production workflow, publishers would have an important resource to draw from when trying to preserve the work. Which, in theory, would also lead to a greater chance that future attempts at re-constructing it or publishing it on a platform that does not currently exist would be possible.
+
+These questions and the idea around “author intent” bring to mind conversations that I facilitated with leaders in the fields of contemporary art and conservation back in 2014. The focus at that time was around conservation of contemporary art and what information to collect that would be useful to know up front with regard to materials, and how to collect that information. [VoCA](https://voca.network/) (Voices in Contemporary Art) developed and stewards this work that takes the form of an in-depth questionnaire that the artist, whose work is being acquired by a museum, fills in coupled with an interview conducted by the conservator tasked with long-term preservation and care of it. In addition to questions around materials, there is also room for discussion around what is important to understand conceptually and aesthetically about the work, the artist’s creative practice, and the facets of the work that are essential to reconstructing it in the future (which is a version of the question that the guidelines are asking, What are the core intellectual components of the work?). This approach has become an essential component of the management and care processes that museum professionals who work with and conserve contemporary art use in their practice. It may also provide a model that could be applied or adapted by publishers looking for ways to integrate conversations and collect critical data about what is essential to preserve from the author’s perspective early on in their workflows.
+
+The embedding process will continue for another two years, the number and type of publishers with whom we are able to exchange ideas will grow, and we will have the opportunity to learn from and work with a fourth publishing platform. As we learn more, we will share it here. Look for posts over the course of the project as we use this blog space to bring you updates and insights from our efforts.
+
+*Angela T. Spinazzè, Project Manager and Embedding Team Member*
