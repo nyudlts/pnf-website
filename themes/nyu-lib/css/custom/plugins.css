@@ -43,3 +43,46 @@ body {
     }
   }
 }
+
+/* Example shortcode card styling */
+.example {
+  @apply relative my-6 px-5 py-4 rounded-lg;
+  @apply bg-primary-50 border border-primary-200;
+  @apply dark:bg-primary-950/30 dark:border-primary-800;
+
+  /* Left accent border */
+  @apply border-l-4 border-l-primary-400 dark:border-l-primary-600;
+
+  /* Icon before content */
+  &::before {
+    content: "\f02d"; /* FontAwesome book icon */
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400;
+    @apply absolute -left-3 -top-3 w-6 h-6 flex items-center justify-center;
+    @apply bg-primary-400 text-white text-xs rounded-full;
+    @apply dark:bg-primary-600;
+  }
+
+  /* "Example" badge in top right */
+  &::after {
+    content: "Example";
+    @apply absolute -top-3 right-3 px-3 py-1;
+    @apply text-xs font-semibold uppercase tracking-wide;
+    @apply bg-primary-400 text-white rounded-full;
+    @apply dark:bg-primary-600;
+  }
+
+  /* Override prose link colors within example */
+  a {
+    @apply text-primary-700 dark:text-primary-400;
+
+    &:hover {
+      @apply text-primary-900 dark:text-primary-300;
+    }
+  }
+
+  /* Ensure proper text color */
+  p {
+    @apply text-gray-700 dark:text-gray-300;
+  }
+}

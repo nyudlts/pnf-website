@@ -14,6 +14,6 @@ _20. [Represent all core intellectual components of the work in the export packa
 _61. [Create installation packages for custom websites that don’t require a live server](/guidelines/61-clean-html-package)_  
 _62. [Create installation packages for custom websites that do require a live server](/guidelines/62-clean-install-dynamic-web)_
 
-!> Example
+[example]
 As part of the research that led to [Knowing Silence: How Children Talk about Immigration Status in School](https://doi.org/10.5749/9781452971094?target=_blank) by Ariana Mangual Figueroa, teenagers were provided with iPod Touches to record audio and video conversations. The resulting audio files are considered core intellectual components by the author and were considered to be in scope for inclusion in the preservation export package. Due to the sensitive nature of the content of these files, and the need to maintain the privacy of these youth, University of Minnesota Press decided to include the edited, privacy supporting versions of the files in the export package. This example highlights an instance where privacy concerns set the stage for how to approach the export package.
-!@
+[/example]

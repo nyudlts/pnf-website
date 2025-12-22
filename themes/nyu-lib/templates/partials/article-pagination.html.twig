@@ -1,33 +1,33 @@
 {# Article pagination with prev/next titles #}
-{# Grav siblings are based on filesystem order (alphabetical by folder name).
-   With date-prefixed folders (YYYY-MM-DD-slug), alphabetical = chronological ASC:
-   - prevSibling = older article (earlier in alphabet/time)
-   - nextSibling = newer article (later in alphabet/time)
+{# Use parent's collection to get reliable prev/next based on configured order #}
+{% set parent = page.parent %}
+{% set siblings = parent.collection({'items':{'@self.children':{}}, 'order': parent.header.content.order|default({'by':'date','dir':'desc'})}) %}
+{% set prev_page = null %}
+{% set next_page = null %}
+{% set found_current = false %}
 
-   For navigation, "Previous" means older, "Next" means newer #}
-{% set older_page = page.prevSibling %}
-{% set newer_page = page.nextSibling %}
+{% for sibling in siblings %}
+    {% if sibling.slug == page.slug %}
+        {% set found_current = true %}
+    {% elseif not found_current %}
+        {% set prev_page = sibling %}
+    {% elseif found_current and not next_page %}
+        {% set next_page = sibling %}
+    {% endif %}
+{% endfor %}
 
-{# Filter out invalid siblings (self-references or missing titles) #}
-{% if older_page and (older_page.rawRoute == page.rawRoute or not older_page.title) %}
-    {% set older_page = null %}
-{% endif %}
-{% if newer_page and (newer_page.rawRoute == page.rawRoute or not newer_page.title) %}
-    {% set newer_page = null %}
-{% endif %}
-
-{% if older_page or newer_page %}
+{% if prev_page or next_page %}
 <nav class="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8 mb-4 lg:-mb-4">
     <div class="flex flex-col sm:flex-row justify-between gap-4 max-w-screen-lg mx-auto px-4">
-        {# Previous (older) article #}
-        {% if older_page %}
-        <a href="{{ older_page.url }}"
+        {# Previous article #}
+        {% if prev_page %}
+        <a href="{{ prev_page.url }}"
            class="group flex items-start gap-3 p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex-1">
             <span class="mt-1">{{ fa_icon('regular/chevron-left.svg', 'w-4 h-4 text-gray-400 flex-shrink-0')|raw }}</span>
             <div class="min-w-0">
                 <span class="block text-xs text-gray-500 dark:text-gray-400 mb-1">Previous</span>
                 <span class="block text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-600 line-clamp-2">
-                    {{ older_page.title }}
+                    {{ prev_page.title }}
                 </span>
             </div>
         </a>
@@ -35,14 +35,14 @@
         <div class="flex-1"></div>
         {% endif %}
 
-        {# Next (newer) article #}
-        {% if newer_page %}
-        <a href="{{ newer_page.url }}"
+        {# Next article #}
+        {% if next_page %}
+        <a href="{{ next_page.url }}"
            class="group flex items-start gap-3 p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex-1 sm:text-right">
             <div class="min-w-0 flex-1 sm:order-1">
                 <span class="block text-xs text-gray-500 dark:text-gray-400 mb-1">Next</span>
                 <span class="block text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-600 line-clamp-2">
-                    {{ newer_page.title }}
+                    {{ next_page.title }}
                 </span>
             </div>
             <span class="mt-1 sm:order-2">{{ fa_icon('regular/chevron-right.svg', 'w-4 h-4 text-gray-400 flex-shrink-0')|raw }}</span>

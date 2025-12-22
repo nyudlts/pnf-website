@@ -15,6 +15,6 @@ _16. [Captions add important context to non-text features](/guidelines/16-create
 _53. [Consider web page designs that pre-load all data when the page loads](/guidelines/53-preload-data-in-browser)_  
 _63. [Supply raw data, documentation for data visualizations](/guidelines/63-data-visualization-raw-data)_
 
-!> Example
+[example]
 In [_Owning My Masters (Mastered)_](https://doi.org/10.3998/mpub.12584348?target=_blank) by A.D Carson, some images are embedded in the EPUB using a IIIF viewer. As a user changes the view on these images by panning or zooming, the tool communicates with a live server to load new image tiles. It is difficult to preserve this interactivity whether via export or web harvesting. To ensure it is possible to view this image in the preserved copy, Fulcrum links this feature to a Resource page on which there is a download button to retrieve a static copy of the image. Here is an example: [This static copy of the image](https://doi.org/10.3998/mpub.12584348.cmp.58?target=_blank) can be easily harvested by a web crawler since the button uses a standard HTML anchor link. Fulcrum also includes this static version of the image in its export package. This ensures viewers can see the full resolution image without needing the IIIF feature to function.
-!@
+[/example]

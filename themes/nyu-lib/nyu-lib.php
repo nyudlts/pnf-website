@@ -3,6 +3,8 @@
 namespace Grav\Theme;
 
 use Grav\Common\Theme;
+use RocketTheme\Toolbox\Event\Event;
+use Thunder\Shortcode\Shortcode\ShortcodeInterface;
 use Twig\TwigFilter;
 
 class NYULib extends Theme
@@ -17,7 +19,15 @@ class NYULib extends Theme
             ],
             'onPageInitialized' => ['onPageInitialized', 0],
             'onTwigInitialized' => ['onTwigInitialized', 0],
+            'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
         ];
+    }
+
+    public function onShortcodeHandlers(Event $e): void
+    {
+        $this->grav['shortcode']->getHandlers()->add('example', static function(ShortcodeInterface $sc) {
+            return '<div class="example">' . $sc->getContent() . '</div>';
+        });
     }
 
     public function onThemeInitialized()

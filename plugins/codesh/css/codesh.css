@@ -1,0 +1,461 @@
+/* ===================================
+   CODESH - Code Syntax Highlighter
+   Complete standalone styles
+   =================================== */
+
+/* Main container - base styles */
+.codesh-block {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================
+   LIGHT MODE (default)
+   =================================== */
+.codesh-block {
+    background-color: #f3f4f6;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+.codesh-block .codesh-header {
+    background-color: rgba(229, 231, 235, 0.15);
+    border-bottom: 1px solid rgba(209, 213, 219, 0.5);
+}
+
+.codesh-block .codesh-lang {
+    color: #4b5563;
+    background-color: rgba(209, 213, 219, 0.4);
+}
+
+.codesh-block .codesh-title {
+    color: #374151;
+}
+
+.codesh-block .codesh-copy,
+.codesh-group .codesh-copy {
+    color: #4b5563;
+    background-color: rgba(209, 213, 219, 0.4);
+    border-color: rgba(156, 163, 175, 0.2);
+}
+
+.codesh-block .codesh-copy:hover,
+.codesh-group .codesh-copy:hover {
+    background-color: rgba(156, 163, 175, 0.2);
+    color: #111827;
+    border-color: rgba(107, 114, 128, 0.2);
+}
+
+.codesh-block .codesh-copy.copied,
+.codesh-group .codesh-copy.copied {
+    background-color: rgba(34, 197, 94, 0.9);
+    color: #ffffff;
+    border-color: rgba(34, 197, 94, 0.8);
+}
+
+/* Light mode diff colors */
+.codesh-block .line .deleted {
+    color: #dc2626;
+}
+
+.codesh-block .line .inserted {
+    color: #16a34a;
+}
+
+/* ===================================
+   DARK MODE (via .dark ancestor - Tailwind style)
+   Using neutral zinc scale based on #1D1D20
+   =================================== */
+.dark .codesh-block {
+    background-color: #1d1d20;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+}
+
+.dark .codesh-block .codesh-header {
+    background-color: rgba(39, 39, 42, 0.6);
+    border-bottom: 1px solid rgba(63, 63, 70, 0.4);
+}
+
+.dark .codesh-block .codesh-lang {
+    color: #a1a1aa;
+    background-color: rgba(51, 51, 55, 0.8);
+}
+
+.dark .codesh-block .codesh-title {
+    color: #d4d4d8;
+}
+
+.dark .codesh-block .codesh-copy,
+.dark .codesh-group .codesh-copy {
+    color: #d4d4d8;
+    background-color: rgba(51, 51, 55, 0.9);
+    border-color: rgba(63, 63, 70, 0.5);
+}
+
+.dark .codesh-block .codesh-copy:hover,
+.dark .codesh-group .codesh-copy:hover {
+    background-color: rgba(63, 63, 70, 0.8);
+    color: #ffffff;
+    border-color: rgba(82, 82, 91, 0.5);
+}
+
+.dark .codesh-block .codesh-copy.copied,
+.dark .codesh-group .codesh-copy.clpied {
+    background-color: rgba(34, 197, 94, 0.9);
+    color: #ffffff;
+    border-color: rgba(34, 197, 94, 0.8);
+}
+
+
+/* ===================================
+   SHARED STYLES
+   =================================== */
+
+/* Header bar */
+.codesh-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 1rem;
+}
+
+/* Language badge */
+.codesh-lang {
+    font-size: 0.75rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+/* Title/filename display */
+.codesh-title {
+    font-size: 0.875rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* Copy button */
+.codesh-copy {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.codesh-copy-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Code container */
+.codesh-code {
+    overflow-x: auto;
+}
+
+/* ===================================
+   PHIKI DUAL THEME SUPPORT
+   Switch between light/dark themes via CSS variables
+   Only applies to blocks with codesh-dual-theme class
+   =================================== */
+
+/* Dark mode: switch to dark theme colors via CSS variables */
+.dark .codesh-dual-theme .shiki,
+.dark .codesh-dual-theme .phiki,
+.dark .codesh-group .shiki,
+.dark .codesh-group .phiki {
+    background-color: var(--shiki-dark-bg, var(--phiki-dark-background-color)) !important;
+}
+
+.dark .codesh-dual-theme .shiki span,
+.dark .codesh-dual-theme .phiki span,
+.dark .codesh-group .shiki span,
+.dark .codesh-group .phiki span {
+    color: var(--shiki-dark, var(--phiki-dark-color)) !important;
+    font-style: var(--shiki-dark-font-style, var(--phiki-dark-font-style)) !important;
+    font-weight: var(--shiki-dark-font-weight, var(--phiki-dark-font-weight)) !important;
+    text-decoration: var(--shiki-dark-text-decoration, var(--phiki-dark-text-decoration)) !important;
+}
+
+/* Token backgrounds for diff - only apply when variable is set */
+.dark .codesh-dual-theme .shiki span[style*="--shiki-dark-bg"],
+.dark .codesh-dual-theme .phiki span[style*="--phiki-dark-background-color"],
+.dark .codesh-group .shiki span[style*="--shiki-dark-bg"],
+.dark .codesh-group .phiki span[style*="--phiki-dark-background-color"] {
+    background-color: var(--shiki-dark-bg, var(--phiki-dark-background-color)) !important;
+}
+
+.codesh-block pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    tab-size: 4;
+}
+
+.codesh-block code {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    padding: 0;
+}
+
+/* No header mode - minimal styling */
+.codesh-block.no-header {
+    border-radius: 0.5rem;
+}
+
+/* ===================================
+   LINE STYLES
+   =================================== */
+.codesh-block .line {
+    display: block;
+    padding: 0 0.5rem;
+    margin: 0 -0.5rem;
+}
+
+/* Line numbers - Phiki uses 'line-number' class */
+.codesh-block .line-number {
+    display: inline-block;
+    width: 2.5em;
+    margin-right: 1.5em;
+    text-align: right;
+    color: inherit;
+    opacity: 0.4;
+    user-select: none;
+    -webkit-user-select: none;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ===================================
+   LINE HIGHLIGHTING
+   =================================== */
+.codesh-block .line.highlight {
+    background-color: rgba(250, 200, 50, 0.15);
+    box-shadow: inset 3px 0 0 0 #d19a00;
+}
+
+.codesh-block .line.highlight .line-number {
+    opacity: 0.6;
+}
+
+/* ===================================
+   LINE FOCUS
+   =================================== */
+.codesh-block.has-focus .line:not(.focus) {
+    opacity: 0.35;
+}
+
+.codesh-block .line.focus {
+    background-color: rgba(59, 130, 246, 0.12);
+    box-shadow: inset 3px 0 0 0 #3b82f6;
+}
+
+.codesh-block .line.focus .line-number {
+    opacity: 0.6;
+}
+
+/* ===================================
+   ERROR FALLBACK
+   =================================== */
+.codesh-block.codesh-error pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+
+/* ===================================
+   SCROLLBAR STYLING
+   =================================== */
+.codesh-block pre::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+.codesh-block pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.codesh-block pre::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.3);
+    border-radius: 4px;
+}
+
+.codesh-block pre::-webkit-scrollbar-thumb:hover {
+    background: rgba(128, 128, 128, 0.5);
+}
+
+/* ===================================
+   CODE GROUPS - Tabbed Code Blocks
+   =================================== */
+.codesh-group {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode group */
+.codesh-group {
+    background-color: #f3f4f6;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode group - zinc scale */
+.dark .codesh-group {
+    background-color: #1d1d20;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Group header */
+.codesh-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: rgba(229, 231, 235, 0.8);
+    border-bottom: 1px solid rgba(209, 213, 219, 0.5);
+}
+
+.dark .codesh-group-header {
+    background-color: rgba(39, 39, 42, 0.6);
+    border-bottom: 1px solid rgba(63, 63, 70, 0.4);
+}
+
+/* Tabs container */
+.codesh-group-tabs {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.codesh-group-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual tab */
+.codesh-group-tab {
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s ease;
+    margin-bottom: -1px;
+}
+
+.codesh-group-tab:hover {
+    color: #374151;
+}
+
+.codesh-group-tab.active {
+    color: #111827;
+    border-bottom-color: #3b82f6;
+}
+
+/* Dark mode tabs */
+.dark .codesh-group-tab {
+    color: #a1a1aa;
+}
+
+.dark .codesh-group-tab:hover {
+    color: #d4d4d8;
+}
+
+.dark .codesh-group-tab.active {
+    color: #f4f4f5;
+    border-bottom-color: #3b82f6;
+}
+
+/* Tab panels container */
+.codesh-group-panels {
+    position: relative;
+}
+
+/* Individual panel */
+.codesh-group-panel {
+    display: none;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+}
+
+.codesh-group-panel.active {
+    display: block;
+}
+
+/* Hide any inner headers - group has its own header */
+.codesh-group-panel .codesh-header,
+.codesh-group-panel .code-header {
+    display: none !important;
+}
+
+/* Reset any .code-block wrapper injected by theme */
+.codesh-group-panel .code-block {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    ring: none;
+}
+
+/* Reset styles for panels inside groups */
+.codesh-group-panel .codesh-code {
+    overflow-x: auto;
+}
+
+.codesh-group-panel pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    tab-size: 4;
+    background: transparent !important;
+}
+
+.codesh-group-panel code {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    padding: 0;
+}
+
+/* Scrollbar for group panels */
+.codesh-group-panel pre::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+.codesh-group-panel pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.codesh-group-panel pre::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.3);
+    border-radius: 4px;
+}
+
+.codesh-group-panel pre::-webkit-scrollbar-thumb:hover {
+    background: rgba(128, 128, 128, 0.5);
+}
