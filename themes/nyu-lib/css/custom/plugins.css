@@ -45,6 +45,10 @@ body {
 }
 
 /* Example shortcode card styling */
+p + .example {
+    @apply mt-12;
+}
+
 .example {
   @apply relative my-6 px-5 py-4 rounded-lg;
   @apply bg-primary-50 border border-primary-200;
