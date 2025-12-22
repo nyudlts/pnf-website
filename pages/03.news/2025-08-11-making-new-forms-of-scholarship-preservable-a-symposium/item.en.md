@@ -14,7 +14,7 @@ summary: 'On June 13, 2025, the Embedding Team hosted a hybrid symposium at Bobs
 
 On June 13, 2025, the Embedding Team hosted a hybrid symposium at Bobst Library at NYU to mark the culmination of our multi-year project focused on advancing the preservability of complex digital scholarship.
 
-![project partner logos](project-partners-300x169.png)
+![project partner logos](project-partners.png)
 
 The symposium presented highlights from our research, featured perspectives from publisher and platform partners and debuted the updated version of the[ Guidelines for Preservability in New Forms of Scholarship](https://archive.nyu.edu/handle/2451/63332). Also introduced was the [Preservability Self-Assessment](https://archive.nyu.edu/handle/2451/74902) — a practical tool designed to help others embed preservability into their own digital scholarly projects. Attendees heard from others in the field who are tackling the challenges preserving complex, multi-modal digital scholarship. Together, we explored the question at the heart of this work: How can we move the preservability of digital scholarship forward?
 

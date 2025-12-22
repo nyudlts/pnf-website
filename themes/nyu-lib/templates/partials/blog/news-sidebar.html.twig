@@ -1,0 +1,58 @@
+{# News sidebar - reusable component for news listing and item pages #}
+{# Parameters:
+   - parent_page: The parent news listing page (for URLs and getting posts)
+   - interactive: Whether to use interactive Alpine.js filters (true on listing, false on items)
+#}
+{% set parent_page = parent_page|default(page.parent) %}
+{% set interactive = interactive|default(false) %}
+
+{# Get all news posts from parent #}
+{% set all_posts = parent_page.collection({'items':{'@self.children':{}}, 'order':{'by':'date', 'dir':'desc'}}) %}
+
+<div class="lg:sticky lg:top-[100px] [&>h3]:mt-0">
+    {# Search filter #}
+    <h3>Filters:</h3>
+    <div class="not-prose">
+        <div class="mb-4">
+            {% if interactive %}
+            <input type="text"
+                   x-model="searchQuery"
+                   @input="onSearchInput()"
+                   placeholder="Search updates..."
+                   class="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+            {% else %}
+            <form action="{{ parent_page.url }}" method="get">
+                <input type="text"
+                       name="q"
+                       placeholder="Search updates..."
+                       class="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+            </form>
+            {% endif %}
+        </div>
+        {% include 'partials/taxonomylist.html.twig' with {'base_url': parent_page.url, 'taxonomy':'tag', 'children_only': true, 'of_page': parent_page, 'link_mode': not interactive} %}
+    </div>
+
+    {# Recent Updates section #}
+    {% if all_posts|length > 0 %}
+    <div class="mt-8 not-prose">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Recent Updates</h3>
+        <ul class="space-y-3">
+            {% for recent_post in all_posts|slice(0, 5) %}
+            <li>
+                <a href="{{ recent_post.url }}"
+                   class="group block {% if recent_post.route == page.route %}pointer-events-none{% endif %}">
+                    <span class="text-sm font-medium {% if recent_post.route == page.route %}text-primary-600 dark:text-primary-500{% else %}text-gray-900 group-hover:text-primary-600 dark:text-white dark:group-hover:text-primary-500{% endif %} line-clamp-2">
+                        {{ recent_post.title }}
+                    </span>
+                    {% if recent_post.date %}
+                    <span class="text-xs text-gray-500 dark:text-gray-400">
+                        {{ recent_post.date|date('M j, Y') }}
+                    </span>
+                    {% endif %}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>

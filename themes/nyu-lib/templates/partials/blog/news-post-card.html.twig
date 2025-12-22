@@ -1,0 +1,54 @@
+{# News/Blog post card - includes author, date, and optional image banner #}
+<article class="mb-8 md:mb-12" data-guideline-card data-tags="{{ post.taxonomy.tag|json_encode }}" data-title="{{ post.title }}">
+    {# Image banner if post has an image #}
+    {% set post_image = post.media.images|first %}
+    {% if post_image %}
+    <div class="mb-4 overflow-hidden rounded-lg">
+        <a href="{{ post.url }}">
+            <img src="{{ post_image.url }}"
+                 alt="{{ post.title }}"
+                 class="w-full h-32 object-cover hover:scale-105 transition-transform duration-300">
+        </a>
+    </div>
+    {% endif %}
+
+    {# Post title #}
+    <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+    </h2>
+
+    {# Meta info: date and author #}
+    <div class="flex flex-wrap items-center gap-3 mb-3 text-sm text-gray-500 dark:text-gray-400">
+        {% if post.date %}
+        <span class="inline-flex items-center">
+            {{ fa_icon('regular/calendar.svg', 'w-3 h-3 mr-1.5 text-gray-400')|raw }}
+            {{ post.date|date('F j, Y') }}
+        </span>
+        {% endif %}
+        {% if post.header.author %}
+        <span class="inline-flex items-center">
+            {{ fa_icon('regular/user.svg', 'w-3 h-3 mr-1.5 text-gray-400')|raw }}
+            {{ post.header.author }}
+        </span>
+        {% endif %}
+    </div>
+
+    {# Tags #}
+    {% if post.taxonomy.tag %}
+    <div class="flex flex-wrap gap-1 mb-4">
+        {% for tag in post.taxonomy.tag %}
+            <span class="inline-flex nowrap text-xs px-2 py-0.5 rounded-md bg-gray-200 text-gray-600">{{ tag }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {# Summary #}
+    <div class="mb-2 font-light text-gray-500 dark:text-gray-400">
+        {{ (post.header.summary ?? post.summary)|raw }}
+    </div>
+
+    <a href="{{ post.url }}"
+       class="inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-500">
+        Read more {{ fa_icon('regular/arrow-right-long.svg', 'text-current w-5 h-5 ml-2')|raw }}
+    </a>
+</article>

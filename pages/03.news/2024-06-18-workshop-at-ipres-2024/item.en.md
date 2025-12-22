@@ -24,4 +24,4 @@ We are excited to share our work and to provide an opportunity for attendees to 
 
 [Download the abstract to learn more](https://wp.nyu.edu/embedding_preservability/wp-content/uploads/sites/24603/2024/06/80191f45-fac7-46b6-aa0b-8b3d373ba499.docx).
 
-![iPres 2024 logo](iPRES_logo_rgb_vijfhoek_def-31687851019117-285x300.jpeg)
+![iPres 2024 logo](iPRES_logo_rgb_vijfhoek_def-31687851019117.jpeg)

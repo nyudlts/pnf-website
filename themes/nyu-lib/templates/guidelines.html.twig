@@ -1,8 +1,4 @@
-{#
-    This is a base blog template. For specific blog types, use:
-    - guidelines.html.twig for the guidelines listing
-    - news.html.twig for news/updates blog
-#}
+{# Guidelines listing template - for the preservation guidelines #}
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
@@ -33,9 +29,8 @@
             posts: posts,
             start: start,
             next_url: next_url,
-            search_placeholder: 'Search...'
+            search_placeholder: 'Search guidelines...',
+            post_card_template: 'partials/blog/post-card.html.twig'
         } %}
     </div>
-
-
 {% endblock %}

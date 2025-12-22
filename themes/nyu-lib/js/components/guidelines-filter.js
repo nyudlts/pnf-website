@@ -73,12 +73,13 @@ document.addEventListener('alpine:init', () => {
             const searchLower = this.searchQuery.toLowerCase().trim();
 
             cards.forEach((card) => {
-                const cardTags = JSON.parse(card.dataset.tags || '[]');
+                const cardTags = JSON.parse(card.dataset.tags || '[]') || [];
                 const cardTitle = (card.dataset.title || '').toLowerCase();
 
                 // Check tag filter: show if no tags selected OR card has ALL selected tags
+                // Cards with no tags are hidden when any tag filter is active
                 const matchesTags = this.selectedTags.length === 0 ||
-                    this.selectedTags.every(tag => cardTags.includes(tag));
+                    (cardTags.length > 0 && this.selectedTags.every(tag => cardTags.includes(tag)));
 
                 // Check search filter: show if no search OR title contains search query
                 const matchesSearch = searchLower.length === 0 ||

@@ -1,16 +1,27 @@
 {% set taxlist = children_only is defined ? taxonomylist.getChildPagesTags(of_page, children_only) : taxonomylist.get() %}
+{% set link_mode = link_mode|default(false) %}
 
 {% if taxlist %}
 <div class="flex flex-wrap gap-1 mr-4">
     {% for tax,value in taxlist[taxonomy] %}
+        {% if link_mode %}
+        {# Link mode: navigate to parent page with tag filter #}
+        <a href="{{ base_url }}?tags={{ tax|url_encode }}"
+           class="inline-flex text-sm px-4 py-1 rounded-md transition-colors cursor-pointer bg-gray-200 text-gray-600 hover:bg-primary-700 hover:text-white">
+            {{ tax }}
+        </a>
+        {% else %}
+        {# Interactive mode: use Alpine.js for filtering #}
         <button type="button"
                 @click="toggleTag('{{ tax }}')"
                 :class="isSelected('{{ tax }}') ? 'bg-primary-700 text-white' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'"
                 class="inline-flex text-sm px-4 py-1 rounded-md transition-colors cursor-pointer">
             {{ tax }}
         </button>
+        {% endif %}
     {% endfor %}
 </div>
+{% if not link_mode %}
 <button type="button"
         x-show="hasFilters()"
         x-transition
@@ -21,4 +32,5 @@
     </svg>
     Clear filters
 </button>
+{% endif %}
 {% endif %}

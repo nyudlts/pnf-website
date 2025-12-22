@@ -1,8 +1,4 @@
-{#
-    This is a base blog template. For specific blog types, use:
-    - guidelines.html.twig for the guidelines listing
-    - news.html.twig for news/updates blog
-#}
+{# News & Updates listing template - traditional blog with author, dates, images, and recent posts #}
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
@@ -29,13 +25,12 @@
     {% endif %}
 
     <div class="pt-6 pb-12 px-4 mx-auto max-w-screen-xl">
-        {% include 'partials/blog/posts-grid.html.twig' with {
+        {% include 'partials/blog/news-posts-grid.html.twig' with {
             posts: posts,
+            all_posts: posts_collection,
             start: start,
             next_url: next_url,
-            search_placeholder: 'Search...'
+            search_placeholder: 'Search updates...'
         } %}
     </div>
-
-
 {% endblock %}

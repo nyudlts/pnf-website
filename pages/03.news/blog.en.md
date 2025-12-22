@@ -1,5 +1,6 @@
 ---
 title: 'News & Updates'
+template: news
 admin:
     children_display_order: default
 blog_url: /news

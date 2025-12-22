@@ -10,7 +10,7 @@ taxonomy:
         - preservability
         - process
         - shared-challenges
-hero_image: IMG_4084-scaled.jpeg
+hero_image: IMG_4084.jpeg
 summary: 'In September, NYU Libraries and the Embedding Team hosted a hybrid on-site/on-line gathering for partners that focused on two areas of inquiry: the embedding experience shared challenges to preservability of complex digital publications Editorial and production staff from six university presses, developers from three publishing platforms, several special guests, and the embedding team shared their &hellip; Continue reading &#8220;Project Partner Gathering at NYU Libraries&#8221;'
 ---
 
