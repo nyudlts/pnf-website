@@ -27,7 +27,7 @@
     {{ assets.js()|raw }}
     {% endblock %}
 </head>
-<body id="top" class="{{ page.header.body_classes|e }} {{ config.theme.production ?: 'debug-screens' }}">
+<body id="top" class="min-h-screen flex flex-col {{ page.header.body_classes|e }} {{ config.theme.production ?: 'debug-screens' }}">
 {% set hero_bg = url('theme://images/backgrounds/' ~ theme_var('hero.background')) %}
 {% block header %}
         {% include 'partials/header.html.twig' %}
@@ -42,7 +42,7 @@
 </button>
 
 {% block main %}
-    <main id="body" class="z-0">
+    <main id="body" class="z-0 flex-grow">
         {% block hero %}
         <div class="bg-primary-50 relative">
             {% if hero_bg %}
