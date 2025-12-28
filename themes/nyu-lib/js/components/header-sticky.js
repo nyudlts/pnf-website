@@ -1,17 +1,8 @@
-var toggleOpen = document.getElementById('toggleOpen');
-var toggleClose = document.getElementById('toggleClose');
-var collapseMenu = document.getElementById('collapseMenu');
-
-function handleClick() {
-  if (collapseMenu.style.display === 'block') {
-    collapseMenu.style.display = 'none';
-  } else {
-    collapseMenu.style.display = 'block';
-  }
-}
-
-toggleOpen.addEventListener('click', handleClick);
-toggleClose.addEventListener('click', handleClick);
+/**
+ * Scroll to Top Button functionality
+ * The mobile menu is now handled by Alpine.js in header.html.twig
+ * with proper focus trapping (x-trap) for WCAG 2.1.2 compliance
+ */
 
 document.addEventListener('DOMContentLoaded', function() {
     var scrollToTopButton = document.getElementById('scroll-to-top');
@@ -34,6 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+
+        // Keyboard support for scroll-to-top button
+        scrollToTopButton.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
         });
     }
 });

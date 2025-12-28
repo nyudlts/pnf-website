@@ -22,10 +22,11 @@
         {# Previous article #}
         {% if prev_page %}
         <a href="{{ prev_page.url }}"
-           class="group flex items-start gap-3 p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex-1">
-            <span class="mt-1">{{ fa_icon('regular/chevron-left.svg', 'w-4 h-4 text-gray-400 flex-shrink-0')|raw }}</span>
+           aria-label="Previous article: {{ prev_page.title }}"
+           class="group flex items-start gap-3 p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex-1 focus:outline-none focus:ring-2 focus:ring-primary-500">
+            <span class="mt-1" aria-hidden="true">{{ fa_icon('regular/chevron-left.svg', 'w-4 h-4 text-gray-500 flex-shrink-0')|raw }}</span>
             <div class="min-w-0">
-                <span class="block text-xs text-gray-500 dark:text-gray-400 mb-1">Previous</span>
+                <span class="block text-xs text-gray-600 dark:text-gray-400 mb-1">Previous</span>
                 <span class="block text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-600 line-clamp-2">
                     {{ prev_page.title }}
                 </span>
@@ -38,14 +39,15 @@
         {# Next article #}
         {% if next_page %}
         <a href="{{ next_page.url }}"
-           class="group flex items-start gap-3 p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex-1 sm:text-right">
+           aria-label="Next article: {{ next_page.title }}"
+           class="group flex items-start gap-3 p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-primary-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex-1 sm:text-right focus:outline-none focus:ring-2 focus:ring-primary-500">
             <div class="min-w-0 flex-1 sm:order-1">
-                <span class="block text-xs text-gray-500 dark:text-gray-400 mb-1">Next</span>
+                <span class="block text-xs text-gray-600 dark:text-gray-400 mb-1">Next</span>
                 <span class="block text-sm font-medium text-gray-900 dark:text-white group-hover:text-primary-600 line-clamp-2">
                     {{ next_page.title }}
                 </span>
             </div>
-            <span class="mt-1 sm:order-2">{{ fa_icon('regular/chevron-right.svg', 'w-4 h-4 text-gray-400 flex-shrink-0')|raw }}</span>
+            <span class="mt-1 sm:order-2" aria-hidden="true">{{ fa_icon('regular/chevron-right.svg', 'w-4 h-4 text-gray-500 flex-shrink-0')|raw }}</span>
         </a>
         {% else %}
         <div class="flex-1"></div>

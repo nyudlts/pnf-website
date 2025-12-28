@@ -1,0 +1,49 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "timeout": 30000,
+    "wait": 1000,
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox"]
+    },
+    "runners": ["axe", "htmlcs"],
+    "ignore": [
+      "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage"
+    ],
+    "hideElements": ".hero-bg h1, .hero-bg .flex-wrap, .hero-bg .inline-flex, .bg-primary-50 h1, .bg-primary-50 .flex-wrap, .bg-primary-50 .inline-flex"
+  },
+  "urls": [
+    {
+      "url": "http://trilby.local/grav-nyu-lib/",
+      "screenCapture": "./a11y-results/home.png"
+    },
+    {
+      "url": "http://trilby.local/grav-nyu-lib/guidelines",
+      "screenCapture": "./a11y-results/guidelines.png"
+    },
+    {
+      "url": "http://trilby.local/grav-nyu-lib/downloads",
+      "screenCapture": "./a11y-results/downloads.png"
+    },
+    {
+      "url": "http://trilby.local/grav-nyu-lib/news",
+      "screenCapture": "./a11y-results/news.png"
+    },
+    {
+      "url": "http://trilby.local/grav-nyu-lib/contact",
+      "screenCapture": "./a11y-results/contact.png"
+    },
+    {
+      "url": "http://trilby.local/grav-nyu-lib/guidelines/23-version-expressed-in-metadata",
+      "screenCapture": "./a11y-results/guideline-item.png"
+    },
+    {
+      "url": "http://trilby.local/grav-nyu-lib/news/2025-03-24-spreading-the-news",
+      "screenCapture": "./a11y-results/news-item.png"
+    },
+    {
+      "url": "http://trilby.local/grav-nyu-lib/news/2024-10-03-how-preservable-is-your-complex-digital-project",
+      "screenCapture": "./a11y-results/news-item-2.png"
+    }
+  ]
+}

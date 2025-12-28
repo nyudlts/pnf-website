@@ -1,46 +1,123 @@
+/*
+ * Accessible Accordion Styles
+ * WCAG 2.1.1 (Keyboard), 4.1.2 (Name, Role, Value)
+ *
+ * Usage with Alpine.js:
+ * <div class="accordion" x-data="{ open: null }">
+ *   <div class="accordion-item">
+ *     <button
+ *       class="accordion-trigger"
+ *       :aria-expanded="open === 1"
+ *       aria-controls="panel-1"
+ *       @click="open = open === 1 ? null : 1">
+ *       Accordion Title
+ *     </button>
+ *     <div
+ *       id="panel-1"
+ *       class="accordion-panel"
+ *       x-show="open === 1"
+ *       x-collapse>
+ *       Panel content here...
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * Or use native <details>/<summary> elements (natively accessible):
+ * <details class="accordion-item">
+ *   <summary class="accordion-trigger">Title</summary>
+ *   <div class="accordion-panel">Content</div>
+ * </details>
+ */
+
+/* Accordion container */
+.accordion {
+    @apply border border-gray-200 dark:border-gray-700 rounded-lg shadow-md divide-y divide-gray-200 dark:divide-gray-700;
+}
+
+/* Individual accordion item */
+.accordion-item {
+    @apply first:rounded-t-lg last:rounded-b-lg;
+}
+
+/* Accordion trigger button */
+.accordion-trigger {
+    @apply w-full flex justify-between items-center text-left px-4 py-3 text-lg font-medium text-gray-900 dark:text-white bg-white dark:bg-gray-800 cursor-pointer transition-colors;
+    @apply hover:bg-gray-50 dark:hover:bg-gray-700;
+    @apply focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500;
+}
+
+.accordion-item:first-child .accordion-trigger {
+    @apply rounded-t-lg;
+}
+
+.accordion-item:last-child .accordion-trigger:not([aria-expanded="true"]) {
+    @apply rounded-b-lg;
+}
+
+/* Chevron icon rotation */
+.accordion-trigger svg,
+.accordion-trigger::after {
+    @apply transition-transform duration-200;
+}
+
+.accordion-trigger[aria-expanded="true"] svg,
+.accordion-trigger[aria-expanded="true"]::after {
+    @apply rotate-180;
+}
+
+/* Add default chevron if no icon provided */
+.accordion-trigger:not(:has(svg))::after {
+    content: '';
+    @apply w-5 h-5 ml-2 flex-shrink-0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Accordion panel content */
+.accordion-panel {
+    @apply px-4 py-3 text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-900;
+}
+
+.accordion-item:last-child .accordion-panel {
+    @apply rounded-b-lg;
+}
+
+/*
+ * Native <details>/<summary> styling (accessible by default)
+ */
+details.accordion-item {
+    @apply border-0;
+}
+
+details.accordion-item summary {
+    @apply list-none; /* Remove default marker */
+}
+
+details.accordion-item summary::-webkit-details-marker {
+    @apply hidden; /* Remove Safari marker */
+}
+
+details.accordion-item[open] summary {
+    @apply border-b border-gray-200 dark:border-gray-700;
+}
+
+/*
+ * Legacy wrapper support (deprecated - use patterns above instead)
+ * Keeping for backwards compatibility but marked as deprecated
+ */
 .accordion-wrapper {
     @apply border border-gray-200 dark:border-gray-700 rounded-lg shadow-md;
-
-    label {
-        @apply relative flex cursor-pointer text-lg md:text-xl px-4 py-2;
-    }
 }
 
-
-.accordion-wrapper label:hover:after, .accordion-wrapper input:checked + label:hover:after {
-    opacity: 0.3;
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 20px;
-    right: 15px;
-    top: 7px;
-    background: transparent url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE0LjgzIDE2LjQybDkuMTcgOS4xNyA5LjE3LTkuMTcgMi44MyAyLjgzLTEyIDEyLTEyLTEyeiIvPjxwYXRoIGQ9Ik0wLS43NWg0OHY0OGgtNDh6IiBmaWxsPSJub25lIi8+PC9zdmc+) no-repeat center center;
+.accordion-wrapper > div {
+    @apply border-b border-gray-200 dark:border-gray-700 last:border-b-0;
 }
 
-.accordion-wrapper input:checked + label:hover:after {
-    -ms-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+.accordion-wrapper label {
+    @apply relative flex cursor-pointer text-lg md:text-xl px-4 py-3 font-medium text-gray-900 dark:text-white;
+    @apply hover:bg-gray-50 dark:hover:bg-gray-700;
 }
 
-.accordion-wrapper input {
-    display: none;
-}
-
-.accordion-wrapper article {
-    @apply px-4 overflow-hidden relative border-b border-gray-200 dark:border-gray-700;
-    transition: max-height 0.6s ease-in-out;
-    max-height: 0;
-}
-
-.accordion-wrapper input:checked ~ article {
-    max-height: inherit;
-}
-
-.accordion-wrapper input:checked + label {
-}
-
-.accordion-wrapper > div:last-child label, .accordion-wrapper > div:last-child input:checked ~ article {
-    @apply border-b-0;
-}
+/* Note: If using the legacy checkbox pattern, ensure keyboard accessibility
+   by adding tabindex="0" and keyboard event handlers */

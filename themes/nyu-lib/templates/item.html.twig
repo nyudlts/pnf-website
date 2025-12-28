@@ -6,7 +6,8 @@
 
     {# Meta info for news items #}
     {% if page.header.date or page.header.author %}
-    <div class="flex flex-wrap justify-center items-center gap-8 mb-4 text-base text-primary-600">
+    {# WCAG 1.4.3 - text-gray-700 ensures 4.5:1 contrast ratio #}
+    <div class="flex flex-wrap justify-center items-center gap-8 mb-4 text-base text-gray-700">
         {% if page.date %}
         <span class="inline-flex items-center">
             {{ fa_icon('regular/calendar.svg', 'w-4 h-4 mr-1.5 opacity-75')|raw }}
@@ -21,10 +22,10 @@
         {% endif %}
     </div>
     {% endif %}
-    {# Tags #}
+    {# Tags - WCAG 1.4.3 bg-gray-800 ensures 4.5:1 contrast with white text #}
     <div class="flex flex-wrap justify-center gap-1 mb-4 max-w-lg mx-auto">
         {% for tag in page.taxonomy.tag %}
-            <span class="inline-flex nowrap text-xs px-2 py-0.5 rounded-md bg-primary-700 text-white">{{ tag }}</span>
+            <span class="inline-flex nowrap text-xs px-2 py-0.5 rounded-md bg-gray-800 text-white">{{ tag }}</span>
         {% endfor %}
     </div>
 {% endblock %}
@@ -42,7 +43,7 @@
 
         {# Main content #}
         <div class="order-1 lg:order-2 lg:col-span-2 lg:px-8">
-            <article id="body" class="prose max-w-none pb-8 px-4 lg:px-0">
+            <article id="article-content" class="prose max-w-none pb-8 px-4 lg:px-0">
                 {{ page.content|raw }}
             </article>
             {% include 'partials/article-pagination.html.twig' %}
@@ -50,7 +51,7 @@
     </div>
     {% else %}
     {# Regular item without sidebar #}
-    <article id="body" class="prose mx-auto max-w-screen-md pb-16 px-4">
+    <article id="article-content" class="prose mx-auto max-w-screen-md pb-16 px-4">
         {{ page.content|raw }}
     </article>
 

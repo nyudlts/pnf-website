@@ -12,7 +12,9 @@
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:js\"",
     "prod:css": "npx @tailwindcss/cli -i ./css/site.css -o ./build/css/site.css --minify",
     "prod:js": "NODE_ENV=production node ./node_modules/vite/bin/vite.js build",
-    "prod": "concurrently \"npm run prod:css\" \"npm run prod:js\""
+    "prod": "concurrently \"npm run prod:css\" \"npm run prod:js\"",
+    "a11y": "pa11y-ci",
+    "a11y:single": "pa11y --standard WCAG2AA --runner axe --runner htmlcs"
   },
   "dependencies": {
     "@alpinejs/collapse": "^3.14.9",
@@ -28,6 +30,8 @@
     "@types/node": "^22.15.29",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
+    "pa11y": "^8.0.0",
+    "pa11y-ci": "^4.0.1",
     "tailwindcss": "^4.1.8",
     "vite": "^6.3.5"
   }

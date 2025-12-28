@@ -1,16 +1,27 @@
-<section
+{# Mobile menu with Alpine.js for accessibility - WCAG 2.1.2 No Keyboard Trap #}
+<header
+    x-data="{ mobileMenuOpen: false }"
+    @keydown.escape.window="mobileMenuOpen = false"
     class="flex w-full py-3 px-4 sm:px-10 min-h-[75px] bg-white tracking-wide sticky top-0 z-50 [box-shadow:rgba(0,0,0,0.1)_-4px_9px_25px_-6px]">
     <div class="relative w-full">
         <div class="max-w-screen-xl w-full mx-auto flex justify-between items-center gap-4">
-            <a class="inline-flex items-center" href="{{ home_url }}">
-                <img src="{{ url('theme://images/NYU-Logo.svg') }}" alt="logo" class="w-24"/>
+            <a class="inline-flex items-center focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded" href="{{ home_url }}">
+                <img src="{{ url('theme://images/NYU-Logo.svg') }}" alt="NYU home" class="w-24"/>
                 <span class="font-semibold text-base text-balance tracking-tight leading-tight">Preserving New Forms<br />of Scholarship</span>
             </a>
+
+            {# Desktop and Mobile Navigation Container - matches original layout #}
             <div id="collapseMenu"
+                 :class="{ 'max-lg:block': mobileMenuOpen }"
                  class="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-70 max-lg:before:inset-0 max-lg:before:z-50">
-                <button id="toggleClose"
-                        class="lg:hidden fixed top-5 right-4  z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border border-gray-200 cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 fill-black"
+
+                {# Close button for mobile - only visible when menu is open #}
+                <button
+                    x-show="mobileMenuOpen"
+                    @click="mobileMenuOpen = false"
+                    aria-label="Close navigation menu"
+                    class="lg:hidden fixed top-5 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border border-gray-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 fill-black" aria-hidden="true"
                          viewBox="0 0 320.591 320.591">
                         <path
                             d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
@@ -21,20 +32,30 @@
                     </svg>
                 </button>
 
-                <div class="lg:w-full align-right">
-                    <ul class="lg:flex lg:ml-10 lg:gap-x-6 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
+                <nav class="lg:w-full align-right" aria-label="Main navigation">
+                    <ul x-trap.noscroll.inert="mobileMenuOpen"
+                        class="lg:flex lg:ml-10 lg:gap-x-6 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50"
+                        :role="mobileMenuOpen ? 'dialog' : null"
+                        :aria-modal="mobileMenuOpen ? 'true' : null"
+                        :aria-label="mobileMenuOpen ? 'Mobile navigation menu' : null">
                         <li class="max-lg:border-b max-lg:border-gray-300 max-lg:pb-4 -mt-1 lg:hidden">
-                            <img src="{{ url('theme://images/NYU-Logo.svg') }}" alt="logo" class="w-24"/>
+                            <img src="{{ url('theme://images/NYU-Logo.svg') }}" alt="NYU Libraries" class="w-24"/>
                         </li>
                         {% include 'partials/navigation.html.twig' %}
                     </ul>
-                </div>
+                </nav>
 
             </div>
 
+            {# Mobile menu toggle button #}
             <div class="lg:hidden flex ml-auto">
-                <button id="toggleOpen" class="lg:hidden ml-4 cursor-pointer">
-                    <svg class="w-8 h-8" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <button
+                    @click="mobileMenuOpen = !mobileMenuOpen"
+                    :aria-expanded="mobileMenuOpen.toString()"
+                    aria-label="Open navigation menu"
+                    aria-controls="collapseMenu"
+                    class="lg:hidden ml-4 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-500 rounded p-1">
+                    <svg class="w-8 h-8" fill="#000" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path fill-rule="evenodd"
                               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                               clip-rule="evenodd"></path>
@@ -43,4 +64,4 @@
             </div>
         </div>
     </div>
-</section>
+</header>

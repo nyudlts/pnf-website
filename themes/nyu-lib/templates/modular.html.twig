@@ -4,7 +4,8 @@
 <main id="body" class="z-0">
   {% for module in page.collection %}
     {% set target = module.header.sticky_menu|default(module.header.title)|lower|hyphenize %}
-    <a id="{{ target }}" class="scroll-spy-anchor"></a>
+    {# WCAG 2.4.4 - Use div instead of empty anchor for scroll targets #}
+    <div id="{{ target }}" class="scroll-spy-anchor"></div>
     {{ module.content|raw }}
   {% endfor %}
 </main>
