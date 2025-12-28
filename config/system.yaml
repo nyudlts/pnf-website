@@ -36,6 +36,7 @@ assets:
   js_pipeline: false
   js_module_pipeline: false
   js_minify: true
+  enable_asset_timestamp: true
 
 errors:
   display: true
