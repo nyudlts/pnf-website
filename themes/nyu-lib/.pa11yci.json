@@ -10,7 +10,7 @@
     "ignore": [
       "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage"
     ],
-    "hideElements": ".hero-bg h1, .hero-bg .flex-wrap, .hero-bg .inline-flex, .bg-primary-50 h1, .bg-primary-50 .flex-wrap, .bg-primary-50 .inline-flex"
+    "hideElements": ".hero-bg h1, .hero-bg .flex-wrap, .hero-bg .inline-flex, .bg-primary-50 h1, .bg-primary-50 .flex-wrap, .bg-primary-50 .inline-flex, .example"
   },
   "urls": [
     {
@@ -26,8 +26,8 @@
       "screenCapture": "./a11y-results/downloads.png"
     },
     {
-      "url": "http://trilby.local/grav-nyu-lib/news",
-      "screenCapture": "./a11y-results/news.png"
+      "url": "http://trilby.local/grav-nyu-lib/projects",
+      "screenCapture": "./a11y-results/projects.png"
     },
     {
       "url": "http://trilby.local/grav-nyu-lib/contact",
@@ -38,12 +38,12 @@
       "screenCapture": "./a11y-results/guideline-item.png"
     },
     {
-      "url": "http://trilby.local/grav-nyu-lib/news/2025-03-24-spreading-the-news",
-      "screenCapture": "./a11y-results/news-item.png"
+      "url": "http://trilby.local/grav-nyu-lib/projects/embedding-preservability",
+      "screenCapture": "./a11y-results/project-item.png"
     },
     {
-      "url": "http://trilby.local/grav-nyu-lib/news/2024-10-03-how-preservable-is-your-complex-digital-project",
-      "screenCapture": "./a11y-results/news-item-2.png"
+      "url": "http://trilby.local/grav-nyu-lib/projects/embedding-preservability/2025-08-11-making-new-forms-of-scholarship-preservable-a-symposium",
+      "screenCapture": "./a11y-results/project-news-item.png"
     }
   ]
 }

@@ -80,6 +80,48 @@
     h2 a {
         @apply font-medium;
     }
+
+    /* WCAG 1.4.3 - Ensure inline code has sufficient contrast */
+    /* Uses !important to override Tailwind Typography plugin defaults */
+    code {
+        color: var(--color-primary-800) !important;
+    }
+
+    &:where(.dark, .dark *) code {
+        color: var(--color-primary-300) !important;
+    }
+
+    /* WCAG 1.4.3 - Ensure em/italic text maintains contrast */
+    em, i {
+        color: var(--color-gray-700) !important;
+    }
+
+    &:where(.dark, .dark *) em,
+    &:where(.dark, .dark *) i {
+        color: var(--color-gray-200) !important;
+    }
+
+    /* WCAG 1.4.3 - Ensure links have sufficient contrast */
+    p a, li a, div a {
+        color: var(--color-primary-700) !important;
+    }
+
+    &:where(.dark, .dark *) p a,
+    &:where(.dark, .dark *) li a,
+    &:where(.dark, .dark *) div a {
+        color: var(--color-primary-300) !important;
+    }
+
+    /* Links containing em/i should also be primary color */
+    a em, a i {
+        color: var(--color-primary-700) !important;
+    }
+
+    &:where(.dark, .dark *) a em,
+    &:where(.dark, .dark *) a i {
+        color: var(--color-primary-300) !important;
+    }
+
     table {
         thead {
             th {

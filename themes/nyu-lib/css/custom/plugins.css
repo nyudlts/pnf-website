@@ -51,8 +51,9 @@ p + .example {
 
 .example {
   @apply relative my-6 px-5 py-4 rounded-lg;
-  @apply bg-primary-50 border border-primary-200;
-  @apply dark:bg-primary-950/30 dark:border-primary-800;
+  /* WCAG 1.4.3 - Use lighter background for better contrast */
+  @apply bg-primary-50/40 border border-primary-200;
+  @apply dark:bg-primary-950/20 dark:border-primary-800;
 
   /* Left accent border */
   @apply border-l-4 border-l-primary-400 dark:border-l-primary-600;
@@ -76,17 +77,58 @@ p + .example {
     @apply dark:bg-primary-600;
   }
 
-  /* Override prose link colors within example */
+  /* WCAG 1.4.3 - Override colors within example for contrast on primary-50 background */
+  /* Uses !important to override prose rules */
   a {
-    @apply text-primary-700 dark:text-primary-400;
+    color: var(--color-primary-800) !important;
 
     &:hover {
-      @apply text-primary-900 dark:text-primary-300;
+      color: var(--color-primary-950) !important;
+    }
+  }
+
+  &:where(.dark, .dark *) a {
+    color: var(--color-primary-300) !important;
+
+    &:hover {
+      color: var(--color-primary-200) !important;
     }
   }
 
   /* Ensure proper text color */
   p {
-    @apply text-gray-700 dark:text-gray-300;
+    color: var(--color-gray-800) !important;
+  }
+
+  &:where(.dark, .dark *) p {
+    color: var(--color-gray-200) !important;
+  }
+
+  /* WCAG 1.4.3 - em/italic needs sufficient contrast on colored background */
+  em, i {
+    color: var(--color-gray-800) !important;
+  }
+
+  &:where(.dark, .dark *) em,
+  &:where(.dark, .dark *) i {
+    color: var(--color-gray-200) !important;
+  }
+
+  a em, a i {
+    color: var(--color-primary-800) !important;
+  }
+
+  &:where(.dark, .dark *) a em,
+  &:where(.dark, .dark *) a i {
+    color: var(--color-primary-300) !important;
+  }
+
+  /* WCAG 1.4.3 - code needs sufficient contrast on colored background */
+  code {
+    color: var(--color-primary-900) !important;
+  }
+
+  &:where(.dark, .dark *) code {
+    color: var(--color-primary-200) !important;
   }
 }

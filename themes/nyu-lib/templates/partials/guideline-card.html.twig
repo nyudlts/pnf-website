@@ -7,8 +7,8 @@
             <span class="inline-flex nowrap text-xs px-2 py-0.5 rounded-md bg-gray-200 text-gray-700">{{ tag }}</span>
         {% endfor %}
     </div>
-    {# WCAG 1.4.3 - text-gray-600 meets 4.5:1 contrast ratio #}
-    <div class="mb-4 font-light text-gray-600 dark:text-gray-300">
+    {# WCAG 1.4.3 - prose class handles colors for a, code, em elements #}
+    <div class="mb-4 font-light">
         {{ (guideline.content)|raw }}
     </div>
 
