@@ -9,9 +9,9 @@
 {# Get all news posts from parent #}
 {% set all_posts = parent_page.collection({'items':{'@self.children':{}}, 'order':{'by':'date', 'dir':'desc'}}) %}
 
-<div class="lg:sticky lg:top-[100px] [&>h3]:mt-0">
+<div class="lg:sticky lg:top-[100px] [&>h2]:mt-0">
     {# Search filter - WCAG 1.3.1, 3.3.2 accessible labels #}
-    <h3 id="filters-heading">Filters:</h3>
+    <h2 id="filters-heading" class="text-lg">Filters:</h2>
     <div class="not-prose">
         <div class="mb-4" role="search" aria-labelledby="filters-heading">
             {% if interactive %}
