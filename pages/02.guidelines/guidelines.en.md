@@ -1,6 +1,5 @@
 ---
 title: Guidelines
-template: guidelines
 admin:
     children_display_order: default
 blog_url: /guidelines

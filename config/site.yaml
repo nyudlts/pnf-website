@@ -6,10 +6,9 @@ metadata:
     description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
 footer:
   copyright: |
-    **New York University** is committed to maintaining an environment that encourages and fosters respect for individual values and appropriate conduct among all persons. In all University spaces—physical and digital—programming, activities, and events are carried out in accordance with applicable law as well as University policy, which includes but is not limited to its [Non-Discrimination and Anti-Harassment Policy](https://www.nyu.edu/about/policies-guidelines-compliance/equal-opportunity/harassment-and-discrimination.html?target=_blank).
-    
-    Unless otherwise noted, all content copyright New York University. All rights reserved.
+    [Digital Library Technology Services](https://wp.nyu.edu/library-dlts/?target=_blank) and [Accessibility](https://www.nyu.edu/footer/accessibility.html?target=_blank)
+
   privacy: |  
-    [Division of Libraries Privacy Policy](https://library.nyu.edu/privacy-policy/?target=_blank)
+    Unless otherwise noted, all content copyright **New York University**. All rights reserved.
 
 

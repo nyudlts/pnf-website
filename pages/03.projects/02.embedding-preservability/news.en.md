@@ -1,9 +1,8 @@
 ---
-title: 'News & Updates'
-template: news
+title: 'Embedding Preservability'
 admin:
     children_display_order: default
-blog_url: /news
+blog_url: /projects/embedding-preservability
 content:
     items:
         - '@self.children'
@@ -11,6 +10,6 @@ content:
     order:
         by: date
         dir: desc
-    pagination: false
-    url_taxonomy_filters: false
+    pagination: true
+    url_taxonomy_filters: true
 ---

@@ -13,6 +13,7 @@
 @import 'tailwindcss';
 
 /* Set extra source folders relative to the current file */
+@source "../templates";
 @source "../../../config";
 @source "../../../pages";
 @source "../node_modules/flowbite";
@@ -64,22 +65,11 @@
     --spacing-inherit: inherit;
 }
 
-/* Hero background image using pseudo-element - axe-core handles CSS backgrounds better than img elements */
-.hero-bg::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: var(--hero-bg);
-    background-size: cover;
-    background-position: center;
-    filter: grayscale(100%);
-    opacity: 0.15;
-    z-index: 0;
-}
+
 
 /* Custom Typography / Prose colors - WCAG 1.4.3 contrast */
 @utility prose {
-  --tw-prose-links: var(--color-gray-900);
+  --tw-prose-links: var(--color-primary-600);
   --tw-prose-invert-links: var(--color-gray-100);
   --tw-prose-body: var(--color-gray-600);
   --tw-prose-headings: var(--color-gray-700);

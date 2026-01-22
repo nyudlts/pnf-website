@@ -2,23 +2,25 @@
 <header
     x-data="{ mobileMenuOpen: false }"
     @keydown.escape.window="mobileMenuOpen = false"
-    class="flex w-full py-3 px-4 sm:px-10 min-h-[75px] bg-white tracking-wide sticky top-0 z-50 [box-shadow:rgba(0,0,0,0.1)_-4px_9px_25px_-6px]">
+    class="flex w-full py-3 px-4 lg:px-10 min-h-[75px] bg-white tracking-wide sticky top-0 z-50 [box-shadow:rgba(0,0,0,0.1)_-4px_9px_25px_-6px]">
     <div class="relative w-full">
         <div class="max-w-screen-xl w-full mx-auto flex justify-between items-center gap-4">
             <a class="inline-flex items-center focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded" href="{{ home_url }}">
-                <img src="{{ url('theme://images/NYU-Logo.svg') }}" alt="NYU home" class="w-24"/>
-                <span class="font-semibold text-base text-balance tracking-tight leading-tight">Preserving New Forms<br />of Scholarship</span>
+                <img src="{{ url('theme://images/NYU-Logo.svg') }}" alt="NYU home" class="h-16"/>
+                <span class="ml-4 font-semibold text-base text-balance tracking-tight leading-tight">Preserving New Forms<br />of Scholarship</span>
             </a>
 
             {# Desktop and Mobile Navigation Container - matches original layout #}
             <div id="collapseMenu"
-                 :class="{ 'max-lg:block': mobileMenuOpen }"
-                 class="max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-70 max-lg:before:inset-0 max-lg:before:z-50">
+                 :class="mobileMenuOpen ? 'max-lg:block' : 'max-lg:hidden'"
+                 class="lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-70 max-lg:before:inset-0 max-lg:before:z-50">
 
-                {# Close button for mobile - only visible when menu is open #}
+                {# Close button for mobile - only visible when menu is open on mobile #}
                 <button
-                    x-show="mobileMenuOpen"
-                    @click="mobileMenuOpen = false"
+                    x-show="mobileMenuOpen && window.innerWidth < 1024"
+                    x-cloak
+                    x-ref="closeBtn"
+                    @click="mobileMenuOpen = false; $nextTick(() => $refs.menuBtn?.focus())"
                     aria-label="Close navigation menu"
                     class="lg:hidden fixed top-5 right-4 z-[100] rounded-full bg-white w-9 h-9 flex items-center justify-center border border-gray-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 fill-black" aria-hidden="true"
@@ -39,7 +41,7 @@
                         :aria-modal="mobileMenuOpen ? 'true' : null"
                         :aria-label="mobileMenuOpen ? 'Mobile navigation menu' : null">
                         <li class="max-lg:border-b max-lg:border-gray-300 max-lg:pb-4 -mt-1 lg:hidden">
-                            <img src="{{ url('theme://images/NYU-Logo.svg') }}" alt="NYU Libraries" class="w-24"/>
+                            <img src="{{ url('theme://images/NYU-Logo.svg') }}" alt="NYU Libraries" class="h-16"/>
                         </li>
                         {% include 'partials/navigation.html.twig' %}
                     </ul>
@@ -50,7 +52,8 @@
             {# Mobile menu toggle button #}
             <div class="lg:hidden flex ml-auto">
                 <button
-                    @click="mobileMenuOpen = !mobileMenuOpen"
+                    x-ref="menuBtn"
+                    @click="mobileMenuOpen = !mobileMenuOpen; $nextTick(() => { if(mobileMenuOpen) $refs.closeBtn?.focus() })"
                     :aria-expanded="mobileMenuOpen.toString()"
                     aria-label="Open navigation menu"
                     aria-controls="collapseMenu"

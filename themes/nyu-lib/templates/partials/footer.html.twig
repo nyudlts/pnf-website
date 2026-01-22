@@ -2,8 +2,6 @@
 <footer class="bg-gray-100 border-t border-gray-200">
     <div class="prose text-sm font-light text-gray-700 [&_strong]:text-gray-600 [&_a]:text-underline [&_a]:text-primary-700 p-4 py-6 mx-auto max-w-screen-xl md:p-8 lg:-10">
 
-{#        <hr class="my-6 border-gray-200 sm:mx-auto">#}
-
         {{ footer.copyright|markdown }}
 
         <div class="grid grid-cols-2 gap-x-8 items-center">
@@ -11,7 +9,9 @@
                 {{ footer.privacy|markdown }}
             </div>
             <div class="flex justify-end not-prose">
-                <img class="h-[27px] invert opacity-50" src="{{ url('theme://images/nyulibraries-logo.svg') }}" alt="footer logo"/>
+                <a href="https://library.nyu.edu">
+                    <img class="h-[27px] invert opacity-50" src="{{ url('theme://images/nyulibraries-logo.svg') }}" alt="footer logo"/>
+                </a>
             </div>
 
         </div>
