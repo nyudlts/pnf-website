@@ -1,0 +1,55 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {# Intro #}
+    <div class="prose mx-auto max-w-screen-lg mb-12">
+        {{ page.content|raw }}
+        <h2>Embedding Team</h2>
+    </div>
+
+    {# Team Members Grid #}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto max-w-screen-lg mb-16">
+        {% for member in page.header.team_members %}
+        <div class="flex flex-col items-center text-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+            {% if member.photo and page.media[member.photo] %}
+                {{ page.media[member.photo].cropResize(200,200).classes('rounded-full shadow-lg').html(member.name)|raw }}
+            {% else %}
+                {% set parts = member.name|split(' ') %}
+                {% set initials = parts|first|first ~ parts|last|first %}
+                <div class="w-[200px] h-[200px] rounded-full shadow-lg bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                    <span class="text-4xl font-bold text-primary-700 dark:text-primary-300">{{ initials|upper }}</span>
+                </div>
+            {% endif %}
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-4">{{ member.name }}</h3>
+            <p class="text-sm text-primary-700 dark:text-primary-300 font-medium">{{ member.role }}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">{{ member.bio|markdown(false) }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    {# Partners Section #}
+    <div class="mx-auto max-w-screen-lg pb-16">
+        <h2 class="prose text-2xl font-bold text-gray-900 dark:text-white mb-6">Project Partners and Presses</h2>
+
+        {% if page.header.partners %}
+        <ul class="columns-2 sm:columns-3 gap-x-8 text-sm text-gray-700 dark:text-gray-300 list-disc list-inside space-y-1 mb-8">
+            {% for partner in page.header.partners %}
+            <li>{{ partner }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if page.media['partner-logos.png'] %}
+        <div class="my-8">
+            {{ page.media['partner-logos.png'].html('Partner Logos')|raw }}
+        </div>
+        {% endif %}
+
+        {% if page.header.contact_email %}
+        <p class="text-gray-700 dark:text-gray-300">
+            To contact the team please email us at
+            <a href="mailto:{{ page.header.contact_email }}" class="text-primary-700 dark:text-primary-300 hover:underline">{{ page.header.contact_email }}</a>.
+        </p>
+        {% endif %}
+    </div>
+{% endblock %}

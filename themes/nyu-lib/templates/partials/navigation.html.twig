@@ -53,7 +53,7 @@
                            max-lg:pl-4 max-lg:mt-1 max-lg:border-l-2 max-lg:border-primary-200 max-lg:ml-3"
                     role="menu">
                     {% for child in p.children.visible %}
-                        {% set child_active = (child.active or child.activeChild) %}
+                        {% set child_active = child.active %}
                         {% set child_active_classes = child_active ? 'text-gray-900 lg:bg-gray-50' : 'text-primary-800' %}
                         <li role="none">
                             <a href="{{ child.url }}"
@@ -62,6 +62,22 @@
                                {% if child_active %} aria-current="page" {% endif %}>
                                 {{ child.menu }}
                             </a>
+                            {% if child.children.visible.count > 0 %}
+                            <ul role="group">
+                                {% for grandchild in child.children.visible %}
+                                    {% set gc_active = (grandchild.active or grandchild.activeChild) %}
+                                    {% set gc_active_classes = gc_active ? 'text-gray-900 lg:bg-gray-50' : 'text-gray-500' %}
+                                    <li role="none">
+                                        <a href="{{ grandchild.url }}"
+                                           class="block py-1.5 pl-8 pr-4 text-sm {{ gc_active_classes }} hover:text-primary-700 lg:hover:bg-gray-50"
+                                           role="menuitem"
+                                           {% if gc_active %} aria-current="page" {% endif %}>
+                                            {{ grandchild.menu }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
                         </li>
                     {% endfor %}
                 </ul>

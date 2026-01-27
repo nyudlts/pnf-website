@@ -96,6 +96,15 @@
         color: var(--color-gray-700) !important;
     }
 
+    figure {
+        img {
+            @apply my-0;
+        }
+        figcaption {
+            @apply text-sm text-gray-600 italic -mt-2
+        }
+    }
+
     &:where(.dark, .dark *) em,
     &:where(.dark, .dark *) i {
         color: var(--color-gray-200) !important;
