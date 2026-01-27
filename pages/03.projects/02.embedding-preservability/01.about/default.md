@@ -12,7 +12,7 @@ The process of embedding with publishers begins at the point a candidate publica
 
 ## See also:
 
-* Press Release Announcing Project Award
-* Project Updates
-* Embedding Team and Project Partners
+* [Press Release Announcing Project Award](https://guides.nyu.edu/blog/The-Andrew-W-Mellon-Foundation-Awards-NYU-502400-For-Libraries-Project-to-Expand-Capabilities-F)
+* [Project Updates](../updates)
+* [Embedding Team and Project Partners](../team)
 * Publications
