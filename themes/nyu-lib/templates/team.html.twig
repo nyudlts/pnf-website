@@ -12,7 +12,7 @@
         {% for member in page.header.team_members %}
         <div class="flex flex-col items-center text-center bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
             {% if member.photo and page.media[member.photo] %}
-                {{ page.media[member.photo].cropResize(200,200).classes('rounded-full shadow-lg').html(member.name)|raw }}
+                {{ page.media[member.photo].cropResize(200,200).classes('rounded-full shadow-lg').html('', member.name)|raw }}
             {% else %}
                 {% set parts = member.name|split(' ') %}
                 {% set initials = parts|first|first ~ parts|last|first %}
@@ -41,14 +41,14 @@
 
         {% if page.media['partner-logos.png'] %}
         <div class="my-8">
-            {{ page.media['partner-logos.png'].html('Partner Logos')|raw }}
+            {{ page.media['partner-logos.png'].html('', 'Partner Logos')|raw }}
         </div>
         {% endif %}
 
         {% if page.header.contact_email %}
         <p class="text-gray-700 dark:text-gray-300">
             To contact the team please email us at
-            <a href="mailto:{{ page.header.contact_email }}" class="text-primary-700 dark:text-primary-300 hover:underline">{{ page.header.contact_email }}</a>.
+            <a href="mailto:{{ page.header.contact_email }}" class="text-primary-700 dark:text-primary-300 underline">{{ page.header.contact_email }}</a>.
         </p>
         {% endif %}
     </div>

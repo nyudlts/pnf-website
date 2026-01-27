@@ -42,6 +42,14 @@
       "screenCapture": "./a11y-results/project-item.png"
     },
     {
+      "url": "http://trilby.local/grav-nyu-lib/projects/embedding-preservability/about",
+      "screenCapture": "./a11y-results/project-about.png"
+    },
+    {
+      "url": "http://trilby.local/grav-nyu-lib/projects/embedding-preservability/team",
+      "screenCapture": "./a11y-results/project-team.png"
+    },
+    {
       "url": "http://trilby.local/grav-nyu-lib/projects/embedding-preservability/2025-08-11-making-new-forms-of-scholarship-preservable-a-symposium",
       "screenCapture": "./a11y-results/project-news-item.png"
     }
