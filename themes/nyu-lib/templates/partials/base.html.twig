@@ -51,12 +51,15 @@
         {% block hero %}
         {# Hero background uses CSS background-image instead of img element for better axe-core contrast detection #}
         <div class="bg-primary-50 relative {% if hero_bg %}hero-bg{% endif %}" {% if hero_bg %}style="--hero-bg: url('{{ hero_bg }}')"{% endif %}>
-            <div class="py-6 mx-auto max-w-screen-xl relative z-10">
+            <div class="mx-auto max-w-screen-xl relative z-10">
                 {% block hero_title %}
                 {% include 'partials/content-title.html.twig' %}
                 {% endblock %}
             </div>
         </div>
+        {% endblock %}
+        {% block sub_navigation %}
+            {% include 'partials/sub-navigation.html.twig' %}
         {% endblock %}
         <div class="pt-12 pb-12 px-4 mx-auto max-w-screen-xl">
             {% block content %}
