@@ -11,4 +11,4 @@ Data driven websites can display different sets of resources from the server at 
 
 _This is another guideline about making URLs web archive friendly:_  
 
-1. _[Parameters should not be added to the URL unnecessarily](/guidelines/49-url-parameters-reflect-data)_
+* _[49 - Parameters should not be added to the URL unnecessarily](/guidelines/49-url-parameters-reflect-data)_

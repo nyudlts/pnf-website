@@ -11,7 +11,7 @@ If externally linked web content must be visually embedded in an EPUB, recognize
 
 _These guidelines may also be relevant to embedding web content in an EPUB:_  
 
-1. _[Captions for non-text features add meaningful context](/guidelines/16-create-meaningful-captions)_  
-2. _[Indicate the license status of resource in the HTML around the object](/guidelines/40-external-web-content-rights)_  
-3. _[Use HTML iframes with caution](/guidelines/41-caution-using-iframes)_  
-4. _[Facilitate a local web archive workflow for iframe content](/guidelines/42-web-archive-iframe)_
+* _[16 - Captions for non-text features add meaningful context](/guidelines/16-create-meaningful-captions)_  
+* _[40 - Indicate the license status of resource in the HTML around the object](/guidelines/40-external-web-content-rights)_  
+* _[41 - Use HTML iframes with caution](/guidelines/41-caution-using-iframes)_  
+* _[42 - Facilitate a local web archive workflow for iframe content](/guidelines/42-web-archive-iframe)_

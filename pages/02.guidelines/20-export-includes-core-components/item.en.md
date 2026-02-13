@@ -10,6 +10,6 @@ In addition to the main text and embedded or supplemental media, other features 
 
 _See also:_  
 
-1. _[Identify and document the core intellectual components of a work](/guidelines/10-define-core-intellectual-components)_  
-2. _[Create a video walkthrough of any complex features](/guidelines/72-record-a-walkthrough)_
+* _[10 - Identify and document the core intellectual components of a work](/guidelines/10-define-core-intellectual-components)_  
+* _[72 - Create a video walkthrough of any complex features](/guidelines/72-record-a-walkthrough)_
 

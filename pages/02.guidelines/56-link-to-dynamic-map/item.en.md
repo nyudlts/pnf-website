@@ -13,5 +13,5 @@ Dynamic maps such as those generated with Google Maps, consist of many smaller m
 
 _These guidelines offer alternative ways to manage dynamic map features:_  
 
-1. _[Captions add important context to non-text features](/guidelines/16-create-meaningful-captions)_  
-2. _[Consider web page designs that pre-load all data when the page loads](/guidelines/53-preload-data-in-browser)_
+* _[16 - Captions add important context to non-text features](/guidelines/16-create-meaningful-captions)_  
+* _[53 - Consider web page designs that pre-load all data when the page loads](/guidelines/53-preload-data-in-browser)_

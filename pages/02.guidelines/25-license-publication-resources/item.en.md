@@ -10,6 +10,6 @@ When a publisher acquires rights for resources that are part of the publication,
 
 _These guidelines may also support the creation of license metadata:_  
 
-1. _[Clarify the license related to preserving third party web resources](/guidelines/8-third-party-terms-of-service)_  
-2. _[Create descriptive metadata for each publication resource](/guidelines/24-metadata-for-resources)_  
-3. _[Embed license information in the HTML](/guidelines/40-external-web-content-rights)_
+* _[8 - Clarify the license related to preserving third party web resources](/guidelines/8-third-party-terms-of-service)_  
+* _[24 - Create descriptive metadata for each publication resource](/guidelines/24-metadata-for-resources)_  
+* _[40 - Embed license information in the HTML](/guidelines/40-external-web-content-rights)_

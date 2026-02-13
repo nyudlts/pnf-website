@@ -12,12 +12,12 @@ Sometimes it is necessary or preferable to reference or embed third-party conten
 
 _These guidelines may also improve preservability of third party hosted media:_  
 
-1. _[Start discussions about multimedia early in the project](/guidelines/12-discuss-media-assets-early)_  
-2. _[Avoid externally hosted media](/guidelines/14-avoid-external-services)_  
-3. _[Captions for non-text features add meaningful context](/guidelines/16-create-meaningful-captions)_  
-4. _[Ensure all core intellectual components of a work are reflected in the export package](/guidelines/20-export-includes-core-components)_  
-5. _[Avoid the use of iframes to embed multimedia](/guidelines/39-avoid-iframes-in-epubs)_  
-6. _[Facilitate a local web archive workflow for iframe content](/guidelines/42-web-archive-iframe)_
+* _[12 - Start discussions about multimedia early in the project](/guidelines/12-discuss-media-assets-early)_  
+* _[14 - Avoid externally hosted media](/guidelines/14-avoid-external-services)_  
+* _[16 - Captions for non-text features add meaningful context](/guidelines/16-create-meaningful-captions)_  
+* _[20 - Ensure all core intellectual components of a work are reflected in the export package](/guidelines/20-export-includes-core-components)_  
+* _[39 - Avoid the use of iframes to embed multimedia](/guidelines/39-avoid-iframes-in-epubs)_  
+* _[42 - Facilitate a local web archive workflow for iframe content](/guidelines/42-web-archive-iframe)_
 
 [example]
 [_Owning My Masters (Mastered): The Rhetorics of Rhymes &amp; Revolutions_](https://doi.org/10.3998/mpub.12584348?target=_blank) by A.D. Carson  includes an annotated interactive timeline created using the Northwestern University Knight Lab’s TimelineJS. A simplified text representation of this timeline is included in the EPUB on the Fulcrum publishing platform. [The interactive version](https://doi.org/10.3998/mpub.12584348.cmp.73?target=_blank), hosted at University of Virginia and embedded on the author's website using an iframe, is linked as an external resource. The timeline is configured from data stored in a Google Sheet owned by the author. [A web archive file (WARC) of the interactive timeline site and a CSV of the Google Sheet](https://doi.org/10.3998/mpub.12584348.cmp.74?target=_blank) are included as hosted resources on Fulcrum and available for download. Since Fulcrum resources are included in the export, the archived web page (WARC file) and the text version are both part of the preserved copy.

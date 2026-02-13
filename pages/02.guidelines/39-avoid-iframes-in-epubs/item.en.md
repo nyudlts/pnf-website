@@ -11,6 +11,6 @@ Iframe, short for “inline frame,” is an HTML tag that can be used to embed t
 
 _These guidelines are also be relevant to embedding media in EPUBs:_  
 
-1. _[Start discussions around multimedia early in the process](/guidelines/12-discuss-media-assets-early)_  
-2. _[Avoid external dependencies in general](/guidelines/14-avoid-external-services)_  
-3. _[Opt for core media types when embedding multimedia in an EPUB](/guidelines/34-use-epub-core-media-types)_
+* _[12 - Start discussions around multimedia early in the process](/guidelines/12-discuss-media-assets-early)_  
+* _[14 - Avoid external dependencies in general](/guidelines/14-avoid-external-services)_  
+* _[34 - Opt for core media types when embedding multimedia in an EPUB](/guidelines/34-use-epub-core-media-types)_

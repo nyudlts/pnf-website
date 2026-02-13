@@ -11,6 +11,6 @@ Data visualizations tend to be a particular arrangement of one or more raw datas
 
 _These guidelines may also be relevant when considering preservation of data visualizations:_  
 
-1. _[Use non-proprietary, broadly supported and adopted open file formats](/guidelines/11-use-non-proprietary-formats)_  
-2. _[Use alternative approaches for features that require communication with a server](/guidelines/57-alternative-for-dynamic-features)_  
-3. _[Use meaningful file names and field names in your data, supply documentation](/guidelines/64-meaningful-file-field-names)_
+* _[11 - Use non-proprietary, broadly supported and adopted open file formats](/guidelines/11-use-non-proprietary-formats)_  
+* _[57 - Use alternative approaches for features that require communication with a server](/guidelines/57-alternative-for-dynamic-features)_  
+* _[64 - Use meaningful file names and field names in your data, supply documentation](/guidelines/64-meaningful-file-field-names)_

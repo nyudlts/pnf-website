@@ -12,5 +12,5 @@ The Library of Congress updates their [Recommended Formats Statement](https://ww
 
 _These guidelines may also be considered during file format selection:_  
 
-1. _[Acquire the highest quality version of media to use for preservation](/guidelines/13-acquire-highest-quality-media-files)_  
-2. _[For EPUBs, opt for core media types, as defined by the EPUB specification](/guidelines/34-use-epub-core-media-types)_
+* _[13 - Acquire the highest quality version of media to use for preservation](/guidelines/13-acquire-highest-quality-media-files)_  
+* _[34 - For EPUBs, opt for core media types, as defined by the EPUB specification](/guidelines/34-use-epub-core-media-types)_

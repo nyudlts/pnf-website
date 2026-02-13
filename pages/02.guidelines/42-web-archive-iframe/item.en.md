@@ -12,6 +12,6 @@ Preservation services might not support a workflow that automatically harvests t
 
 _These guidelines may also be relevant:_  
 
-1. _[Avoid dependence on externally hosted platforms for core features](/guidelines/14-avoid-external-services)_  
-2. _[Plan a strategy for preservation when third party dependencies exist](/guidelines/15-plan-for-third-party-hosted-media)_  
-3. _[Avoid the use of iframes to embed multimedia](/guidelines/39-avoid-iframes-in-epubs)_
+* _[14 - Avoid dependence on externally hosted platforms for core features](/guidelines/14-avoid-external-services)_  
+* _[15 - Plan a strategy for preservation when third party dependencies exist](/guidelines/15-plan-for-third-party-hosted-media)_  
+* _[39 - Avoid the use of iframes to embed multimedia](/guidelines/39-avoid-iframes-in-epubs)_

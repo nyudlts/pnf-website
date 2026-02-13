@@ -11,7 +11,7 @@ Website crawling and playback of web archives use URLs as unique references—th
 
 _This guideline is also useful for creating web archive friendly URLs:_  
 
-1. _[Assign each unique page state one, and only one, URL](/guidelines/46-each-page-state-a-url)_
+* _[46 - Assign each unique page state one, and only one, URL](/guidelines/46-each-page-state-a-url)_
 
 [example]
 Language tags, such as `?locale=en` for English, may be appended to the end of the URL to reflect the display language of the publication. If the default language for the publication is the same in the basic URL without the language tag, a web crawler will make a redundant copy by crawling both the basic URL and the URL with the tag. If the publication is available in multiple languages, the language tag could be used for only non-default languages, or every language could include a language tag.

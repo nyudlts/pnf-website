@@ -9,7 +9,7 @@ This document offers a variety of general recommendations for creating publicati
 
 _These other guidelines can facilitate conversations with preservation partners:_
 
-1. _[Establish formatting rules for common features](/guidelines/5-establish-basic-formatting-rules)_
-2. _[Keep preservation partners informed of changes](/guidelines/6-keep-preservation-services-informed)_ 
-3. _[Define “version of record” for your context](/guidelines/9-define-version-of-record)_  
-4. _[Define and document the core intellectual components of a work](/guidelines/10-define-core-intellectual-components)_
+* _[5 - Establish formatting rules for common features](/guidelines/5-establish-basic-formatting-rules)_
+* _[6 - Keep preservation partners informed of changes](/guidelines/6-keep-preservation-services-informed)_
+* _[9 - Define “version of record” for your context](/guidelines/9-define-version-of-record)_  
+* _[10 - Define and document the core intellectual components of a work](/guidelines/10-define-core-intellectual-components)_

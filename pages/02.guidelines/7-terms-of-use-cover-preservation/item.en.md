@@ -11,8 +11,8 @@ If a publication platform enables user contributed content and that content is m
 
 _See also:_  
 
-1. _[Ethical concerns of user-contributed content](/guidelines/55-social-media-ethics)_  
-2. _[Consider systematically tagging material that should be excluded from preservation](/guidelines/70-consider-tagging-material-that-should-be-excluded)_
+* _[55 - Ethical concerns of user-contributed content](/guidelines/55-social-media-ethics)_  
+* _[70 - Consider systematically tagging material that should be excluded from preservation](/guidelines/70-consider-tagging-material-that-should-be-excluded)_
 
 [example]
 PubPub supports features that allow users to contribute content through annotations and comments. This content is integrated into the page and can't be excluded from web crawls. The default PubPub Terms of Service template includes language that covers User-Generated Content under a Creative Commons Attribution 4.0 License:

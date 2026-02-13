@@ -12,7 +12,7 @@ Embedded enhanced features, especially those that link to resources outside of t
 
 _Where non-text features are supplied as separate publication resources, this guideline may also be relevant:_    
 
-1. _[Create metadata for each publication resource](/guidelines/24-metadata-for-resources)_
+* _[24 - Create metadata for each publication resource](/guidelines/24-metadata-for-resources)_
 
 [example]
 On the Fulcrum platform, University of Michigan Press requires authors to create alt text for all images and caption descriptions for media files. [U-M Press’s Author’s Guide](https://press.umich.edu/For-Authors/Author-s-Guide?target=_blank) documentation includes a definition of alt text, as well as links to the [Describing Visual Resources Toolkit](https://describingvisualresources.org/?target=_blank) and [Sample Textual Descriptions for Illustrative Materials](https://press.umich.edu/content/download/136831/1887235/version/1/file/SampleTextualDescriptionsforIllustrativeMaterials-2019.pdf?target=_blank).

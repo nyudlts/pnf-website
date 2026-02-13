@@ -10,6 +10,6 @@ For custom websites or software, publishers should request an installation scrip
 
 _These guidelines also discuss the installation package for a web application:_  
 
-1. _[Create installation packages for custom websites that don’t require a live server](/guidelines/61-clean-html-package)_  
-2. _[Create installation packages for custom websites that do require a live server](/guidelines/62-clean-install-dynamic-web)_  
-3. _[Keep the source code and compiled version of the software](/guidelines/67-compiled-software-and-source-code)_
+* _[61 - Create installation packages for custom websites that don’t require a live server](/guidelines/61-clean-html-package)_  
+* _[62 - Create installation packages for custom websites that do require a live server](/guidelines/62-clean-install-dynamic-web)_  
+* _[67 - Keep the source code and compiled version of the software](/guidelines/67-compiled-software-and-source-code)_

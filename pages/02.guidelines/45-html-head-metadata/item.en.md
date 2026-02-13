@@ -11,9 +11,9 @@ This can help facilitate a fully automated web harvest of content in situations 
 
 _These guidelines may also be relevant when generating bibliographic metadata:_  
 
-1. _[Provide bibliographic metadata with exported publications](/guidelines/21-structured-bibliographic-metadata)_  
-2. _[Bibliographic metadata in the context of EPUBs](/guidelines/30-epub-bibliographic-metadata)_  
-3. _[The license for external resources can be expressed in HTML](/guidelines/40-external-web-content-rights)_
+* _[21 - Provide bibliographic metadata with exported publications](/guidelines/21-structured-bibliographic-metadata)_  
+* _[30 - Bibliographic metadata in the context of EPUBs](/guidelines/30-epub-bibliographic-metadata)_  
+* _[40 - The license for external resources can be expressed in HTML](/guidelines/40-external-web-content-rights)_
 
 [example]
 The enhanced journal [_Technology, Mind & Behavior_](https://tmb.apaopen.org/?target=_blank) (_TMB_) is hosted on PubPub. Publishers can configure articles on PubPub to display the full article metadata in the `<head>` section of the web page HTML. If you inspect the HTML code of a PubPub-based _TMB_ article, you will see that the `<head>` element of the document at the top of the document includes bibliographic metadata in the `<meta>` tags and has implemented several standards. One is `citation_`, which is used by Google Scholar to create search records, and another is `dc` which stands for Dublin Core, a widely used descriptive metadata standard. Including metadata in these formats supports archiving that is performed by automatic harvesting. It allows harvest tools to extract accurate descriptive metadata from the webpage of the article. Note that in the case of PubPub, the license is not in the `<head>` section, which would be ideal, but is expressed at the bottom of the page using the Creative Commons relationship. The anchor tag for that license has the format `<a rel="license">` which indicates this connects to the license for the page.

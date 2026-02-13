@@ -10,5 +10,5 @@ A preservation service will work with a publisher to determine the version(s) of
 
 _These guidelines relate to other aspects of versioning:_  
 
-1. _[Express versioning in bibliographic metadata](/guidelines/23-version-expressed-in-metadata)_  
-2. _[Assign new identifiers to significant versions](/guidelines/31-persistent-identifiers-for-versions)_
+* _[23 - Express versioning in bibliographic metadata](/guidelines/23-version-expressed-in-metadata)_  
+* _[31 - Assign new identifiers to significant versions](/guidelines/31-persistent-identifiers-for-versions)_

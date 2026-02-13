@@ -12,6 +12,6 @@ Avoid using the “embed” option to insert a social media post into your publi
 
 _These guidelines are also relevant to embedding social media posts in a publication:_  
 
-1. _[Ensure terms of service cover preservation of data in third-party services](/guidelines/8-third-party-terms-of-service)_  
-2. _[Avoid depending on third party services for core intellectual components](/guidelines/14-avoid-external-services)_   
-3. _[Consider ethical implications of embedding social media posts](/guidelines/55-social-media-ethics)_
+* _[8 - Ensure terms of service cover preservation of data in third-party services](/guidelines/8-third-party-terms-of-service)_  
+* _[14 - Avoid depending on third party services for core intellectual components](/guidelines/14-avoid-external-services)_  
+* _[55 - Consider ethical implications of embedding social media posts](/guidelines/55-social-media-ethics)_

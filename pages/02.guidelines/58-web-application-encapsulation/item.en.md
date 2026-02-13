@@ -11,6 +11,6 @@ If publishers are involved early enough in the development process for a custom 
 
 _These guidelines may be referred to when considering encapsulation:_  
 
-1. _[Avoid depending on externally hosted web services](/guidelines/14-avoid-external-services)_  
-2. _[Embed multimedia locally](/guidelines/51-local-media-files)_  
-3. _[Avoid embedding map visualizations where a static representation would suffice](/guidelines/56-link-to-dynamic-map)_
+* _[14 - Avoid depending on externally hosted web services](/guidelines/14-avoid-external-services)_  
+* _[51 - Embed multimedia locally](/guidelines/51-local-media-files)_  
+* _[56 - Avoid embedding map visualizations where a static representation would suffice](/guidelines/56-link-to-dynamic-map)_

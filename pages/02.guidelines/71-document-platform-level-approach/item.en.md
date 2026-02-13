@@ -11,5 +11,5 @@ To achieve a shared understanding between the publisher, authors, and preservati
 
 _See also:_  
 
-1. _[Keep preservation partners informed of changes](/guidelines/6-keep-preservation-services-informed)_  
-2. _[Define and document the core intellectual components of a work](/guidelines/10-define-core-intellectual-components)_
+* _[6 - Keep preservation partners informed of changes](/guidelines/6-keep-preservation-services-informed)_  
+* _[10 - Define and document the core intellectual components of a work](/guidelines/10-define-core-intellectual-components)_

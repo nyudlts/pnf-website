@@ -11,6 +11,6 @@ Some publications, especially in a web environment, may include social media pos
 
 _These guidelines discuss legal and technical considerations for preservation:_  
 
-1. _[Ensure terms of service cover preservation of data in third-party services](/guidelines/8-third-party-terms-of-service)_  
-2. _[Avoid embedding social media posts in a publication](/guidelines/54-avoid-embedding-social-media)_  
-3. _[Consider systematically tagging material that should be excluded](/guidelines/70-consider-tagging-material-that-should-be-excluded)_
+* _[8 - Ensure terms of service cover preservation of data in third-party services](/guidelines/8-third-party-terms-of-service)_  
+* _[54 - Avoid embedding social media posts in a publication](/guidelines/54-avoid-embedding-social-media)_  
+* _[70 - Consider systematically tagging material that should be excluded](/guidelines/70-consider-tagging-material-that-should-be-excluded)_

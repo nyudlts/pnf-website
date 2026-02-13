@@ -10,5 +10,5 @@ When referencing an external resource in a publication, see if there is a versio
 
 _These guidelines cover other instances that may benefit from use of identifiers:_  
 
-1. _[Assign persistent identifiers to publication resources and use them](/guidelines/27-assign-persistent-identifiers)_  
-2. _[Assign identifiers to significant new versions of the work](/guidelines/31-persistent-identifiers-for-versions)_
+* _[27 - Assign persistent identifiers to publication resources and use them](/guidelines/27-assign-persistent-identifiers)_  
+* _[31 - Assign identifiers to significant new versions of the work](/guidelines/31-persistent-identifiers-for-versions)_

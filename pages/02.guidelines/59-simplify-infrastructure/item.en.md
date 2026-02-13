@@ -10,5 +10,5 @@ All websites have to be maintained in order to be sustained on the live web. An 
 
 _These guidelines may also be helpful when considering publication software:_  
 
-1. _[General considerations for designing or selecting publication platforms](/guidelines/2-assess-technology)_  
-2. _[Favor existing standards](/guidelines/3-use-existing-standards)_
+* _[2 - General considerations for designing or selecting publication platforms](/guidelines/2-assess-technology)_  
+* _[3 - Favor existing standards](/guidelines/3-use-existing-standards)_

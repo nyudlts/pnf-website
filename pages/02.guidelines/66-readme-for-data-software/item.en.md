@@ -10,4 +10,4 @@ For data, software, or any resource that has a complex arrangement of files, if 
 
 _See also:_  
 
-1. _[Provide documentation for software](/guidelines/68-provide-software-documentation)_
+* _[68 - Provide documentation for software](/guidelines/68-provide-software-documentation)_

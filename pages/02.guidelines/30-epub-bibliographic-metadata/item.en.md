@@ -9,5 +9,5 @@ Each EPUB should have structured bibliographic metadata associated with it. This
 
 _These guidelines relate to bibliographic metadata for other formats:_  
 
-1. _[Provide structured bibliographic metadata with exported publications](/guidelines/21-structured-bibliographic-metadata)_  
-2. _[Embed bibliographic metadata in the `<head>` of a web-based publication](/guidelines/45-html-head-metadata)_
+* _[21 - Provide structured bibliographic metadata with exported publications](/guidelines/21-structured-bibliographic-metadata)_  
+* _[45 - Embed bibliographic metadata in the `<head>` of a web-based publication](/guidelines/45-html-head-metadata)_

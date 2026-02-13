@@ -12,5 +12,5 @@ Key URLs for a publication, such as a publication’s home page, should not chan
 
 _These guidelines discuss identifiers, another way to support URL persistence:_  
 
-1. _[Persistent identifiers can be used at the publication resource level](/guidelines/27-assign-persistent-identifiers)_   
-2. _[Persistent identifiers should assigned to new versions of the work](/guidelines/31-persistent-identifiers-for-versions)_
+* _[27 - Persistent identifiers can be used at the publication resource level](/guidelines/27-assign-persistent-identifiers)_  
+* _[31 - Persistent identifiers should assigned to new versions of the work](/guidelines/31-persistent-identifiers-for-versions)_

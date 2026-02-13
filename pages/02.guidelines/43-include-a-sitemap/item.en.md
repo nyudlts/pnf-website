@@ -11,4 +11,4 @@ XML Sitemaps containing links to all of the content in a website ensure that web
 
 _This guideline will make creating a sitemap simpler:_  
 
-1. _[For websites, give each page state its own URL](/guidelines/46-each-page-state-a-url)_
+* _[46 - For websites, give each page state its own URL](/guidelines/46-each-page-state-a-url)_

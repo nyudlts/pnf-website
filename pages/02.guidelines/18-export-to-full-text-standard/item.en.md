@@ -10,6 +10,6 @@ If a publication is document-like, exporting and transforming the core intellect
 
 _These guidelines may also be helpful when considering the export package for a linear publication:_  
 
-1. _[Use existing standards for export formats](/guidelines/3-use-existing-standards)_  
-2. _[Identify and document the core intellectual components of a work](/guidelines/10-define-core-intellectual-components)_  
-3. _[Ensure exports cover all core intellectual components](/guidelines/20-export-includes-core-components)_
+* _[3 - Use existing standards for export formats](/guidelines/3-use-existing-standards)_  
+* _[10 - Identify and document the core intellectual components of a work](/guidelines/10-define-core-intellectual-components)_  
+* _[20 - Ensure exports cover all core intellectual components](/guidelines/20-export-includes-core-components)_

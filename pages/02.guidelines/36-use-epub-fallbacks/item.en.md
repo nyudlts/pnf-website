@@ -11,5 +11,5 @@ Where there is a strong justification for using remote resources or non-core med
 
 _These guidelines may also be relevant when considering use of non-core media types:_  
 
-1. _[Consider a preservation-specific version of the EPUB](/guidelines/29-preservation-specific-epub)_  
-2. _[Harvesting the content of iframes may have unpredictable outcomes](/guidelines/41-caution-using-iframes)_
+* _[29 - Consider a preservation-specific version of the EPUB](/guidelines/29-preservation-specific-epub)_  
+* _[41 - Harvesting the content of iframes may have unpredictable outcomes](/guidelines/41-caution-using-iframes)_

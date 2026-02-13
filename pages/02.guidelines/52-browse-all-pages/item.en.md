@@ -11,6 +11,6 @@ Platforms with good search engine optimization implement paths to navigate every
 
 _These guidelines also help a website crawler discover all content:_  
 
-1. _[A sitemap can help website crawlers reach unlinked content](/guidelines/43-include-a-sitemap)_  
-2. _[Use simple links to help a website crawler find content](/guidelines/44-keep-links-simple)_  
-3. _[Ensure each page state has its own unique URL](/guidelines/46-each-page-state-a-url)_
+* _[43 - A sitemap can help website crawlers reach unlinked content](/guidelines/43-include-a-sitemap)_  
+* _[44 - Use simple links to help a website crawler find content](/guidelines/44-keep-links-simple)_  
+* _[46 - Ensure each page state has its own unique URL](/guidelines/46-each-page-state-a-url)_

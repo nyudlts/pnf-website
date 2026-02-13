@@ -9,4 +9,4 @@ EPUB 3 has the potential to be a solid format for preservation when creators (1)
 
 _When preserving a website rather than an EPUB, this guideline may be relevant:_  
 
-1. _[For a custom web application, consider encapsulation early](/guidelines/58-web-application-encapsulation)_ 
+* _[58 - For a custom web application, consider encapsulation early](/guidelines/58-web-application-encapsulation)_

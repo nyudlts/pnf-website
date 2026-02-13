@@ -9,7 +9,7 @@ Each publication should have structured bibliographic metadata associated with i
 
 _These guidelines may add context when deciding how to format bibliographic metadata and where to store it:_  
 
-1. _[Use existing standards when creating metadata](/guidelines/3-use-existing-standards)_  
-2. _[Express metadata in an appropriate structured format](/guidelines/22-metadata-in-structured-format)_  
-3. _[Add bibliographic metadata to an EPUB](/guidelines/30-epub-bibliographic-metadata)_  
-4. _[Embed bibliographic metadata in a web page](/guidelines/45-html-head-metadata)_
+* _[3 - Use existing standards when creating metadata](/guidelines/3-use-existing-standards)_  
+* _[22 - Express metadata in an appropriate structured format](/guidelines/22-metadata-in-structured-format)_  
+* _[30 - Add bibliographic metadata to an EPUB](/guidelines/30-epub-bibliographic-metadata)_  
+* _[45 - Embed bibliographic metadata in a web page](/guidelines/45-html-head-metadata)_

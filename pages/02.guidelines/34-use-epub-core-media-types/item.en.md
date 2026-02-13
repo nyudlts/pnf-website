@@ -10,4 +10,4 @@ The EPUB specification defines a list of core media types that are supported. Us
 
 _This more general guideline may also be useful to consider:_  
 
-1. _[Use non-proprietary, broadly supported and adopted open file formats](/guidelines/11-use-non-proprietary-formats)_
+* _[11 - Use non-proprietary, broadly supported and adopted open file formats](/guidelines/11-use-non-proprietary-formats)_

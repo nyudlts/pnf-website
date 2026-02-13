@@ -9,4 +9,4 @@ While developing export processes, attention should be given to describing each 
 
 _See also:_  
 
-1. _[Assign persistent identifiers to publication resources, they can help perpetuate connections between resources](/guidelines/27-assign-persistent-identifiers)_
+* _[27 - Assign persistent identifiers to publication resources, they can help perpetuate connections between resources](/guidelines/27-assign-persistent-identifiers)_

@@ -10,4 +10,4 @@ An excessive number of small metadata files or a complex folder hierarchy within
 
 _See also:_  
 
-1. _[Use an appropriate metadata serialization within the export package](/guidelines/22-metadata-in-structured-format)_
+* _[22 - Use an appropriate metadata serialization within the export package](/guidelines/22-metadata-in-structured-format)_

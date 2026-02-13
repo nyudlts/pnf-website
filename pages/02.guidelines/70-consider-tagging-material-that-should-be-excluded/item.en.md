@@ -13,8 +13,8 @@ For publications where some content should not be preserved, consider tagging wh
 
 _These guidelines also concern the inclusion and exclusion of content in the preservation process:_  
 
-1. _[Define and document core intellectual components that need to be preserved](/guidelines/10-define-core-intellectual-components)_  
-2. _[Represent all core intellectual components of the work in the export package](/guidelines/20-export-includes-core-components)_  
-3. _[Identify the rights for external web content](/guidelines/40-external-web-content-rights)_  
-4. _[Consider whether it is ethical/appropriate to preserve social media](/guidelines/55-social-media-ethics)_  
-5. _[Ensure irrelevant or private administrative data is removed from data exports](/guidelines/65-remove-irrelevant-or-private-data)_
+* _[10 - Define and document core intellectual components that need to be preserved](/guidelines/10-define-core-intellectual-components)_  
+* _[20 - Represent all core intellectual components of the work in the export package](/guidelines/20-export-includes-core-components)_  
+* _[40 - Identify the rights for external web content](/guidelines/40-external-web-content-rights)_  
+* _[55 - Consider whether it is ethical/appropriate to preserve social media](/guidelines/55-social-media-ethics)_  
+* _[65 - Ensure irrelevant or private administrative data is removed from data exports](/guidelines/65-remove-irrelevant-or-private-data)_

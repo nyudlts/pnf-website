@@ -9,5 +9,5 @@ Publications with embedded media content often require that these files are comp
 
 _Where there is a choice of which file format to use, consider these guidelines:_  
 
-1. _[Use non-proprietary, broadly supported and adopted open file formats](/guidelines/11-use-non-proprietary-formats)_  
-2. _[Remove private data from export packages](/guidelines/65-remove-irrelevant-or-private-data)_
+* _[11 - Use non-proprietary, broadly supported and adopted open file formats](/guidelines/11-use-non-proprietary-formats)_  
+* _[65 - Remove private data from export packages](/guidelines/65-remove-irrelevant-or-private-data)_

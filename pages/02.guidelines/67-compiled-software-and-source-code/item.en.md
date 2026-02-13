@@ -9,6 +9,6 @@ Compiled software may be opaque or impossible to modify, while source code may b
 
 _These guidelines refer to the creation of the installation package:_  
 
-1. _[Request an installation script for custom software](/guidelines/60-request-installation-script)_  
-2. _[Create installation packages for custom websites that don’t require a live server](/guidelines/61-clean-html-package)_  
-3. _[Create installation packages for custom websites that do require a live server](/guidelines/62-clean-install-dynamic-web)_
+* _[60 - Request an installation script for custom software](/guidelines/60-request-installation-script)_  
+* _[61 - Create installation packages for custom websites that don’t require a live server](/guidelines/61-clean-html-package)_  
+* _[62 - Create installation packages for custom websites that do require a live server](/guidelines/62-clean-install-dynamic-web)_

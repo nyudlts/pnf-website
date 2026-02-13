@@ -12,6 +12,6 @@ Some platforms support assigning each publication resource its own descriptive m
 
 _These guidelines also relate to the use of identifiers:_  
 
-1. _[Use persistent identifiers to link or cite external resources](/guidelines/17-use-persistent-identifiers)_  
-2. _[Create descriptive metadata for each publication resource, include identifiers](/guidelines/24-metadata-for-resources)_  
-3. _[Assign persistent identifiers to significant versions](/guidelines/31-persistent-identifiers-for-versions)_
+* _[17 - Use persistent identifiers to link or cite external resources](/guidelines/17-use-persistent-identifiers)_  
+* _[24 - Create descriptive metadata for each publication resource, include identifiers](/guidelines/24-metadata-for-resources)_  
+* _[31 - Assign persistent identifiers to significant versions](/guidelines/31-persistent-identifiers-for-versions)_

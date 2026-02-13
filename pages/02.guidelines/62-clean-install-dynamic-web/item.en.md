@@ -10,6 +10,6 @@ When other methods of preserving a web publication (export, web crawling) cannot
 
 _These guidelines also discuss the installation package for a web application:_  
 
-1. _[Consider encapsulation of custom-built web applications early](/guidelines/58-web-application-encapsulation)_  
-2. _[Request an installation script for custom software and websites](/guidelines/60-request-installation-script)_  
-3. _[Produce packages for software and websites that don’t require a live server](/guidelines/61-clean-html-package)_
+* _[58 - Consider encapsulation of custom-built web applications early](/guidelines/58-web-application-encapsulation)_  
+* _[60 - Request an installation script for custom software and websites](/guidelines/60-request-installation-script)_  
+* _[61 - Produce packages for software and websites that don’t require a live server](/guidelines/61-clean-html-package)_

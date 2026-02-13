@@ -13,6 +13,6 @@ An HTML iframe can contain a wide range of types of content, from a wide range o
 
 _These guidelines may also be relevant to use of iframes:_  
 
-1. _[List the URLs for each embedded iframe in the metadata](/guidelines/38-include-external-urls-in-metadata)_  
-2. _[Avoid use of iframes in EPUBs](/guidelines/39-avoid-iframes-in-epubs)_  
-3. _[Facilitate a local web archiving workflow to support iframes](/guidelines/42-web-archive-iframe)_
+* _[38 - List the URLs for each embedded iframe in the metadata](/guidelines/38-include-external-urls-in-metadata)_  
+* _[39 - Avoid use of iframes in EPUBs](/guidelines/39-avoid-iframes-in-epubs)_  
+* _[42 - Facilitate a local web archiving workflow to support iframes](/guidelines/42-web-archive-iframe)_

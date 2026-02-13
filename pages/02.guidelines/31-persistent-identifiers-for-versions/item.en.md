@@ -11,6 +11,6 @@ If a publication contains digital enhancements that are important enough to warr
 
 _These guidelines also relate to management of versions and use of identifiers:_  
 
-1. _[Define the “version of record” in your context](/guidelines/9-define-version-of-record)_  
-2. _[Use persistent identifiers to link or cite external resources](/guidelines/17-use-persistent-identifiers)_  
-3. _[Include version information in bibliographic metadata](/guidelines/23-version-expressed-in-metadata)_
+* _[9 - Define the “version of record” in your context](/guidelines/9-define-version-of-record)_  
+* _[17 - Use persistent identifiers to link or cite external resources](/guidelines/17-use-persistent-identifiers)_  
+* _[23 - Include version information in bibliographic metadata](/guidelines/23-version-expressed-in-metadata)_

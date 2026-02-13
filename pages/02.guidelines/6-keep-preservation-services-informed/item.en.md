@@ -10,8 +10,8 @@ For platforms and publishers working with a preservation service, preservation w
 
 _For more about changes that should be communicated to a preservation service:_  
 
-1. _[Document any changes to the default functionality of a platform](/guidelines/4-use-features-as-intended)_  
-2. _[Establish and document basic formatting rules](/guidelines/5-establish-basic-formatting-rules)_  
-3. _[Define and document the core intellectual components of a work](/guidelines/10-define-core-intellectual-components)_  
-4. _[Consider systematically tagging material that should be excluded from preservation](/guidelines/70-consider-tagging-material-that-should-be-excluded)_  
-5. _[Document and share the platform-level approach to preserving components of a publication](/guidelines/71-document-platform-level-approach)_
+* _[4 - Document any changes to the default functionality of a platform](/guidelines/4-use-features-as-intended)_  
+* _[5 - Establish and document basic formatting rules](/guidelines/5-establish-basic-formatting-rules)_  
+* _[10 - Define and document the core intellectual components of a work](/guidelines/10-define-core-intellectual-components)_  
+* _[70 - Consider systematically tagging material that should be excluded from preservation](/guidelines/70-consider-tagging-material-that-should-be-excluded)_  
+* _[71 - Document and share the platform-level approach to preserving components of a publication](/guidelines/71-document-platform-level-approach)_

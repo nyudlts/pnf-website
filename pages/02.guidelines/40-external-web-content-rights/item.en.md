@@ -14,7 +14,7 @@ Some preservation services will not collect web content outside of the agreed up
 
 _These guidelines may also be useful to consider when embedding external web content:_  
 
-1. _[Add license information to resource-level metadata](/guidelines/25-license-publication-resources)_  
-2. _[List the URLs for external web content in the metadata](/guidelines/38-include-external-urls-in-metadata)_  
-3. _[Embed metadata that includes a license in the `<head>` of a web page](/guidelines/45-html-head-metadata)_  
-4. _[Consider systematically tagging component that should be excluded for preservation](/guidelines/70-consider-tagging-material-that-should-be-excluded)_
+* _[25 - Add license information to resource-level metadata](/guidelines/25-license-publication-resources)_  
+* _[38 - List the URLs for external web content in the metadata](/guidelines/38-include-external-urls-in-metadata)_  
+* _[45 - Embed metadata that includes a license in the `<head>` of a web page](/guidelines/45-html-head-metadata)_  
+* _[70 - Consider systematically tagging component that should be excluded for preservation](/guidelines/70-consider-tagging-material-that-should-be-excluded)_

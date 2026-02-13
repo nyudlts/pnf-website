@@ -10,6 +10,6 @@ When using out-of-the-box software solutions for your publishing platform, expor
 
 _These other guidelines may be helpful when implementing new features:_  
 
-1. _[Use existing standards when implementing features](/guidelines/3-use-existing-standards)_ 
-2. _[Establish formatting rules for common features](/guidelines/5-establish-basic-formatting-rules)_  
-3. _[Keep preservation partners informed of changes that affect the publications](/guidelines/6-keep-preservation-services-informed)_ 
+* _[3 - Use existing standards when implementing features](/guidelines/3-use-existing-standards)_
+* _[5 - Establish formatting rules for common features](/guidelines/5-establish-basic-formatting-rules)_  
+* _[6 - Keep preservation partners informed of changes that affect the publications](/guidelines/6-keep-preservation-services-informed)_

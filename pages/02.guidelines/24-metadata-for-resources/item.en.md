@@ -10,8 +10,8 @@ Many publication resources that are supported by modern publishing platforms war
 
 _These guidelines add additional context to creating metadata for publication resources:_  
 
-1. _[Captions for non-text features add meaningful context](/guidelines/16-create-meaningful-captions)_  
-2. _[Express metadata in an appropriate structured format](/guidelines/22-metadata-in-structured-format)_  
-3. _[Express the license information in the resource-level metadata](/guidelines/25-license-publication-resources)_  
-4. _[Describe connections between resources in the metadata](/guidelines/26-relationships-between-resources)_  
-5. _[Assign and use unique persistent identifiers for publication resources](/guidelines/27-assign-persistent-identifiers)_
+* _[16 - Captions for non-text features add meaningful context](/guidelines/16-create-meaningful-captions)_  
+* _[22 - Express metadata in an appropriate structured format](/guidelines/22-metadata-in-structured-format)_  
+* _[25 - Express the license information in the resource-level metadata](/guidelines/25-license-publication-resources)_  
+* _[26 - Describe connections between resources in the metadata](/guidelines/26-relationships-between-resources)_  
+* _[27 - Assign and use unique persistent identifiers for publication resources](/guidelines/27-assign-persistent-identifiers)_

@@ -10,6 +10,6 @@ Consistency is the key to a scalable preservation workflow, and so if a publishe
 
 _These other guidelines may be helpful when implementing new features:_  
 
-1. _[Use existing standards when implementing features](/guidelines/3-use-existing-standards)_  
-2. _[Keep preservation partners informed of changes that affect the publications](/guidelines/6-keep-preservation-services-informed)_  
-3. _[Consider systematically tagging material that should be excluded or tagging material that should be included as part of the preserved content](/guidelines/70-consider-tagging-material-that-should-be-excluded)_
+* _[3 - Use existing standards when implementing features](/guidelines/3-use-existing-standards)_  
+* _[6 - Keep preservation partners informed of changes that affect the publications](/guidelines/6-keep-preservation-services-informed)_  
+* _[70 - Consider systematically tagging material that should be excluded or tagging material that should be included as part of the preserved content](/guidelines/70-consider-tagging-material-that-should-be-excluded)_

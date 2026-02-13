@@ -11,7 +11,7 @@ Avoid obscure, dependent, or closed technologies that are harder to support due 
 
 _These guidelines also refer to the use of open formats and technologies:_  
 
-1. _[Use existing standards to guide design decisions on publishing platforms](/guidelines/3-use-existing-standards)_  
-2. _[Use non-proprietary, broadly supported and adopted open file formats](/guidelines/11-use-non-proprietary-formats)_  
-3. _[Consider a preservation-specific EPUB in your workflow](/guidelines/29-preservation-specific-epub)_  
+* _[3 - Use existing standards to guide design decisions on publishing platforms](/guidelines/3-use-existing-standards)_  
+* _[11 - Use non-proprietary, broadly supported and adopted open file formats](/guidelines/11-use-non-proprietary-formats)_  
+* _[29 - Consider a preservation-specific EPUB in your workflow](/guidelines/29-preservation-specific-epub)_  
 _51. [When embedding video and other media in web-based publications, host the media files local to the website using standard HTML](/guidelines/51-local-media-files) _

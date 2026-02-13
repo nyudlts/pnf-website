@@ -12,8 +12,8 @@ Complex and interactive features of a publication may be most vulnerable to chan
 _See also:_  
 _11. [If adding a video to the preservation package, consider the format](/guidelines/11-use-non-proprietary-formats) _  
 
-1. _[Represent all core intellectual components of the work in the export package](/guidelines/20-export-includes-core-components)_  
-2. _[Document and share the platform-level approach to preserving components of a publication](/guidelines/71-document-platform-level-approach)_
+* _[20 - Represent all core intellectual components of the work in the export package](/guidelines/20-export-includes-core-components)_  
+* _[71 - Document and share the platform-level approach to preserving components of a publication](/guidelines/71-document-platform-level-approach)_
 
 [example]
 Stanford University Press publishes immersive digital monographs that feature non-linear navigation and innovative design. As part of their preservation strategy, they include a video walkthrough for each publication as documentation. This video serves both as a way to introduce readers to an unfamiliar experience and also as a record in the event that features stop functioning in the future. [Here is a  video Walkthrough for Stephen Robertson's _Harlem in Disorder_](https://www.harlemindisorder.org/archive/documentation.html?target=_blank).

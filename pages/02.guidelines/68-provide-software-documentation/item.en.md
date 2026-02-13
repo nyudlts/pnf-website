@@ -10,4 +10,4 @@ Consider what a future user of the software might need to know to run the softwa
 
 _This guideline refers to another common method for documenting software:_  
 
-1. _[Use a README file to document data or software](/guidelines/66-readme-for-data-software)_
+* _[66 - Use a README file to document data or software](/guidelines/66-readme-for-data-software)_

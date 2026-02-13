@@ -12,8 +12,8 @@ Linking to media that is hosted on YouTube or Vimeo is a threat to platform and 
 
 _See also:_  
 
-1. _[Start discussions about multimedia features early](/guidelines/12-discuss-media-assets-early)_  
-2. _[Avoid depending on externally hosted web services](/guidelines/14-avoid-external-services)_
+* _[12 - Start discussions about multimedia features early](/guidelines/12-discuss-media-assets-early)_  
+* _[14 - Avoid depending on externally hosted web services](/guidelines/14-avoid-external-services)_
 
 [example]
 Created as part of the Brown University Digital Publications program and published by University of Virginia Press, _Furnace and Fugue_ by Tara Nummedal includes a variety of audio and video features. Instead of using a third party service to stream the audio and video, these files are stored local to the website in a subfolder for assets associated with the project. They are embedded using HTML `<video>` and `<audio>` tags. An example of this can be seen on <a href="https://doi.org/10.26300/bdp.ff.nummedal-bilak" target="_blank">the Essays "Interplay" page</a>, where the site designers opted to use a `<video>` element rather than utilize a service such as Vimeo and YouTube. Hosting these videos local to the site and embedding them using simple HTML tags reduces the chance the audio or video will be lost over time and improves the preservability.

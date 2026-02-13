@@ -12,8 +12,8 @@ If a publication platform integrates third party applications for features such 
 
 _See also:_  
 
-1. _[Avoid being dependent on third party services for core features](/guidelines/14-avoid-external-services)_  
-2. _[Plan a strategy for preservation when third party dependencies exist](/guidelines/15-plan-for-third-party-hosted-media)_
+* _[14 - Avoid being dependent on third party services for core features](/guidelines/14-avoid-external-services)_  
+* _[15 - Plan a strategy for preservation when third party dependencies exist](/guidelines/15-plan-for-third-party-hosted-media)_
 
 [example]
 Some third-party annotation services have restrictive default terms of service or do not define their terms of service. Hypothesis, an annotation tool that can be added to or used with most websites, [grants a CC0 license for all annotation data stored on their servers](https://web.hypothes.is/terms-of-service?target=_blank). This means you don't need to seek special permission to preserve the annotation data.
