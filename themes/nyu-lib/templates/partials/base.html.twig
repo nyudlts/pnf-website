@@ -14,10 +14,12 @@
     {% endblock head %}
 
     {% block stylesheets %}
+        {% do assets.addCss('https://doi.org/10.25776/z58z-r575') %}
         {% do assets.addCss('theme://build/css/site.css') %}
     {% endblock %}
 
     {% block javascripts %}
+        {% do assets.addJs('https://doi.org/10.25776/h1fa-7a28') %}
         {% do assets.addJs('https://unpkg.com/htmx.org@1.9.12', {group: 'bottom', loading: 'defer'}) %}
 	    {% do assets.addJs('theme://build/js/main.js', {group: 'bottom', loading: 'defer'}) %}
     {% endblock %}

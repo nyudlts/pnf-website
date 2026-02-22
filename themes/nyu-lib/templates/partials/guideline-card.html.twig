@@ -11,10 +11,4 @@
     <div class="mb-4 font-light">
         {{ (guideline.content)|raw }}
     </div>
-
-    {# WCAG 1.4.3 - text-gray-900 ensures 4.5:1 contrast ratio #}
-    <a href="{{ guideline.url }}"
-       class="inline-flex items-center font-medium text-gray-900 hover:text-primary-700 hover:underline focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded dark:text-gray-100">
-        Read more {{ fa_icon('regular/arrow-right-long.svg', 'text-current w-5 h-5 ml-2')|raw }}
-    </a>
 </article>
