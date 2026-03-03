@@ -16,5 +16,5 @@ _See also:_
 * _[15 - Plan a strategy for preservation when third party dependencies exist](/guidelines/15-plan-for-third-party-hosted-media)_
 
 [example]
-Some third-party annotation services have restrictive default terms of service or do not define their terms of service. Hypothesis, an annotation tool that can be added to or used with most websites, [grants a CC0 license for all annotation data stored on their servers](https://web.hypothes.is/terms-of-service?target=_blank). This means you don't need to seek special permission to preserve the annotation data.
+Some third-party annotation services have restrictive default terms of service or do not define their terms of service. Hypothesis, an annotation tool that can be added to or used with most websites, <a href="https://web.archive.org/web/20220201020148/https://web.hypothes.is/terms-of-service/" data-versionurl="https://web.archive.org/web/20210814162048/https://web.hypothes.is/terms-of-service/" data-versiondate="2021-08-14" target="_blank">grants a CC0 license for all annotation data stored on their servers</a>. This means you don't need to seek special permission to preserve the annotation data.
 [/example]

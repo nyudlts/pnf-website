@@ -56,6 +56,6 @@ The Embedding Preservability project made it clear that, even with access to the
 This website was created in order to publish the latest guidelines and aid in navigation. These guidelines are a work in progress. As with most things on the web, the URLs are likely to change or disappear over time. We have published a full static, print-ready version in [NYU's Faculty Digital Archive](https://doi.org/10.33682/4a2v-diqv?target=_blank), which can be referenced for formal citations. Here is a sample citation:  
 * Greenberg, J., Guicherd-Callin, T., Hanson, K., Spinazzè, A., Verhoff, D., & Witmer, S. (2025). Guidelines for Preservability in Forms of Scholarship. _NYU Libraries_. [https://doi.org/10.33682/4a2v-diqv](https://doi.org/10.33682/4a2v-diqv?target=_blank).  
 
-If citing a webpage is preferred, we have made this website web archive friendly. To cite or link to specific pages on this site, one option is to use the [Robustify your links_ service](https://robustlinks.mementoweb.org/?target=_blank&data-versionurl=https://web.archive.org/web/20210914022553/https://robustlinks.mementoweb.org/&data-versiondate=2021-09-17) which archives the page in a public web archive and supplies a link to use for citation.
+If citing a webpage is preferred, we have made this website web archive friendly.
 
 [Read the Guidelines](/guidelines)

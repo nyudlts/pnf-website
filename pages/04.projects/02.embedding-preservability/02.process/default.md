@@ -1,6 +1,6 @@
 ---
-title: About the Embedding Process
-menu: About
+title: 'Embedding Preservability: The Embedding Process'
+menu: Process
 ---
 
 The process of embedding with publishers begins at the point a candidate publication is identified by the publisher. The embedding cycle is iterative and includes a set of conversations amongst the embedding team, the publisher, and the developers of the publication platform that take place at key inflection points leading up to and within the production timeline. The visual below provides a picture of what the process looked like as of June 2022. 
@@ -12,7 +12,7 @@ The process of embedding with publishers begins at the point a candidate publica
 
 ## See also:
 
-* [Press Release Announcing Project Award](https://guides.nyu.edu/blog/The-Andrew-W-Mellon-Foundation-Awards-NYU-502400-For-Libraries-Project-to-Expand-Capabilities-F)
+
 * [Project Updates](../updates)
 * [Embedding Team and Project Partners](../team)
 * Publications

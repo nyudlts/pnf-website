@@ -1,10 +1,11 @@
 ---
-title: Embedding Preservability
+title: 'Embedding Preservability for New Forms of Scholarship'
+menu: 'Embedding Preservability'
 ---
 
 ## Project Overview
 
-The Embedding Preservability for New Forms of Scholarship project is [led by NYU Libraries](https://library.nyu.edu/people/david-millman/) and builds off of [Enhancing Services to Preserve New Forms of Scholarship](https://archive.nyu.edu/handle/2451/63552), a two-year project that addressed the risk to scholarship presented by a scarcity of preservation technology within the scholarly publishing field by identifying the challenges to long-term preservation inherent in commonly used file formats, publication structures, and workflows. It resulted [in a set of 68 recommendations](/guidelines) designed to guide publishers to create digital publications that are more likely to be preserved. 
+Supported by the Andrew W. Mellon Foundation, the Embedding Preservability for New Forms of Scholarship project is [led by NYU Libraries](https://library.nyu.edu/people/david-millman/) and builds off of [Enhancing Services to Preserve New Forms of Scholarship](/projects/enhancing-services), a two-year project that addressed the risk to scholarship presented by a scarcity of preservation technology within the scholarly publishing field by identifying the challenges to long-term preservation inherent in commonly used file formats, publication structures, and workflows. It resulted [in a set of 68 recommendations](/guidelines) designed to guide publishers to create digital publications that are more likely to be preserved. 
 
 ### Scope
 

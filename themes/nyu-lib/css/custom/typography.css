@@ -145,8 +145,14 @@
     h6 {
         @apply text-lg md:text-xl font-normal text-black dark:text-white;
     }
+    ul {
+        list-style: none;
+        padding-inline-start: 0 !important;
+    }
+    ul > li {
+        padding-left: 0 !important;
+    }
 }
-
 .circle-background {
     background-color: transparent;
     opacity: 0.6;
@@ -200,7 +206,6 @@ table {
         }
     }
 }
-
 
 
 
