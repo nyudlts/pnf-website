@@ -7,7 +7,7 @@
     {# Meta info for news items #}
     {% if page.header.date or page.header.author %}
     {# WCAG 1.4.3 - text-gray-700 ensures 4.5:1 contrast ratio #}
-    <div class="flex flex-wrap justify-center items-center gap-8 mb-4 text-base text-gray-700">
+    <div class="flex flex-wrap justify-center items-center gap-8 -mt-12 mb-4 text-base text-gray-700">
         {% if page.date %}
         <span class="inline-flex items-center">
             {{ fa_icon('regular/calendar.svg', 'w-4 h-4 mr-1.5 opacity-75')|raw }}
@@ -23,7 +23,7 @@
     </div>
     {% endif %}
     {# Tags - WCAG 1.4.3 bg-gray-800 ensures 4.5:1 contrast with white text #}
-    <div class="flex flex-wrap justify-center gap-1 pb-8 -mt-8 max-w-lg mx-auto">
+    <div class="flex flex-wrap justify-center gap-1 pb-8 max-w-lg mx-auto">
         {% for tag in page.taxonomy.tag %}
             <a href="{{ page.parent.url ~ '/?tags=' ~ tag }}">
                 <span class="inline-flex nowrap text-xs px-2 py-0.5 rounded-md bg-gray-800 text-white">{{ tag }}</span>
