@@ -1,9 +1,11 @@
-title: Grav
+title: NYU - Preserving New Forms of Scholarship
 author:
   name: Joe Bloggs
   email: 'joe@example.com'
 metadata:
-    description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+  description: 'Scholars are making extensive use of new digital technologies to express their research. Publishers, in turn, are working to support increasingly complex publications that are not easily represented in print'
+guidelines:
+  boilerplate: Downloadable versions of these guidelines can be found at <a href="https://doi.org/10.33682/4a2v-diqv" target="_blank">https://doi.org/10.33682/4a2v-diqv</a>
 footer:
   copyright: |
     [Digital Library Technology Services](https://wp.nyu.edu/library-dlts/?target=_blank) and [Accessibility](https://www.nyu.edu/footer/accessibility.html?target=_blank)

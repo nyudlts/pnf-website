@@ -3,7 +3,6 @@
 {% block hero_title %}
     {% include 'partials/content-title.html.twig' %}
 
-
     {# Meta info for news items #}
     {% if page.header.date or page.header.author %}
     {# WCAG 1.4.3 - text-gray-700 ensures 4.5:1 contrast ratio #}
@@ -48,6 +47,7 @@
             <article id="article-content" class="prose max-w-none pb-8 px-4 lg:px-0">
                 {{ page.content|raw }}
             </article>
+
             {% include 'partials/article-pagination.html.twig' %}
         </div>
     </div>
@@ -55,7 +55,16 @@
     {# Regular item without sidebar #}
     <article id="article-content" class="prose mx-auto max-w-screen-md pb-16 px-4">
         {{ page.content|raw }}
+
+        {% if config.site.guidelines.boilerplate %}
+            <hr />
+            <aside class="mt-12">
+                {{ config.site.guidelines.boilerplate|markdown }}
+            </aside>
+        {% endif %}
     </article>
+
+
 
     {% include 'partials/article-pagination.html.twig' %}
     {% endif %}

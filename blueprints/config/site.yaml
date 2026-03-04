@@ -1,0 +1,18 @@
+extends@: parent@
+
+form:
+  fields:
+
+    content:
+      fields:
+
+        author.name:
+          unset@: true
+
+        author.email:
+          unset@: true
+
+        guidelines.boilerplate:
+          type: textarea
+          rows: 3
+          label: Guidelines Boilerplate
