@@ -2,7 +2,7 @@
     {% import _self as macros %}
     {% for p in page.children.visible %}
         {% set is_active_page = (p.active or p.activeChild) %}
-        {% set active_classes = is_active_page ? 'text-gray-900' : 'text-primary-800' %}
+        {% set active_classes = is_active_page ? 'text-gray-900 font-semibold' : 'text-primary-800' %}
         {% set has_children = p.children.visible.count > 0 %}
         {% set is_clickable = p.header.clickable is not same as(false) %}
 
@@ -54,7 +54,7 @@
                     role="menu">
                     {% for child in p.children.visible %}
                         {% set child_active = child.active %}
-                        {% set child_active_classes = child_active ? 'text-gray-900 lg:bg-gray-50' : 'text-primary-800' %}
+                        {% set child_active_classes = child_active ? 'text-gray-900 font-semibold lg:bg-primary' : 'text-primary-800' %}
                         <li role="none">
                             <a href="{{ child.url }}"
                                class="block py-2 px-4 {{ child_active_classes }} hover:text-primary-700 lg:hover:bg-gray-50"
@@ -66,7 +66,7 @@
                             <ul role="group">
                                 {% for grandchild in child.children.visible %}
                                     {% set gc_active = (grandchild.active or grandchild.activeChild) %}
-                                    {% set gc_active_classes = gc_active ? 'text-gray-900 lg:bg-gray-50' : 'text-gray-500' %}
+                                    {% set gc_active_classes = gc_active ? 'text-gray-900 font-semibold lg:bg-primary' : 'text-gray-500' %}
                                     <li role="none">
                                         <a href="{{ grandchild.url }}"
                                            class="block py-1.5 pl-8 pr-4 text-sm {{ gc_active_classes }} hover:text-primary-700 lg:hover:bg-gray-50"
