@@ -5,3 +5,6 @@
 /config/security.yaml
 /themes/nyu-lib/node_modules
 /plugins/grav-ray
+plugins/.DS_Store
+themes/.DS_Store
+.DS_Store

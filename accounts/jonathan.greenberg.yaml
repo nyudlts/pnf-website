@@ -1,0 +1,11 @@
+email: jg5890@nyu.edu
+fullname: 'Guidelines for Preservability'
+title: Administrator
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $1$ICHEjExz$yZ3Jo/HiVDhOgsMrh2zYt.
