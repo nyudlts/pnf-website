@@ -30,6 +30,8 @@ Greenberg, J. (2024, December 9). A Tool for Assessing the Preservability of Com
 
 Greenberg, J., Guicherd-Callin, T., Hanson, K., Spinazzè, A. T., & Witmer, S. (2025, March 13). Assessing Preservability in New Forms of Scholarship. Feeding the Elephant: A Forum for Scholarly Communications. [https://networks.h-net.org/group/discussions/20062697/assessing-preservability-new-forms-scholarship](https://networks.h-net.org/group/discussions/20062697/assessing-preservability-new-forms-scholarship)
 
+Hanson, K., Greenberg, J. Guicherd-Callin, T., Witmer, S. & Spinazzè, A. (2025, October 14). Embedding Preservability in New Forms of Scholarship. [https://www.dpconline.org/blog/embedding-preservability-in-new-forms-of-scholarship](https://www.dpconline.org/blog/embedding-preservability-in-new-forms-of-scholarship)
+
 
 ## Press
 
