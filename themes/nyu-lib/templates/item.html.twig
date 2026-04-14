@@ -25,7 +25,7 @@
     <div class="flex flex-wrap justify-center gap-1 pb-8 max-w-lg mx-auto">
         {% for tag in page.taxonomy.tag %}
             <a href="{{ page.parent.url ~ '/?tags=' ~ tag }}">
-                <span class="inline-flex nowrap text-xs px-2 py-0.5 rounded-md bg-gray-800 text-white">{{ tag }}</span>
+                <span class="inline-flex nowrap text-sm px-2 py-0.5 rounded-md bg-gray-800 text-white">{{ tag }}</span>
             </a>
         {% endfor %}
     </div>
