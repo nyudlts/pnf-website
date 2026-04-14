@@ -17,7 +17,7 @@ team_members:
         name: 'Karen Hanson'
         photo: karen-hanson.png
         role: 'Senior Research Developer, Portico'
-        bio: 'Karen is Senior Research Developer at [Portico](https://www.portico.org/). Portico is a community-supported preservation archive that safeguards access to e-journals, e-books, and digital collections. Our unique, trusted process ensures that the content we preserve will remain accessible and usable for researchers, scholars, and students in the future.'
+        bio: 'Karen is Lead Research Developer at [Portico](https://www.portico.org/). Portico is a community-supported preservation archive that safeguards access to e-journals, e-books, and digital collections. Our unique, trusted process ensures that the content we preserve will remain accessible and usable for researchers, scholars, and students in the future.'
     -
         name: 'Scott Witmer'
         role: 'Digital Preservation Specialist, University of Michigan'
