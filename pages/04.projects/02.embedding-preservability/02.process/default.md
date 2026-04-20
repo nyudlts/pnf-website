@@ -13,6 +13,6 @@ The process of embedding with publishers begins at the point a candidate publica
 ## See also:
 
 
-* [Project Updates](../updates)
+* [Project Updates](../news)
 * [Embedding Team and Project Partners](../team)
-* Publications
+* [Publications](../../../03.publications/)
